@@ -1,12 +1,13 @@
 /* ==========================================================================
-   RYDON DIGITAL — MAIN APP JS MODULE
-   Handles Initialization, Preloader, Custom Cursor, Sticky Header
+   MULTI-PAGE APP JS MODULE — MAIN
+   Handles Initialization, Preloader, Custom Cursor, Sticky Header & Active Nav
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
   initPreloader();
   initCustomCursor();
   initStickyHeader();
+  initActiveNavLink();
   initMobileMenu();
 });
 
@@ -20,18 +21,18 @@ function initPreloader() {
 
   let progress = 0;
   const interval = setInterval(() => {
-    progress += Math.floor(Math.random() * 25) + 10;
+    progress += Math.floor(Math.random() * 25) + 15;
     if (progress >= 100) {
       progress = 100;
       clearInterval(interval);
       setTimeout(() => {
         preloader.classList.add('loaded');
-      }, 300);
+      }, 250);
     }
     if (progressBar) {
       progressBar.style.width = `${progress}%`;
     }
-  }, 100);
+  }, 60);
 }
 
 /* --------------------------------------------------------------------------
@@ -67,7 +68,7 @@ function initCustomCursor() {
   requestAnimationFrame(renderFollower);
 
   // Hover targets
-  const hoverElements = document.querySelectorAll('a, button, .service-row, .portfolio-card, .nfc-card, .ad-card');
+  const hoverElements = document.querySelectorAll('a, button, .service-row, .portfolio-card, .nfc-card, .ad-card, .feature-card, .dropdown-item');
   hoverElements.forEach(el => {
     el.addEventListener('mouseenter', () => {
       cursor.classList.add('hovering');
@@ -89,12 +90,11 @@ function initCustomCursor() {
 }
 
 /* --------------------------------------------------------------------------
-   Sticky Header & Scroll State
+   Sticky Header & Active Link Detection
    -------------------------------------------------------------------------- */
 function initStickyHeader() {
   const header = document.getElementById('main-header');
-  const navLinks = document.querySelectorAll('.nav-link');
-  const sections = document.querySelectorAll('section[id]');
+  if (!header) return;
 
   window.addEventListener('scroll', () => {
     if (window.scrollY > 40) {
@@ -102,23 +102,20 @@ function initStickyHeader() {
     } else {
       header.classList.remove('scrolled');
     }
+  });
+}
 
-    // ScrollSpy active state
-    let currentSection = '';
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop - 120;
-      const sectionHeight = section.offsetHeight;
-      if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-        currentSection = section.getAttribute('id');
-      }
-    });
+function initActiveNavLink() {
+  const path = window.location.pathname.split('/').pop() || 'index.html';
+  const navLinks = document.querySelectorAll('.nav-link');
 
-    navLinks.forEach(link => {
+  navLinks.forEach(link => {
+    const href = link.getAttribute('href');
+    if (href === path || (path === '' && href === 'index.html')) {
+      link.classList.add('active');
+    } else {
       link.classList.remove('active');
-      if (link.getAttribute('href') === `#${currentSection}`) {
-        link.classList.add('active');
-      }
-    });
+    }
   });
 }
 

@@ -1,5 +1,5 @@
 /* ==========================================================================
-   RYDON DIGITAL — RESPONSIVE BREAKPOINT SYSTEM
+   MULTI-PAGE RESPONSIVE BREAKPOINT SYSTEM
    Breakpoints:
    - Laptop / Desktop Medium: max-width 1200px
    - Tablet Landscape & Portrait: max-width 992px & 768px
@@ -16,6 +16,10 @@
     font-size: 4.5rem;
   }
   
+  .dropdown-menu.mega-menu {
+    min-width: 520px;
+  }
+  
   .service-row {
     grid-template-columns: 60px 1fr 1fr 40px;
     gap: 1.5rem;
@@ -29,7 +33,7 @@
 /* Tablets (<= 992px) */
 @media (max-width: 992px) {
   .custom-cursor, .custom-cursor-follower {
-    display: none !important; /* Touch device safety */
+    display: none !important;
   }
 
   .nav-menu {
@@ -46,20 +50,10 @@
     text-align: center;
   }
   
-  .hero-subtag {
-    margin: 0 auto 1.5rem;
-  }
-  
-  .hero-description {
-    margin: 0 auto 2rem;
-  }
-  
-  .hero-actions {
+  .hero-subtag, .hero-actions, .hero-locations {
     justify-content: center;
-  }
-  
-  .hero-locations {
-    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
   }
   
   .hero-visual-container {
@@ -71,34 +65,8 @@
     gap: 2.5rem;
   }
   
-  .service-row {
-    grid-template-columns: 50px 1fr 40px;
-  }
-  
-  .service-desc {
-    display: none; /* Clean accordion overview */
-  }
-  
-  .showcase-item, .showcase-item.reverse {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-  
-  .showcase-item.reverse .showcase-visual {
-    order: 1;
-  }
-  
-  .nfc-grid, .ad-products-grid {
+  .feature-grid-3, .nfc-grid, .ad-products-grid {
     grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .why-row {
-    grid-template-columns: 60px 1fr;
-    gap: 1rem;
-  }
-  
-  .why-desc {
-    grid-column: 1 / -1;
   }
   
   .portfolio-grid {
@@ -126,8 +94,17 @@
     padding: 5rem 0;
   }
 
+  .inner-hero {
+    padding-top: 140px;
+    padding-bottom: 3.5rem;
+  }
+
   .hero-title {
     font-size: 3.2rem;
+  }
+  
+  .inner-hero-title {
+    font-size: 2.6rem;
   }
   
   .hero-3d-orb {
@@ -135,13 +112,7 @@
     height: 240px;
   }
 
-  .intro-stats-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    text-align: center;
-  }
-
-  .nfc-grid, .ad-products-grid, .process-grid {
+  .feature-grid-3, .nfc-grid, .ad-products-grid, .process-grid {
     grid-template-columns: 1fr;
   }
   
@@ -191,6 +162,11 @@
   
   .service-row {
     padding: 1.5rem 0.5rem;
+    grid-template-columns: 40px 1fr 30px;
+  }
+  
+  .service-desc {
+    display: none;
   }
   
   .service-title {
