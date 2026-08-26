@@ -716,7 +716,7 @@ ul { list-style: none; }
 
 .svc-card {
   background-color: var(--white);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill='%23e60000' fill-opacity='0.03'%3E%3Cpath d='M50 0L100 25L50 50L0 25z'/%3E%3Cpath d='M100 25L50 50L50 100L100 75z' fill-opacity='0.08'/%3E%3Cpath d='M0 25L50 50L50 100L0 75z' fill-opacity='0.05'/%3E%3C/g%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMDAnIGhlaWdodD0nMTAwJyB2aWV3Qm94PScwIDAgMTAwIDEwMCc+PGcgZmlsbD0nI2U2MDAwMCcgZmlsbC1vcGFjaXR5PScwLjAzJz48cGF0aCBkPSdNNTAgMEwxMDAgMjVMNTAgNTBMMCAyNXonLz48cGF0aCBkPSdNMTAwIDI1TDUwIDUwTDUwIDEwMEwxMDAgNzV6JyBmaWxsLW9wYWNpdHk9JzAuMDgnLz48cGF0aCBkPSdNMCAyNUw1MCA1MEw1MCAxMDBMMCA3NXonIGZpbGwtb3BhY2l0eT0nMC4wNScvPjwvZz48L3N2Zz4=");
   background-size: 60px 60px;
   background-position: top center;
   border: 1.5px solid rgba(230, 0, 0, 0.22);
@@ -733,12 +733,6 @@ ul { list-style: none; }
   justify-content: space-between;
   text-decoration: none;
   color: inherit;
-  z-index: 1;
-}
-
-.svc-card > * {
-  position: relative;
-  z-index: 2;
 }
 
 .svc-card:hover {
