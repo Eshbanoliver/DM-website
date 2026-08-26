@@ -88,10 +88,10 @@ function initAmbientGlowFollow() {
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
 
-    ctaSection.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(255, 26, 26, 0.25) 0%, #050505 70%)`;
+    ctaSection.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(230, 0, 0, 0.08) 0%, #FFFFFF 70%)`;
   });
 
   ctaSection.addEventListener('mouseleave', () => {
-    ctaSection.style.background = `radial-gradient(circle at 50% 50%, rgba(255, 26, 26, 0.25) 0%, #050505 75%)`;
+    ctaSection.style.background = `radial-gradient(circle at 50% 50%, rgba(230, 0, 0, 0.08) 0%, #FFFFFF 75%)`;
   });
 }
