@@ -1056,6 +1056,78 @@ ul { list-style: none; }
   transition: opacity .9s var(--ease-out), transform .9s var(--ease-out);
 }
 .u-reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ─── DIVERSE ANIMATION VARIATIONS ─────────────────────────────────────── */
+/* Slide Left Reveal */
+.u-reveal-left {
+  opacity: 0;
+  transform: translateX(-60px);
+  transition: opacity 0.9s var(--ease-out), transform 0.9s var(--ease-out);
+}
+.u-reveal-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Slide Right Reveal */
+.u-reveal-right {
+  opacity: 0;
+  transform: translateX(60px);
+  transition: opacity 0.9s var(--ease-out), transform 0.9s var(--ease-out);
+}
+.u-reveal-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Zoom In Reveal */
+.u-reveal-zoom {
+  opacity: 0;
+  transform: scale(0.88);
+  transition: opacity 0.85s var(--ease-out), transform 0.85s var(--ease-out);
+}
+.u-reveal-zoom.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* 3D Flip Reveal */
+.u-reveal-flip {
+  opacity: 0;
+  transform: perspective(800px) rotateX(25deg) translateY(40px);
+  transition: opacity 0.9s var(--ease-out), transform 0.9s var(--ease-out);
+}
+.u-reveal-flip.visible {
+  opacity: 1;
+  transform: perspective(800px) rotateX(0deg) translateY(0);
+}
+
+/* 3D Rotate Y Reveal */
+.u-reveal-rotate {
+  opacity: 0;
+  transform: perspective(1000px) rotateY(-15deg) translateY(35px);
+  transition: opacity 0.9s var(--ease-out), transform 0.9s var(--ease-out);
+}
+.u-reveal-rotate.visible {
+  opacity: 1;
+  transform: perspective(1000px) rotateY(0deg) translateY(0);
+}
+
+/* Continuous Keyframes */
+@keyframes floatGlow {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-7px); }
+}
+
+@keyframes pulseGlowRed {
+  0%, 100% { box-shadow: 0 0 15px rgba(230, 0, 0, 0.3); }
+  50% { box-shadow: 0 0 35px rgba(230, 0, 0, 0.65); }
+}
+
+.hero-eyebrow, .strip-badge, .sec-tag, .sec-tag-light {
+  animation: floatGlow 4.5s ease-in-out infinite;
+}
+
 .u-reveal-delay-1 { transition-delay: .1s; }
 .u-reveal-delay-2 { transition-delay: .2s; }
 .u-reveal-delay-3 { transition-delay: .3s; }

@@ -406,7 +406,7 @@
       <a href="work.html" class="btn-ghost" data-cursor="VIEW">Full Portfolio ↗</a>
     </div>
 
-    <div class="work-grid u-reveal">
+    <div class="work-grid u-reveal-zoom">
 
       <a href="work.html" class="work-card" data-cursor="VIEW">
         <div class="work-card-inner">
@@ -445,7 +445,7 @@
       </div>
     </div>
 
-    <div class="process-grid u-reveal" style="margin-top: 4rem;">
+    <div class="process-grid u-reveal-flip" style="margin-top: 4rem;">
 
       <div class="process-step">
         <div class="ps-num">01</div>
@@ -520,7 +520,7 @@
       </div>
     </div>
 
-    <div class="testi-box u-reveal">
+    <div class="testi-box u-reveal-rotate">
       <div class="testi-quote-mark">"</div>
 
       <div class="testimonial-slide active">
@@ -841,20 +841,37 @@
 })();
 
 /* ───────────────────────────────────────────────────────────────
-   SCROLL REVEALS & AUTOMATIC STAGGERING
+   SCROLL REVEALS & AUTOMATIC STAGGERING & SMOOTH ANCHORS
 ─────────────────────────────────────────────────────────────── */
 (function () {
+  // Smooth scroll to anchors
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const targetId = this.getAttribute('href');
+      if (targetId === '#') return;
+      const targetEl = document.querySelector(targetId);
+      if (targetEl) {
+        e.preventDefault();
+        targetEl.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
+  });
+
   // Stagger grid/list items automatically
   const containers = document.querySelectorAll('.svc-list, .prod-grid, .work-grid, .process-grid, .intro-stats-grid');
   containers.forEach(container => {
     const children = container.children;
     Array.from(children).forEach((child, index) => {
       child.classList.add('u-reveal-item');
-      child.style.transitionDelay = `${index * 0.12}s`;
+      child.style.transitionDelay = `${index * 0.1}s`;
     });
   });
 
-  const els = document.querySelectorAll('.u-reveal');
+  const selector = '.u-reveal, .u-reveal-left, .u-reveal-right, .u-reveal-zoom, .u-reveal-flip, .u-reveal-rotate';
+  const els = document.querySelectorAll(selector);
   const io  = new IntersectionObserver(entries => {
     entries.forEach(e => { 
       if (e.isIntersecting) { 
@@ -862,7 +879,7 @@
         io.unobserve(e.target); 
       } 
     });
-  }, { rootMargin: '0px 0px -80px 0px', threshold: .12 });
+  }, { rootMargin: '0px 0px -60px 0px', threshold: .1 });
   els.forEach(el => io.observe(el));
 })();
 

@@ -27,18 +27,20 @@ function initStaggeredReveals() {
    Scroll Reveal Observer
    -------------------------------------------------------------------------- */
 function initScrollReveals() {
-  const revealElements = document.querySelectorAll('.reveal');
+  const selector = '.reveal, .reveal-left, .reveal-right, .reveal-zoom, .reveal-flip, .reveal-rotate, .u-reveal, .u-reveal-left, .u-reveal-right, .u-reveal-zoom, .u-reveal-flip, .u-reveal-rotate';
+  const revealElements = document.querySelectorAll(selector);
 
   const observerOptions = {
     root: null,
     rootMargin: '0px 0px -50px 0px',
-    threshold: 0.15
+    threshold: 0.12
   };
 
   const observer = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('active');
+        entry.target.classList.add('visible');
         obs.unobserve(entry.target);
       }
     });
