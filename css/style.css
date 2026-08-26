@@ -1039,3 +1039,71 @@ ul { list-style: none; }
   .testi-box { padding: 3rem 2rem; }
   .header-wrap, .strip-wrap, .services-wrap, .products-wrap, .work-wrap, .process-wrap, .testi-wrap, .cta-wrap, .footer-inner { padding: 0 1.5rem; }
 }
+
+/* ─── LOCAL IMAGE INTEGRATIONS ───────────────────────────────────────────── */
+.logo-img {
+  height: 38px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.svc-icon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  filter: grayscale(1) brightness(0.2);
+  transition: filter var(--transition-fast), transform var(--transition-fast);
+}
+.svc-row:hover .svc-icon {
+  filter: grayscale(0) brightness(1) drop-shadow(0 4px 10px rgba(230, 0, 0, 0.2));
+  transform: scale(1.1);
+}
+
+.prod-img-wrap {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  border-radius: var(--r-md);
+  margin-bottom: 2rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.prod-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-medium);
+}
+.prod-card:hover .prod-img {
+  transform: scale(1.05);
+}
+
+.work-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(1) contrast(1.1);
+  transition: filter var(--transition-medium), transform var(--transition-medium);
+}
+.work-card:hover .work-img {
+  filter: grayscale(0) contrast(1);
+  transform: scale(1.05);
+}
+
+.marquee-logo {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+  filter: grayscale(1) opacity(0.3);
+  transition: filter var(--transition-fast), opacity var(--transition-fast);
+  display: inline-block;
+  vertical-align: middle;
+}
+.marquee-logo:hover {
+  filter: grayscale(0) opacity(1);
+}
+
