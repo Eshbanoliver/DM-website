@@ -73,6 +73,9 @@
   }
   .cta-wrap  { padding: 0 1rem; }
   .sec-header { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
+  .nfc-intro-section { padding: 5rem 0; margin-bottom: 5rem; }
+  .nfc-intro-wrap { grid-template-columns: 1fr; gap: 3rem; padding: 0 1.5rem; }
+  .nfc-showcase-grid { grid-template-columns: 1fr; gap: 1.5rem; }
 }
 
 @media (max-width: 480px) {
