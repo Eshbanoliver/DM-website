@@ -742,29 +742,55 @@ ul { list-style: none; }
   width: 60px;
   height: 60px;
   border-radius: 16px;
+.svc-card-icon-wrap,
+.why-icon-wrap {
+  width: 60px;
+  height: 60px;
+  min-width: 60px;
+  border-radius: 16px;
   background: rgba(230, 0, 0, 0.08);
-  border: 1px solid rgba(230, 0, 0, 0.2);
+  border: 1.5px solid rgba(230, 0, 0, 0.22);
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 1.4rem;
-  transition: background 0.35s, transform 0.35s var(--ease-out);
+  box-shadow: 0 4px 15px rgba(230, 0, 0, 0.1);
+  transition: all 0.35s var(--ease-out);
 }
 
-.svc-card:hover .svc-card-icon-wrap {
+.svc-card:hover .svc-card-icon-wrap,
+.why-card:hover .why-icon-wrap {
   background: var(--red);
+  border-color: var(--red);
   transform: scale(1.1);
+  box-shadow: 0 8px 25px rgba(230, 0, 0, 0.45);
 }
 
-.svc-card-icon {
-  width: 32px;
-  height: 32px;
+.svc-card-icon,
+.why-icon {
+  width: 30px;
+  height: 30px;
   object-fit: contain;
-  transition: filter 0.35s;
+  transition: filter 0.35s, transform 0.35s;
 }
 
-.svc-card:hover .svc-card-icon {
+.svc-card-i,
+.why-i {
+  font-size: 1.75rem;
+  color: var(--red);
+  transition: color 0.35s, transform 0.35s;
+}
+
+.svc-card:hover .svc-card-icon,
+.why-card:hover .why-icon {
   filter: brightness(0) invert(1);
+  transform: scale(1.08);
+}
+
+.svc-card:hover .svc-card-i,
+.why-card:hover .why-i {
+  color: #FFFFFF;
+  transform: scale(1.12);
 }
 
 .svc-card-title {
