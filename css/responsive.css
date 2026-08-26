@@ -42,6 +42,11 @@
   .header-wrap, .header-container {
     padding: 0 1.2rem;
   }
+  .strip-wrap {
+    width: calc(100% - 2rem);
+    padding: 3.5rem 1.8rem;
+    border-radius: 20px;
+  }
   .about-strip, .services-section, .products-section,
   .work-section, .process-section, .testi-section, .cta-section { padding: 5rem 0; }
   .intro-stats-grid { grid-template-columns: 1fr; }
