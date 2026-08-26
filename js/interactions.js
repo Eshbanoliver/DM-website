@@ -9,6 +9,9 @@ document.addEventListener('DOMContentLoaded', () => {
   initAmbientGlowFollow();
   init3DTilt();
   initMagneticButtons();
+  initSpotlightTracking();
+  initClickRipple();
+  initCursorFollowerLight();
 });
 
 /* --------------------------------------------------------------------------
@@ -99,12 +102,89 @@ function initAmbientGlowFollow() {
 }
 
 /* --------------------------------------------------------------------------
-   3D Tilt Effect
+   Spotlight Card Light Tracking
+   -------------------------------------------------------------------------- */
+function initSpotlightTracking() {
+  const cards = document.querySelectorAll('.svc-card, .why-card, .nfc-showcase-card, .prod-card, .testi-box, .cta-card, .nfc-card, .ad-card');
+  cards.forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      card.style.setProperty('--mouse-x', `${x}px`);
+      card.style.setProperty('--mouse-y', `${y}px`);
+    });
+  });
+}
+
+/* --------------------------------------------------------------------------
+   Cursor Ambient Light Follower
+   -------------------------------------------------------------------------- */
+function initCursorFollowerLight() {
+  if (window.innerWidth <= 900) return;
+  let glow = document.getElementById('cursor-ambient-glow');
+  if (!glow) {
+    glow = document.createElement('div');
+    glow.id = 'cursor-ambient-glow';
+    document.body.appendChild(glow);
+  }
+
+  let mouseX = window.innerWidth / 2;
+  let mouseY = window.innerHeight / 2;
+  let currentX = mouseX;
+  let currentY = mouseY;
+
+  window.addEventListener('mousemove', e => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+  });
+
+  function render() {
+    currentX += (mouseX - currentX) * 0.15;
+    currentY += (mouseY - currentY) * 0.15;
+    glow.style.left = `${currentX}px`;
+    glow.style.top = `${currentY}px`;
+    requestAnimationFrame(render);
+  }
+  render();
+}
+
+/* --------------------------------------------------------------------------
+   Click Crimson Ripple Effect
+   -------------------------------------------------------------------------- */
+function initClickRipple() {
+  const targets = document.querySelectorAll('.btn-red, .btn-ghost, .svc-card, .why-card, .nfc-showcase-card, .prod-card, .testi-btn, .strip-cta');
+  targets.forEach(target => {
+    target.style.position = target.style.position || 'relative';
+    target.style.overflow = 'hidden';
+
+    target.addEventListener('click', function (e) {
+      const rect = this.getBoundingClientRect();
+      const ripple = document.createElement('span');
+      const diameter = Math.max(rect.width, rect.height);
+      const radius = diameter / 2;
+
+      ripple.style.width = ripple.style.height = `${diameter}px`;
+      ripple.style.left = `${e.clientX - rect.left - radius}px`;
+      ripple.style.top = `${e.clientY - rect.top - radius}px`;
+      ripple.classList.add('click-ripple');
+
+      const existing = this.querySelector('.click-ripple');
+      if (existing) existing.remove();
+
+      this.appendChild(ripple);
+      setTimeout(() => ripple.remove(), 650);
+    });
+  });
+}
+
+/* --------------------------------------------------------------------------
+   3D Parallax Tilt Physics
    -------------------------------------------------------------------------- */
 function init3DTilt() {
-  const cards = document.querySelectorAll('.nfc-card, .portfolio-card, .ad-card, .service-row, .feature-card');
+  const cards = document.querySelectorAll('.svc-card, .why-card, .nfc-showcase-card, .prod-card, .nfc-card, .ad-card, .testi-box, .cta-card');
   if (window.innerWidth <= 900) return;
-  
+
   cards.forEach(card => {
     card.addEventListener('mousemove', e => {
       const rect = card.getBoundingClientRect();
@@ -112,23 +192,24 @@ function init3DTilt() {
       const y = e.clientY - rect.top;
       const xc = rect.width / 2;
       const yc = rect.height / 2;
-      const angleX = (yc - y) / 14; 
-      const angleY = (x - xc) / 14;
-      card.style.transform = `perspective(1000px) rotateX(${angleX}deg) rotateY(${angleY}deg) scale3d(1.02, 1.02, 1.02)`;
+      const angleX = (yc - y) / 16;
+      const angleY = (x - xc) / 16;
+      card.style.transform = `perspective(1000px) rotateX(${angleX}deg) rotateY(${angleY}deg) translateY(-6px)`;
       card.style.transition = 'transform 0.08s ease-out';
     });
+
     card.addEventListener('mouseleave', () => {
-      card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+      card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)`;
       card.style.transition = 'transform 0.5s var(--ease-out)';
     });
   });
 }
 
 /* --------------------------------------------------------------------------
-   Magnetic Buttons
+   Magnetic Button Physics
    -------------------------------------------------------------------------- */
 function initMagneticButtons() {
-  const elements = document.querySelectorAll('.btn, .nav-link, .logo');
+  const elements = document.querySelectorAll('.btn-red, .btn-ghost, .svc-card-arrow, .strip-cta, .nav-link, .brand-logo, .testi-btn');
   if (window.innerWidth <= 900) return;
 
   elements.forEach(el => {
@@ -139,6 +220,7 @@ function initMagneticButtons() {
       el.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
       el.style.transition = 'transform 0.1s ease-out';
     });
+
     el.addEventListener('mouseleave', () => {
       el.style.transform = 'translate(0px, 0px)';
       el.style.transition = 'transform 0.5s cubic-bezier(0.25, 1, 0.5, 1)';

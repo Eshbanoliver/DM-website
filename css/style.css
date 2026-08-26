@@ -1790,3 +1790,77 @@ ul { list-style: none; }
   filter: grayscale(0) opacity(1);
 }
 
+/* ─── ADVANCED INTERACTIVE EFFECTS & ANIMATIONS ───────────────────────────── */
+.svc-card, .why-card, .nfc-showcase-card, .prod-card, .testi-box, .cta-card {
+  position: relative;
+}
+
+.svc-card::before,
+.why-card::before,
+.nfc-showcase-card::before,
+.testi-box::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(450px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(230, 0, 0, 0.12), transparent 75%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s var(--ease-out);
+  z-index: 1;
+}
+
+.svc-card:hover::before,
+.why-card:hover::before,
+.nfc-showcase-card:hover::before,
+.testi-box:hover::before {
+  opacity: 1;
+}
+
+/* Red Ambient Follower Glow Light */
+#cursor-ambient-glow {
+  position: fixed;
+  top: 0; left: 0;
+  width: 550px; height: 550px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(230, 0, 0, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9998;
+  transition: opacity 0.4s ease;
+  opacity: 0;
+}
+
+body:hover #cursor-ambient-glow {
+  opacity: 1;
+}
+
+/* Pulsing Red Border Beam */
+@keyframes borderBeam {
+  0% { border-color: rgba(230, 0, 0, 0.22); box-shadow: 0 10px 30px rgba(230, 0, 0, 0.12); }
+  50% { border-color: rgba(230, 0, 0, 0.55); box-shadow: 0 15px 45px rgba(230, 0, 0, 0.28); }
+  100% { border-color: rgba(230, 0, 0, 0.22); box-shadow: 0 10px 30px rgba(230, 0, 0, 0.12); }
+}
+
+.prod-card, .svc-card, .why-card, .nfc-showcase-card {
+  animation: borderBeam 7s ease-in-out infinite alternate;
+}
+
+/* Click Crimson Ripple Wave */
+.click-ripple {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  background: rgba(230, 0, 0, 0.35);
+  animation: rippleAnimation 0.65s ease-out;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+@keyframes rippleAnimation {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
