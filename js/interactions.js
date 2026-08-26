@@ -12,6 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initSpotlightTracking();
   initClickRipple();
   initCursorFollowerLight();
+  initSmoothScrollEngine();
+  initSmoothAnchors();
 });
 
 /* --------------------------------------------------------------------------
@@ -224,6 +226,70 @@ function initMagneticButtons() {
     el.addEventListener('mouseleave', () => {
       el.style.transform = 'translate(0px, 0px)';
       el.style.transition = 'transform 0.5s cubic-bezier(0.25, 1, 0.5, 1)';
+    });
+  });
+}
+
+/* --------------------------------------------------------------------------
+   Ultra-Smooth Momentum Inertia Wheel Scroll Engine
+   -------------------------------------------------------------------------- */
+function initSmoothScrollEngine() {
+  if (window.innerWidth <= 900) return;
+
+  let currentY = window.scrollY;
+  let targetY = window.scrollY;
+  let isScrolling = false;
+
+  window.addEventListener('wheel', e => {
+    if (document.body.classList.contains('menu-open') || document.body.style.overflow === 'hidden') return;
+    
+    e.preventDefault();
+    targetY += e.deltaY * 0.85;
+    targetY = Math.max(0, Math.min(targetY, document.documentElement.scrollHeight - window.innerHeight));
+
+    if (!isScrolling) {
+      isScrolling = true;
+      requestAnimationFrame(updateScroll);
+    }
+  }, { passive: false });
+
+  function updateScroll() {
+    const diff = targetY - currentY;
+    if (Math.abs(diff) > 0.5) {
+      currentY += diff * 0.1;
+      window.scrollTo(0, currentY);
+      requestAnimationFrame(updateScroll);
+    } else {
+      currentY = targetY;
+      window.scrollTo(0, currentY);
+      isScrolling = false;
+    }
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!isScrolling) {
+      currentY = window.scrollY;
+      targetY = window.scrollY;
+    }
+  });
+}
+
+/* --------------------------------------------------------------------------
+   Smooth Anchor Navigation Handler
+   -------------------------------------------------------------------------- */
+function initSmoothAnchors() {
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const targetId = this.getAttribute('href');
+      if (!targetId || targetId === '#') return;
+      const targetEl = document.querySelector(targetId);
+      if (targetEl) {
+        e.preventDefault();
+        targetEl.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
     });
   });
 }
