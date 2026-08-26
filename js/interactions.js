@@ -14,8 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
    -------------------------------------------------------------------------- */
 function initTestimonialSlider() {
   const slides = document.querySelectorAll('.testimonial-slide');
-  const prevBtn = document.getElementById('testi-prev');
-  const nextBtn = document.getElementById('testi-next');
+  const prevBtn = document.getElementById('prev-testimonial') || document.getElementById('testi-prev');
+  const nextBtn = document.getElementById('next-testimonial') || document.getElementById('testi-next');
   if (!slides.length || !prevBtn || !nextBtn) return;
 
   let currentIndex = 0;
