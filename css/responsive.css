@@ -77,6 +77,10 @@
   .nfc-intro-wrap { grid-template-columns: 1fr; gap: 3rem; padding: 0 1.5rem; }
   .nfc-showcase-grid { grid-template-columns: 1fr; gap: 1.5rem; }
   .svc-cards-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+  .why-choose-section { padding: 5rem 0; }
+  .why-choose-wrap { padding: 0 1.5rem; }
+  .why-choose-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+  .why-card { flex-direction: column; padding: 1.8rem; }
 }
 
 @media (max-width: 600px) {
