@@ -1203,19 +1203,27 @@ ul { list-style: none; }
 .testi-section { padding: 9rem 0; }
 .testi-wrap { max-width: 1440px; margin: 0 auto; padding: 0 3rem; }
 .testi-box {
-  border: 1px solid var(--ink-10);
+  border: 1.5px solid rgba(230, 0, 0, 0.3);
   border-radius: var(--r-lg);
   padding: 5rem;
-  position: relative; overflow: hidden;
+  position: relative; 
+  overflow: hidden;
   background: var(--white);
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 20px 60px rgba(230, 0, 0, 0.22), 0 0 35px rgba(230, 0, 0, 0.15);
+  transition: all 0.4s var(--ease-out);
+}
+.testi-box:hover {
+  border-color: var(--red);
+  box-shadow: 0 30px 80px rgba(230, 0, 0, 0.35), 0 0 50px rgba(230, 0, 0, 0.25);
+  transform: translateY(-4px);
 }
 .testi-quote-mark {
-  position: absolute; top: 2rem; left: 4rem;
+  position: absolute; top: 1.5rem; left: 3.5rem;
   font-family: var(--f-display);
-  font-size: 10rem; font-weight: 700;
-  color: var(--ink-10); line-height: 1;
+  font-size: 11rem; font-weight: 700;
+  color: rgba(230, 0, 0, 0.08); line-height: 1;
   pointer-events: none;
+  text-shadow: 0 0 20px rgba(230, 0, 0, 0.15);
 }
 .testimonial-slide { display: none; }
 .testimonial-slide.active { display: block; }
@@ -1233,7 +1241,7 @@ ul { list-style: none; }
   font-size: 1rem; font-weight: 700;
   letter-spacing: -.01em;
 }
-.testi-author span { display: block; font-size: .8rem; color: var(--red); margin-top: .25rem; font-weight: 600; }
+.testi-author span { display: block; font-size: .8rem; color: var(--red); margin-top: .25rem; font-weight: 600; text-shadow: 0 0 10px rgba(230, 0, 0, 0.3); }
 .testi-nav { display: flex; gap: .8rem; margin-top: 3rem; }
 .testi-btn {
   width: 48px; height: 48px;
@@ -1242,9 +1250,14 @@ ul { list-style: none; }
   background: transparent;
   display: flex; align-items: center; justify-content: center;
   font-size: 1.1rem; cursor: pointer;
-  transition: background .25s, border-color .25s, color .25s;
+  transition: all .3s var(--ease-out);
 }
-.testi-btn:hover { background: var(--ink); border-color: var(--ink); color: #fff; }
+.testi-btn:hover { 
+  background: var(--red); 
+  border-color: var(--red); 
+  color: #fff; 
+  box-shadow: 0 0 20px rgba(230, 0, 0, 0.45);
+}
 
 /* ─── SCROLL CARET ───────────────────────────────────────────────────────── */
 .scroll-caret {
