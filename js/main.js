@@ -47,6 +47,7 @@ function initCustomCursor() {
 
   let mouseX = 0, mouseY = 0;
   let followerX = 0, followerY = 0;
+  let activeHoverEl = null;
 
   document.addEventListener('mousemove', (e) => {
     mouseX = e.clientX;
@@ -57,8 +58,26 @@ function initCustomCursor() {
   });
 
   function renderFollower() {
-    followerX += (mouseX - followerX) * 0.15;
-    followerY += (mouseY - followerY) * 0.15;
+    if (activeHoverEl) {
+      const rect = activeHoverEl.getBoundingClientRect();
+      const cx = rect.left + rect.width / 2;
+      const cy = rect.top + rect.height / 2;
+      followerX += (cx - followerX) * 0.22;
+      followerY += (cy - followerY) * 0.22;
+      
+      follower.style.width = `${rect.width + 12}px`;
+      follower.style.height = `${rect.height + 12}px`;
+      follower.style.borderRadius = window.getComputedStyle(activeHoverEl).borderRadius;
+      follower.style.borderColor = 'var(--accent)';
+    } else {
+      followerX += (mouseX - followerX) * 0.15;
+      followerY += (mouseY - followerY) * 0.15;
+      
+      follower.style.width = '42px';
+      follower.style.height = '42px';
+      follower.style.borderRadius = '50%';
+      follower.style.borderColor = 'rgba(255, 255, 255, 0.3)';
+    }
 
     follower.style.left = `${followerX}px`;
     follower.style.top = `${followerY}px`;
@@ -73,6 +92,7 @@ function initCustomCursor() {
     el.addEventListener('mouseenter', () => {
       cursor.classList.add('hovering');
       follower.classList.add('hovering');
+      activeHoverEl = el;
 
       const customBadgeText = el.getAttribute('data-cursor');
       if (badge && customBadgeText) {
@@ -85,6 +105,7 @@ function initCustomCursor() {
     el.addEventListener('mouseleave', () => {
       cursor.classList.remove('hovering');
       follower.classList.remove('hovering');
+      activeHoverEl = null;
     });
   });
 }

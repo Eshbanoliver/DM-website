@@ -4,9 +4,24 @@
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
+  initStaggeredReveals();
   initScrollReveals();
   initStatsCounters();
 });
+
+/* --------------------------------------------------------------------------
+   Staggered Reveal Setup
+   -------------------------------------------------------------------------- */
+function initStaggeredReveals() {
+  const containers = document.querySelectorAll('.service-list-container, .portfolio-grid, .nfc-grid, .ad-grid, .process-grid');
+  containers.forEach(container => {
+    const children = container.children;
+    Array.from(children).forEach((child, idx) => {
+      child.classList.add('reveal-item');
+      child.style.transitionDelay = `${idx * 0.12}s`;
+    });
+  });
+}
 
 /* --------------------------------------------------------------------------
    Scroll Reveal Observer

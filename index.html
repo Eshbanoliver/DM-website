@@ -645,7 +645,7 @@
 })();
 
 /* ───────────────────────────────────────────────────────────────
-   CUSTOM CURSOR
+   SNAPPING MAGNETIC CUSTOM CURSOR
 ─────────────────────────────────────────────────────────────── */
 (function () {
   const dot  = document.getElementById('cursor-dot');
@@ -654,19 +654,144 @@
   if (!dot || window.innerWidth <= 900) return;
 
   let mx = 0, my = 0, rx = 0, ry = 0;
-  document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; dot.style.left = mx+'px'; dot.style.top = my+'px'; });
-  (function animate() {
-    rx += (mx - rx) * .14; ry += (my - ry) * .14;
-    ring.style.left = rx+'px'; ring.style.top = ry+'px';
-    requestAnimationFrame(animate);
-  })();
+  let activeHoverEl = null;
 
-  document.querySelectorAll('[data-cursor]').forEach(el => {
+  document.addEventListener('mousemove', e => { 
+    mx = e.clientX; 
+    my = e.clientY; 
+    dot.style.left = mx+'px'; 
+    dot.style.top = my+'px'; 
+  });
+
+  // Track cursor interactive targets
+  const interactiveSelector = '[data-cursor], a, button, .svc-row, .prod-card, .work-card';
+  document.querySelectorAll(interactiveSelector).forEach(el => {
     el.addEventListener('mouseenter', () => {
       ring.classList.add('hovered');
-      label.textContent = el.dataset.cursor || 'VIEW';
+      label.textContent = el.getAttribute('data-cursor') || 'VIEW';
+      activeHoverEl = el;
     });
-    el.addEventListener('mouseleave', () => ring.classList.remove('hovered'));
+    el.addEventListener('mouseleave', () => {
+      ring.classList.remove('hovered');
+      activeHoverEl = null;
+    });
+  });
+
+  (function animate() {
+    if (activeHoverEl) {
+      const rect = activeHoverEl.getBoundingClientRect();
+      const cx = rect.left + rect.width / 2;
+      const cy = rect.top + rect.height / 2;
+      rx += (cx - rx) * 0.22;
+      ry += (cy - ry) * 0.22;
+      
+      // Morph ring to fit the button shape nicely
+      ring.style.width = `${rect.width + 12}px`;
+      ring.style.height = `${rect.height + 12}px`;
+      ring.style.borderRadius = window.getComputedStyle(activeHoverEl).borderRadius;
+      ring.style.borderColor = 'var(--red)';
+    } else {
+      rx += (mx - rx) * 0.14; 
+      ry += (my - ry) * 0.14;
+      ring.style.width = '36px';
+      ring.style.height = '36px';
+      ring.style.borderRadius = '50%';
+      ring.style.borderColor = 'var(--ink-30)';
+    }
+    ring.style.left = rx+'px'; 
+    ring.style.top = ry+'px';
+    requestAnimationFrame(animate);
+  })();
+})();
+
+/* ───────────────────────────────────────────────────────────────
+   3D TILT EFFECT FOR CARDS
+─────────────────────────────────────────────────────────────── */
+(function () {
+  const cards = document.querySelectorAll('.prod-card, .work-card, .stat-item, .process-step');
+  if (window.innerWidth <= 900) return;
+  
+  cards.forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const xc = rect.width / 2;
+      const yc = rect.height / 2;
+      const angleX = (yc - y) / 14; 
+      const angleY = (x - xc) / 14;
+      card.style.transform = `perspective(1000px) rotateX(${angleX}deg) rotateY(${angleY}deg) scale3d(1.03, 1.03, 1.03)`;
+      card.style.boxShadow = 'var(--shadow-md)';
+      card.style.transition = 'transform 0.08s ease-out, box-shadow 0.08s ease-out';
+    });
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+      card.style.boxShadow = '';
+      card.style.transition = 'transform 0.5s var(--ease-out), box-shadow 0.5s var(--ease-out)';
+    });
+  });
+})();
+
+/* ───────────────────────────────────────────────────────────────
+   MAGNETIC ACTION FOR CTAS
+─────────────────────────────────────────────────────────────── */
+(function () {
+  const elements = document.querySelectorAll('.btn-red, .btn-ghost, .nav-cta, .site-logo');
+  if (window.innerWidth <= 900) return;
+
+  elements.forEach(el => {
+    el.addEventListener('mousemove', e => {
+      const rect = el.getBoundingClientRect();
+      const x = e.clientX - rect.left - (rect.width / 2);
+      const y = e.clientY - rect.top - (rect.height / 2);
+      el.style.transform = `translate(${x * 0.32}px, ${y * 0.32}px) scale(1.02)`;
+      el.style.transition = 'transform 0.1s ease-out';
+    });
+    el.addEventListener('mouseleave', () => {
+      el.style.transform = 'translate(0px, 0px) scale(1)';
+      el.style.transition = 'transform 0.5s cubic-bezier(0.25, 1, 0.5, 1)';
+    });
+  });
+})();
+
+/* ───────────────────────────────────────────────────────────────
+   DYNAMIC SPLIT-TEXT REVEAL
+─────────────────────────────────────────────────────────────── */
+(function () {
+  const headline = document.querySelector('.hero-headline');
+  if (!headline) return;
+
+  const lines = headline.querySelectorAll('.line');
+  lines.forEach((line, lineIdx) => {
+    const text = line.textContent.trim();
+    const words = text.split(' ');
+    line.innerHTML = ''; 
+
+    words.forEach((word, wordIdx) => {
+      const wrapper = document.createElement('span');
+      wrapper.style.display = 'inline-block';
+      wrapper.style.overflow = 'hidden';
+      wrapper.style.verticalAlign = 'bottom';
+
+      const inner = document.createElement('span');
+      inner.innerHTML = word + '&nbsp;';
+      inner.style.display = 'inline-block';
+      inner.style.transform = 'translateY(110%)';
+      inner.style.opacity = '0';
+      inner.style.transition = 'transform 0.95s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.95s ease';
+      inner.style.transitionDelay = `${(lineIdx * 0.18) + (wordIdx * 0.05)}s`;
+
+      if (line.classList.contains('em-red')) inner.classList.add('em-red');
+      if (line.classList.contains('em-outline')) inner.classList.add('em-outline');
+
+      wrapper.appendChild(inner);
+      line.appendChild(wrapper);
+
+      setTimeout(() => {
+        inner.style.transform = 'translateY(0)';
+        inner.style.opacity = '1';
+      }, 100);
+    });
   });
 })();
 
@@ -700,13 +825,28 @@
 })();
 
 /* ───────────────────────────────────────────────────────────────
-   SCROLL REVEALS
+   SCROLL REVEALS & AUTOMATIC STAGGERING
 ─────────────────────────────────────────────────────────────── */
 (function () {
+  // Stagger grid/list items automatically
+  const containers = document.querySelectorAll('.svc-list, .prod-grid, .work-grid, .process-grid, .intro-stats-grid');
+  containers.forEach(container => {
+    const children = container.children;
+    Array.from(children).forEach((child, index) => {
+      child.classList.add('u-reveal-item');
+      child.style.transitionDelay = `${index * 0.12}s`;
+    });
+  });
+
   const els = document.querySelectorAll('.u-reveal');
   const io  = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
-  }, { rootMargin: '0px 0px -60px 0px', threshold: .12 });
+    entries.forEach(e => { 
+      if (e.isIntersecting) { 
+        e.target.classList.add('visible'); 
+        io.unobserve(e.target); 
+      } 
+    });
+  }, { rootMargin: '0px 0px -80px 0px', threshold: .12 });
   els.forEach(el => io.observe(el));
 })();
 

@@ -7,6 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initTestimonialSlider();
   initContactForm();
   initAmbientGlowFollow();
+  init3DTilt();
+  initMagneticButtons();
 });
 
 /* --------------------------------------------------------------------------
@@ -93,5 +95,53 @@ function initAmbientGlowFollow() {
 
   ctaSection.addEventListener('mouseleave', () => {
     ctaSection.style.background = `radial-gradient(circle at 50% 50%, rgba(230, 0, 0, 0.08) 0%, #FFFFFF 75%)`;
+  });
+}
+
+/* --------------------------------------------------------------------------
+   3D Tilt Effect
+   -------------------------------------------------------------------------- */
+function init3DTilt() {
+  const cards = document.querySelectorAll('.nfc-card, .portfolio-card, .ad-card, .service-row, .feature-card');
+  if (window.innerWidth <= 900) return;
+  
+  cards.forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const xc = rect.width / 2;
+      const yc = rect.height / 2;
+      const angleX = (yc - y) / 14; 
+      const angleY = (x - xc) / 14;
+      card.style.transform = `perspective(1000px) rotateX(${angleX}deg) rotateY(${angleY}deg) scale3d(1.02, 1.02, 1.02)`;
+      card.style.transition = 'transform 0.08s ease-out';
+    });
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+      card.style.transition = 'transform 0.5s var(--ease-out)';
+    });
+  });
+}
+
+/* --------------------------------------------------------------------------
+   Magnetic Buttons
+   -------------------------------------------------------------------------- */
+function initMagneticButtons() {
+  const elements = document.querySelectorAll('.btn, .nav-link, .logo');
+  if (window.innerWidth <= 900) return;
+
+  elements.forEach(el => {
+    el.addEventListener('mousemove', e => {
+      const rect = el.getBoundingClientRect();
+      const x = e.clientX - rect.left - (rect.width / 2);
+      const y = e.clientY - rect.top - (rect.height / 2);
+      el.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+      el.style.transition = 'transform 0.1s ease-out';
+    });
+    el.addEventListener('mouseleave', () => {
+      el.style.transform = 'translate(0px, 0px)';
+      el.style.transition = 'transform 0.5s cubic-bezier(0.25, 1, 0.5, 1)';
+    });
   });
 }

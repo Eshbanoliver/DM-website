@@ -886,6 +886,39 @@ ul { list-style: none; }
 .u-reveal-delay-3 { transition-delay: .3s; }
 .u-reveal-delay-4 { transition-delay: .4s; }
 
+.u-reveal-item {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
+}
+.visible .u-reveal-item,
+.u-reveal.visible .u-reveal-item {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Scroll Reveals for Subpages */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
+}
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-item {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
+}
+.reveal.active .reveal-item,
+.active .reveal-item {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* ─── INTRO STAT GRID ────────────────────────────────────────────────────── */
 .intro-stats-grid {
   display: grid;
