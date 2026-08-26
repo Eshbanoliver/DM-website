@@ -53,8 +53,13 @@
   .about-strip, .services-section, .products-section,
   .work-section, .process-section, .testi-section, .cta-section { padding: 5rem 0; }
   .intro-stats-grid { grid-template-columns: 1fr; }
-  .svc-row { grid-template-columns: 48px 1fr 36px; gap: 1.2rem; }
-  .svc-desc { display: none; }
+  .svc-row, .service-row {
+    grid-template-columns: 32px 42px 1fr 40px;
+    gap: 1rem;
+    padding: 1.2rem 1.4rem;
+  }
+  .svc-desc, .service-desc { display: none; }
+  .svc-arrow, .service-arrow { width: 40px; height: 40px; font-size: 1rem; }
   .process-grid { grid-template-columns: 1fr; }
   .process-step + .process-step { border-left: none; border-top: 1px solid var(--ink-10); }
   .footer-grid { grid-template-columns: 1fr; gap: 2.5rem; }
