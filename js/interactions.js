@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initSpotlightTracking();
   initClickRipple();
   initCursorFollowerLight();
-  initSmoothScrollEngine();
   initSmoothAnchors();
 });
 
