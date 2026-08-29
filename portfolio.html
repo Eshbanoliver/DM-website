@@ -12,71 +12,80 @@
   <link rel="stylesheet" href="css/responsive.css" />
 </head>
 <body>
+<!-- ─── CUSTOM CURSOR ─── -->
+<div id="cursor-dot"></div>
+<div id="cursor-ring">
+  <span class="ring-label" id="cursor-label">VIEW</span>
+</div>
 
-  <div class="custom-cursor" id="custom-cursor"></div>
-  <div class="custom-cursor-follower" id="cursor-follower"><span class="cursor-badge" id="cursor-badge">VIEW</span></div>
+<!-- ─── PRELOADER ─── -->
+<div id="preloader">
+  <div class="pl-logo">RYDON<em>.</em></div>
+  <div class="pl-bar-wrap"><div id="pl-bar"></div></div>
+  <div class="pl-percent" id="pl-percent">0%</div>
+</div>
 
-  <div class="preloader" id="preloader">
-    <div class="preloader-brand">RYDON DIGITAL <span class="dot"></span></div>
-    <div class="preloader-bar-wrap"><div class="preloader-bar" id="preloader-bar"></div></div>
-  </div>
+<!-- ─── HEADER ─── -->
+<header class="site-header" id="site-header">
+  <div class="header-wrap">
+    <a href="index.html" class="site-logo">
+      <img src="images/rydon-logo.png" alt="Rydon Digital" class="logo-img" />
+    </a>
 
-  <header class="header" id="main-header">
-    <div class="container header-container">
-      <a href="index.html" class="logo" data-cursor="RYDON">
-        <img src="images/rydon-logo.png" alt="Rydon Digital" class="logo-img" />
-      </a>
-      <nav class="nav-menu">
-        <div class="nav-item"><a href="index.html" class="nav-link">Home</a></div>
-        <div class="nav-item">
-          <a href="nfc-products.html" class="nav-link">NFC Product List ▾</a>
-          <div class="dropdown-menu">
-            <a href="nfc-products.html" class="dropdown-item"><span class="dropdown-title">Smart NFC Products</span><span class="dropdown-desc">Cards, Stands, NFC Plates & Google Reviews</span></a>
-            <a href="advertising-products.html" class="dropdown-item"><span class="dropdown-title">Advertising Products</span><span class="dropdown-desc">Lollipop Stands, Standees & Sky Balloons</span></a>
-          </div>
+    <nav class="site-nav">
+      <div class="nav-item"><a href="index.html" class="nav-link">Home</a></div>
+      <div class="nav-item"><a href="about.html" class="nav-link">About</a></div>
+      <div class="nav-item">
+        <a href="services.html" class="nav-link">Services ↓</a>
+        <div class="dropdown-menu mega">
+          <a href="website-development.html" class="dd-item"><span class="dd-title">Website Development</span><span class="dd-sub">Bespoke performance web platforms</span></a>
+          <a href="seo.html" class="dd-item"><span class="dd-title">SEO Optimization</span><span class="dd-sub">Keyword dominance &amp; organic growth</span></a>
+          <a href="digital-marketing.html" class="dd-item"><span class="dd-title">Digital Marketing</span><span class="dd-sub">Full-funnel acquisition strategy</span></a>
+          <a href="social-media.html" class="dd-item"><span class="dd-title">Social Media Management</span><span class="dd-sub">Content creation &amp; community growth</span></a>
+          <a href="video-editing.html" class="dd-item"><span class="dd-title">Video Editing</span><span class="dd-sub">Cinematic post-production &amp; reels</span></a>
+          <a href="graphic-design.html" class="dd-item"><span class="dd-title">Graphic Design</span><span class="dd-sub">Editorial brand identity systems</span></a>
+          <a href="content-writing.html" class="dd-item"><span class="dd-title">Content Writing</span><span class="dd-sub">High-conversion brand copywriting</span></a>
+          <a href="ads.html" class="dd-item"><span class="dd-title">Google &amp; Meta Ads</span><span class="dd-sub">Targeted high-ROAS campaigns</span></a>
         </div>
-        <div class="nav-item"><a href="digital-product.html" class="nav-link">Digital Product</a></div>
-        <div class="nav-item">
-          <a href="services.html" class="nav-link">Services ▾</a>
-          <div class="dropdown-menu mega-menu">
-            <a href="website-development.html" class="dropdown-item"><span class="dropdown-title">Website Development</span><span class="dropdown-desc">Bespoke performance web platforms</span></a>
-            <a href="seo.html" class="dropdown-item"><span class="dropdown-title">SEO Optimization</span><span class="dropdown-desc">Keyword dominance & organic growth</span></a>
-            <a href="digital-marketing.html" class="dropdown-item"><span class="dropdown-title">Digital Marketing</span><span class="dropdown-desc">Full-funnel digital strategy</span></a>
-            <a href="social-media.html" class="dropdown-item"><span class="dropdown-title">Social Media Management</span><span class="dropdown-desc">Content creation & audience engagement</span></a>
-            <a href="video-editing.html" class="dropdown-item"><span class="dropdown-title">Video Editing</span><span class="dropdown-desc">Cinematic visual storytelling</span></a>
-            <a href="graphic-design.html" class="dropdown-item"><span class="dropdown-title">Graphic Design</span><span class="dropdown-desc">Editorial brand identity design</span></a>
-            <a href="content-writing.html" class="dropdown-item"><span class="dropdown-title">Content Writing</span><span class="dropdown-desc">High-conversion copywriting</span></a>
-            <a href="ads.html" class="dropdown-item"><span class="dropdown-title">Google & Meta Ads</span><span class="dropdown-desc">Targeted paid ad campaigns</span></a>
-          </div>
-        </div>
-        <div class="nav-item"><a href="our-clients.html" class="nav-link">Our Clients</a></div>
-        <div class="nav-item"><a href="portfolio.html" class="nav-link active">Portfolio</a></div>
-        <div class="nav-item"><a href="career.html" class="nav-link">Career</a></div>
-        <div class="nav-item"><a href="blogs.html" class="nav-link">Blogs</a></div>
-        <div class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></div>
-        <div class="nav-item"><a href="podcast.html" class="nav-link">Podcast</a></div>
-      </nav>
-      <div style="display: flex; align-items: center; gap: 1.5rem;">
-        <a href="contact.html" class="btn btn-secondary" style="padding: 0.7rem 1.4rem; font-size: 0.8rem;">START A PROJECT ↗</a>
-        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Navigation"><span></span><span></span><span></span></button>
       </div>
-    </div>
-  </header>
+      <div class="nav-item">
+        <a href="nfc-products.html" class="nav-link">NFC Product List ↓</a>
+        <div class="dropdown-menu">
+          <a href="nfc-products.html" class="dd-item"><span class="dd-title">Smart NFC Products</span><span class="dd-sub">Business cards, stands &amp; Google review plates</span></a>
+          <a href="advertising-products.html" class="dd-item"><span class="dd-title">Advertising Products</span><span class="dd-sub">Lollipop stands, standees &amp; sky balloons</span></a>
+        </div>
+      </div>
+      <div class="nav-item"><a href="digital-product.html" class="nav-link">Digital Product</a></div>
+      <div class="nav-item"><a href="our-clients.html" class="nav-link">Our Clients</a></div>
+      <div class="nav-item"><a href="portfolio.html" class="nav-link active">Portfolio</a></div>
+      <div class="nav-item"><a href="career.html" class="nav-link">Career</a></div>
+      <div class="nav-item"><a href="blogs.html" class="nav-link">Blogs</a></div>
+      <div class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></div>
+      <div class="nav-item"><a href="podcast.html" class="nav-link">Podcast</a></div>
+    </nav>
 
-  <div class="mobile-nav-overlay" id="mobile-nav-overlay">
-    <a href="index.html" class="nav-link mobile-nav-link">Home</a>
-    <a href="nfc-products.html" class="nav-link mobile-nav-link">NFC Product List</a>
-    <a href="digital-product.html" class="nav-link mobile-nav-link">Digital Product</a>
-    <a href="services.html" class="nav-link mobile-nav-link">Services</a>
-    <a href="our-clients.html" class="nav-link mobile-nav-link">Our Clients</a>
-    <a href="portfolio.html" class="nav-link mobile-nav-link">Portfolio</a>
-    <a href="career.html" class="nav-link mobile-nav-link">Career</a>
-    <a href="blogs.html" class="nav-link mobile-nav-link">Blogs</a>
-    <a href="contact.html" class="nav-link mobile-nav-link">Contact Us</a>
-    <a href="podcast.html" class="nav-link mobile-nav-link">Podcast</a>
+    <a href="contact.html" class="nav-cta" data-cursor="TALK">Start a Project ↗</a>
+
+    <button class="mobile-burger" id="mobile-burger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
+</header>
 
-  <main>
+<!-- Mobile overlay -->
+<div class="mobile-overlay" id="mobile-overlay">
+  <a href="index.html" class="nav-link">Home</a>
+  <a href="nfc-products.html" class="nav-link">NFC Product List</a>
+  <a href="digital-product.html" class="nav-link">Digital Product</a>
+  <a href="services.html" class="nav-link">Services</a>
+  <a href="our-clients.html" class="nav-link">Our Clients</a>
+  <a href="portfolio.html" class="nav-link active">Portfolio</a>
+  <a href="career.html" class="nav-link">Career</a>
+  <a href="blogs.html" class="nav-link">Blogs</a>
+  <a href="contact.html" class="nav-link">Contact Us</a>
+  <a href="podcast.html" class="nav-link">Podcast</a>
+</div>
+<main>
     <section class="inner-hero">
       <div class="container reveal">
         <div class="breadcrumbs-wrap">
@@ -212,44 +221,260 @@
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
+  
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+
+      <div>
+        <div class="footer-brand-logo">
           <img src="images/rydon-logo.png" alt="Rydon Digital" class="logo-img" style="filter: invert(1);" />
-          <p>BUILDING BRANDS FOR THE DIGITAL WORLD.</p>
         </div>
-        <div class="footer-col"><h5>COMPANY</h5><div class="footer-links"><a href="index.html">Home</a><a href="about.html">About Us</a><a href="our-clients.html">Our Clients</a><a href="portfolio.html">Portfolio</a><a href="career.html">Career</a><a href="contact.html">Contact</a></div></div>
-        <div class="footer-col"><h5>SERVICES</h5><div class="footer-links"><a href="website-development.html">Website Development</a><a href="seo.html">SEO Optimization</a><a href="digital-marketing.html">Digital Marketing</a><a href="ads.html">Google & Meta Ads</a><a href="social-media.html">Social Media</a></div></div>
-        <div class="footer-col"><h5>PRODUCTS & MORE</h5><div class="footer-links"><a href="nfc-products.html">NFC Products</a><a href="digital-product.html">Digital Products</a><a href="advertising-products.html">Advertising Products</a><a href="blogs.html">Blogs</a><a href="podcast.html">Podcast</a></div></div>
+        <p class="footer-desc">
+          Building brands that are impossible to ignore. Premium web engineering, performance marketing, NFC products &amp; physical advertising.
+        </p>
       </div>
-      <div class="footer-bottom"><div>© 2026 Rydon Digital. All Rights Reserved.</div></div>
+
+      <div class="footer-col">
+        <h6>Company</h6>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="our-clients.html">Our Clients</a>
+          <a href="portfolio.html">Portfolio</a>
+          <a href="career.html">Career</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h6>Services</h6>
+        <div class="footer-links">
+          <a href="website-development.html">Web Development</a>
+          <a href="seo.html">SEO Optimization</a>
+          <a href="digital-marketing.html">Digital Marketing</a>
+          <a href="social-media.html">Social Media</a>
+          <a href="video-editing.html">Video Editing</a>
+          <a href="ads.html">Google &amp; Meta Ads</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h6>Products &amp; Social</h6>
+        <div class="footer-links">
+          <a href="nfc-products.html">NFC Products</a>
+          <a href="digital-product.html">Digital Products</a>
+          <a href="advertising-products.html">Advertising Products</a>
+          <a href="blogs.html">Blogs</a>
+          <a href="podcast.html">Podcast</a>
+          <a href="https://www.instagram.com/rydondigital/" target="_blank" rel="noopener">Instagram ↗</a>
+        </div>
+      </div>
+
     </div>
-  </footer>
 
-  <script src="js/main.js"></script>
-  <script src="js/animations.js"></script>
-  <script src="js/interactions.js"></script>
+    <div class="footer-base">
+      <div>© 2026 Rydon Digital. All Rights Reserved.</div>
+      <div class="footer-base-links">
+        <a href="contact.html">Privacy Policy</a>
+        <a href="contact.html">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
 
-  <script>
-    // Portfolio filter functionality
-    document.querySelectorAll('.portfolio-filter').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.portfolio-filter').forEach(b => {
-          b.classList.remove('active');
-          b.style.background = 'transparent';
-        });
-        btn.classList.add('active');
-        const filter = btn.dataset.filter;
-        document.querySelectorAll('.work-card').forEach(card => {
-          if (filter === 'all' || card.dataset.category === filter) {
-            card.style.display = 'block';
-          } else {
-            card.style.display = 'none';
-          }
-        });
-      });
+<!-- ─── JS ─── -->
+<script>
+(function () {
+  const bar     = document.getElementById('pl-bar');
+  const pct     = document.getElementById('pl-percent');
+  const loader  = document.getElementById('preloader');
+  if (loader) {
+    let p = 0;
+    const iv = setInterval(() => {
+      p += Math.random() * 25 + 15;
+      if (p >= 100) {
+        p = 100; clearInterval(iv);
+        setTimeout(() => {
+          loader.classList.add('out');
+          loader.style.display = 'none';
+        }, 150);
+      }
+      if (bar) bar.style.width = p + '%';
+      if (pct) pct.textContent = Math.floor(p) + '%';
+    }, 35);
+  }
+})();
+
+(function () {
+  const dot  = document.getElementById('cursor-dot');
+  const ring = document.getElementById('cursor-ring');
+  const label = document.getElementById('cursor-label');
+  if (!dot || window.innerWidth <= 900) return;
+
+  let mx = 0, my = 0, rx = 0, ry = 0;
+  let activeHoverEl = null;
+
+  document.addEventListener('mousemove', e => { 
+    mx = e.clientX; 
+    my = e.clientY; 
+    dot.style.left = mx + 'px'; 
+    dot.style.top = my + 'px'; 
+  });
+
+  const interactiveSelector = '[data-cursor], a, button, .svc-row, .prod-card, .work-card, .nfc-card, .ad-card, .location-card, .why-row, .podcast-card';
+  document.querySelectorAll(interactiveSelector).forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      ring.classList.add('hovered');
+      if (label) label.textContent = el.getAttribute('data-cursor') || 'VIEW';
+      activeHoverEl = el;
     });
-  </script>
+    el.addEventListener('mouseleave', () => {
+      ring.classList.remove('hovered');
+      activeHoverEl = null;
+    });
+  });
+
+  (function animate() {
+    if (activeHoverEl) {
+      const rect = activeHoverEl.getBoundingClientRect();
+      const cx = rect.left + rect.width / 2;
+      const cy = rect.top + rect.height / 2;
+      rx += (cx - rx) * 0.22;
+      ry += (cy - ry) * 0.22;
+      
+      ring.style.width = (rect.width + 12) + 'px';
+      ring.style.height = (rect.height + 12) + 'px';
+      ring.style.borderRadius = window.getComputedStyle(activeHoverEl).borderRadius;
+      ring.style.borderColor = 'var(--red)';
+    } else {
+      rx += (mx - rx) * 0.14; 
+      ry += (my - ry) * 0.14;
+      ring.style.width = '36px';
+      ring.style.height = '36px';
+      ring.style.borderRadius = '50%';
+      ring.style.borderColor = 'var(--ink-30)';
+    }
+    ring.style.left = rx + 'px'; 
+    ring.style.top = ry + 'px';
+    requestAnimationFrame(animate);
+  })();
+})();
+
+(function () {
+  const cards = document.querySelectorAll('.prod-card, .work-card, .stat-item, .process-step, .nfc-card, .ad-card, .location-card, .why-row, .podcast-card');
+  if (window.innerWidth <= 900) return;
+  
+  cards.forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const xc = rect.width / 2;
+      const yc = rect.height / 2;
+      const angleX = (yc - y) / 14; 
+      const angleY = (x - xc) / 14;
+      card.style.transform = 'perspective(1000px) rotateX(' + angleX + 'deg) rotateY(' + angleY + 'deg) scale3d(1.02, 1.02, 1.02)';
+      card.style.transition = 'transform 0.08s ease-out';
+    });
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+      card.style.transition = 'transform 0.5s var(--ease-out)';
+    });
+  });
+})();
+
+(function () {
+  const elements = document.querySelectorAll('.btn-red, .btn-ghost, .btn-primary, .btn-secondary, .btn-outline, .nav-cta, .site-logo');
+  if (window.innerWidth <= 900) return;
+
+  elements.forEach(el => {
+    el.addEventListener('mousemove', e => {
+      const rect = el.getBoundingClientRect();
+      const x = e.clientX - rect.left - (rect.width / 2);
+      const y = e.clientY - rect.top - (rect.height / 2);
+      el.style.transform = 'translate(' + (x * 0.3) + 'px, ' + (y * 0.3) + 'px) scale(1.02)';
+      el.style.transition = 'transform 0.1s ease-out';
+    });
+    el.addEventListener('mouseleave', () => {
+      el.style.transform = 'translate(0px, 0px) scale(1)';
+      el.style.transition = 'transform 0.5s cubic-bezier(0.25, 1, 0.5, 1)';
+    });
+  });
+})();
+
+(function () {
+  const h = document.getElementById('site-header');
+  if (!h) return;
+  window.addEventListener('scroll', () => {
+    h.classList.toggle('scrolled', window.scrollY > 40);
+  });
+})();
+
+(function () {
+  const btn = document.getElementById('mobile-burger');
+  const ov  = document.getElementById('mobile-overlay');
+  if (!btn || !ov) return;
+  btn.addEventListener('click', () => {
+    btn.classList.toggle('open');
+    ov.classList.toggle('active');
+    document.body.style.overflow = ov.classList.contains('active') ? 'hidden' : '';
+  });
+  ov.querySelectorAll('.nav-link').forEach(l => l.addEventListener('click', () => {
+    btn.classList.remove('open');
+    ov.classList.remove('active');
+    document.body.style.overflow = '';
+  }));
+})();
+
+(function () {
+  const selector = '.u-reveal, .u-reveal-left, .u-reveal-right, .u-reveal-zoom, .u-reveal-flip, .u-reveal-rotate, .reveal';
+  const els = document.querySelectorAll(selector);
+  
+  els.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      el.classList.add('visible');
+      el.classList.add('active');
+    }
+  });
+
+  if ('IntersectionObserver' in window) {
+    const io  = new IntersectionObserver(entries => {
+      entries.forEach(e => { 
+        if (e.isIntersecting) { 
+          e.target.classList.add('visible'); 
+          e.target.classList.add('active');
+          io.unobserve(e.target); 
+        } 
+      });
+    }, { rootMargin: '0px 0px -40px 0px', threshold: .05 });
+    els.forEach(el => io.observe(el));
+  }
+})();
+
+(function () {
+  const nums = document.querySelectorAll('.stat-num[data-target]');
+  if (!nums.length) return;
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const el = e.target;
+      const target = +el.dataset.target;
+      const suffix = el.querySelector('span')?.textContent || '';
+      let n = 0;
+      const step = Math.ceil(target / 50);
+      const iv = setInterval(() => {
+        n = Math.min(n + step, target);
+        el.innerHTML = n + '<span>' + (suffix || '+') + '</span>';
+        if (n >= target) clearInterval(iv);
+      }, 30);
+      io.unobserve(el);
+    });
+  }, { threshold: .3 });
+  nums.forEach(n => io.observe(n));
+})();
+</script>
 </body>
 </html>
