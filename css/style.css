@@ -691,38 +691,67 @@ ul { list-style: none; }
   font-weight: 700; text-transform: uppercase;
   letter-spacing: -.03em;
 }
-.btn-ghost {
-  display: inline-flex; align-items: center; gap: .6rem;
+.btn-ghost, .btn-outline {
+  display: inline-flex; align-items: center; justify-content: center; gap: .6rem;
   font-family: var(--f-display);
   font-size: .82rem; font-weight: 700;
   letter-spacing: 1.5px; text-transform: uppercase;
   padding: .85rem 1.8rem;
-  border: 1.5px solid var(--ink-10);
+  border: 1.5px solid var(--ink-30);
   border-radius: var(--r-pill);
-  background: transparent; color: var(--ink);
+  background: transparent; color: var(--ink) !important;
   transition: background .3s, border-color .3s, color .3s, transform .3s var(--ease-out);
-  white-space: nowrap;
+  white-space: nowrap; cursor: pointer; text-decoration: none;
 }
-.btn-ghost:hover {
-  background: var(--ink); color: #fff;
-  border-color: var(--ink);
+.btn-ghost:hover, .btn-outline:hover {
+  background: var(--ink) !important; color: #FFFFFF !important;
+  border-color: var(--ink) !important;
   transform: translateY(-2px);
 }
-.btn-red {
-  display: inline-flex; align-items: center; gap: .6rem;
+
+.btn-red, .btn-primary {
+  display: inline-flex; align-items: center; justify-content: center; gap: .6rem;
   font-family: var(--f-display);
   font-size: .82rem; font-weight: 700;
   letter-spacing: 1.5px; text-transform: uppercase;
   padding: .9rem 1.9rem;
-  background: var(--red); color: #fff;
+  background: var(--red) !important; color: #FFFFFF !important;
   border-radius: var(--r-pill);
-  border: 1.5px solid var(--red);
-  transition: background .3s, transform .3s var(--ease-out), box-shadow .3s;
+  border: 1.5px solid var(--red) !important;
+  transition: background .3s, transform .3s var(--ease-out), box-shadow .3s, color .3s;
+  cursor: pointer; text-decoration: none; white-space: nowrap;
 }
-.btn-red:hover {
-  background: #cc0000; border-color: #cc0000;
-  transform: translateY(-3px);
+.btn-red:hover, .btn-primary:hover {
+  background: #cc0000 !important; border-color: #cc0000 !important;
+  color: #FFFFFF !important;
+  transform: translateY(-2px);
   box-shadow: var(--shadow-red);
+}
+
+/* Dark Background Button Overrides */
+.cta-card .btn-ghost,
+.cta-section .btn-ghost,
+.cta-card .btn-outline,
+.cta-section .btn-outline,
+.about-strip .btn-ghost,
+.about-manifesto-card .btn-ghost,
+.products-section .btn-ghost {
+  color: #FFFFFF !important;
+  border-color: rgba(255, 255, 255, 0.35) !important;
+  background: rgba(255, 255, 255, 0.06) !important;
+}
+
+.cta-card .btn-ghost:hover,
+.cta-section .btn-ghost:hover,
+.cta-card .btn-outline:hover,
+.cta-section .btn-outline:hover,
+.about-strip .btn-ghost:hover,
+.about-manifesto-card .btn-ghost:hover,
+.products-section .btn-ghost:hover {
+  background: #FFFFFF !important;
+  color: var(--ink) !important;
+  border-color: #FFFFFF !important;
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
 }
 
 /* ─── SERVICES LIST & 8 CARDS GRID ────────────────────────────────────────── */
