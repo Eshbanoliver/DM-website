@@ -1004,13 +1004,19 @@ ul { list-style: none; }
   border-radius: 12px;
   background: var(--red-pale);
   color: var(--red);
+  stroke: var(--red);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.35rem;
-  transition: transform 0.35s var(--ease-out), background 0.35s, color 0.35s, box-shadow 0.35s;
+  transition: transform 0.35s var(--ease-out), background 0.35s, color 0.35s, stroke 0.35s, box-shadow 0.35s;
   flex-shrink: 0;
   border: 1px solid rgba(230, 0, 0, 0.15);
+}
+
+.svc-icon-box svg {
+  stroke: var(--red);
+  transition: stroke 0.35s var(--ease-out);
 }
 
 .svc-row:hover .svc-icon-box, .service-row:hover .svc-icon-box,
@@ -1018,8 +1024,13 @@ ul { list-style: none; }
   transform: scale(1.1);
   background: var(--red);
   color: #FFFFFF !important;
+  stroke: #FFFFFF !important;
   border-color: var(--red);
   box-shadow: 0 0 20px rgba(230, 0, 0, 0.35);
+}
+
+.svc-row:hover .svc-icon-box svg, .service-row:hover .svc-icon-box svg {
+  stroke: #FFFFFF !important;
 }
 
 .svc-name, .service-title {
