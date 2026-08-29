@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Podcast | Digital Marketing & Business Growth Show | Rydon Digital</title>
+  <meta name="description" content="Listen to Rydon Digital's podcast featuring in-depth conversations on digital marketing, SEO, brand building, NFC technology, and business growth strategies for entrepreneurs in India." />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <style>
+    /* Podcast-specific styles */
+    .podcast-hero-img {
+      width: 100%;
+      max-width: 360px;
+      border-radius: 24px;
+      box-shadow: 0 30px 80px rgba(224,30,60,0.25);
+    }
+    .podcast-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      padding: 2rem;
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+    }
+    .podcast-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+    }
+    .podcast-num {
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: var(--accent);
+      opacity: 0.4;
+      min-width: 60px;
+      line-height: 1;
+    }
+    .podcast-meta {
+      font-size: 0.78rem;
+      color: var(--ink-40);
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .podcast-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      line-height: 1.4;
+      margin-bottom: 0.6rem;
+      text-transform: uppercase;
+    }
+    .podcast-desc {
+      font-size: 0.88rem;
+      color: var(--ink-60);
+      line-height: 1.7;
+    }
+    .podcast-platforms {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+    .platform-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.8rem 1.5rem;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      color: var(--ink-80);
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .platform-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    .play-btn {
+      width: 44px;
+      height: 44px;
+      min-width: 44px;
+      background: var(--accent);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      margin-top: 0.5rem;
+      flex-shrink: 0;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .play-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 25px rgba(224,30,60,0.4);
+    }
+    .waveform {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      height: 24px;
+      margin-top: 1rem;
+    }
+    .wave-bar {
+      width: 3px;
+      background: var(--accent);
+      border-radius: 2px;
+      opacity: 0.4;
+    }
+    .wave-bar:nth-child(odd) { opacity: 0.7; }
+  </style>
+</head>
+<body>
+
+  <div class="custom-cursor" id="custom-cursor"></div>
+  <div class="custom-cursor-follower" id="cursor-follower"><span class="cursor-badge" id="cursor-badge">LISTEN</span></div>
+
+  <div class="preloader" id="preloader">
+    <div class="preloader-brand">RYDON DIGITAL <span class="dot"></span></div>
+    <div class="preloader-bar-wrap"><div class="preloader-bar" id="preloader-bar"></div></div>
+  </div>
+
+  <header class="header" id="main-header">
+    <div class="container header-container">
+      <a href="index.html" class="logo" data-cursor="RYDON">
+        <img src="images/rydon-logo.png" alt="Rydon Digital" class="logo-img" />
+      </a>
+      <nav class="nav-menu">
+        <div class="nav-item"><a href="index.html" class="nav-link">Home</a></div>
+        <div class="nav-item">
+          <a href="nfc-products.html" class="nav-link">NFC Product List ▾</a>
+          <div class="dropdown-menu">
+            <a href="nfc-products.html" class="dropdown-item"><span class="dropdown-title">Smart NFC Products</span><span class="dropdown-desc">Cards, Stands, NFC Plates & Google Reviews</span></a>
+            <a href="advertising-products.html" class="dropdown-item"><span class="dropdown-title">Advertising Products</span><span class="dropdown-desc">Lollipop Stands, Standees & Sky Balloons</span></a>
+          </div>
+        </div>
+        <div class="nav-item"><a href="digital-product.html" class="nav-link">Digital Product</a></div>
+        <div class="nav-item">
+          <a href="services.html" class="nav-link">Services ▾</a>
+          <div class="dropdown-menu mega-menu">
+            <a href="website-development.html" class="dropdown-item"><span class="dropdown-title">Website Development</span><span class="dropdown-desc">Bespoke performance web platforms</span></a>
+            <a href="seo.html" class="dropdown-item"><span class="dropdown-title">SEO Optimization</span><span class="dropdown-desc">Keyword dominance & organic growth</span></a>
+            <a href="digital-marketing.html" class="dropdown-item"><span class="dropdown-title">Digital Marketing</span><span class="dropdown-desc">Full-funnel digital strategy</span></a>
+            <a href="social-media.html" class="dropdown-item"><span class="dropdown-title">Social Media Management</span><span class="dropdown-desc">Content creation & audience engagement</span></a>
+            <a href="video-editing.html" class="dropdown-item"><span class="dropdown-title">Video Editing</span><span class="dropdown-desc">Cinematic visual storytelling</span></a>
+            <a href="graphic-design.html" class="dropdown-item"><span class="dropdown-title">Graphic Design</span><span class="dropdown-desc">Editorial brand identity design</span></a>
+            <a href="content-writing.html" class="dropdown-item"><span class="dropdown-title">Content Writing</span><span class="dropdown-desc">High-conversion copywriting</span></a>
+            <a href="ads.html" class="dropdown-item"><span class="dropdown-title">Google & Meta Ads</span><span class="dropdown-desc">Targeted paid ad campaigns</span></a>
+          </div>
+        </div>
+        <div class="nav-item"><a href="our-clients.html" class="nav-link">Our Clients</a></div>
+        <div class="nav-item"><a href="portfolio.html" class="nav-link">Portfolio</a></div>
+        <div class="nav-item"><a href="career.html" class="nav-link">Career</a></div>
+        <div class="nav-item"><a href="blogs.html" class="nav-link">Blogs</a></div>
+        <div class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></div>
+        <div class="nav-item"><a href="podcast.html" class="nav-link active">Podcast</a></div>
+      </nav>
+      <div style="display: flex; align-items: center; gap: 1.5rem;">
+        <a href="contact.html" class="btn btn-secondary" style="padding: 0.7rem 1.4rem; font-size: 0.8rem;">START A PROJECT ↗</a>
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Navigation"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-nav-overlay" id="mobile-nav-overlay">
+    <a href="index.html" class="nav-link mobile-nav-link">Home</a>
+    <a href="nfc-products.html" class="nav-link mobile-nav-link">NFC Product List</a>
+    <a href="digital-product.html" class="nav-link mobile-nav-link">Digital Product</a>
+    <a href="services.html" class="nav-link mobile-nav-link">Services</a>
+    <a href="our-clients.html" class="nav-link mobile-nav-link">Our Clients</a>
+    <a href="portfolio.html" class="nav-link mobile-nav-link">Portfolio</a>
+    <a href="career.html" class="nav-link mobile-nav-link">Career</a>
+    <a href="blogs.html" class="nav-link mobile-nav-link">Blogs</a>
+    <a href="contact.html" class="nav-link mobile-nav-link">Contact Us</a>
+    <a href="podcast.html" class="nav-link mobile-nav-link">Podcast</a>
+  </div>
+
+  <main>
+    <!-- HERO - PODCAST FEATURED -->
+    <section class="section-spacing" style="padding-top: 140px;">
+      <div class="container">
+        <div class="intro-grid reveal" style="align-items: center;">
+          <div>
+            <div class="breadcrumbs-wrap" style="margin-bottom: 1.5rem;">
+              <a href="index.html">HOME</a><span class="separator">/</span>
+              <span class="current">PODCAST</span>
+            </div>
+            <div class="section-tag">THE RYDON DIGITAL SHOW</div>
+            <h1 class="inner-hero-title" style="font-size: clamp(2.5rem, 5vw, 4.5rem);">
+              REAL TALK ON<br />DIGITAL GROWTH<br /><span class="text-gradient">& MARKETING.</span>
+            </h1>
+            <p class="intro-body" style="margin-top: 1.5rem;">In-depth conversations with founders, marketers, and digital experts on building businesses, growing brands online, and navigating the ever-changing world of digital marketing.</p>
+
+            <div class="podcast-platforms">
+              <a href="#" class="platform-btn"><span>🎵</span> Spotify</a>
+              <a href="#" class="platform-btn"><span>🎙️</span> Apple Podcasts</a>
+              <a href="#" class="platform-btn"><span>▶️</span> YouTube</a>
+              <a href="#" class="platform-btn"><span>☁️</span> SoundCloud</a>
+            </div>
+          </div>
+
+          <div style="display: flex; justify-content: center;">
+            <div style="position: relative; width: fit-content;">
+              <div style="width: 300px; height: 300px; background: linear-gradient(135deg, var(--accent), #8B0000); border-radius: 24px; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 30px 80px rgba(224,30,60,0.35);">
+                <div style="font-size: 5rem; margin-bottom: 1rem;">🎙️</div>
+                <div style="font-size: 1.1rem; font-weight: 900; color: white; letter-spacing: 0.05em; text-align: center; line-height: 1.3;">RYDON<br/>DIGITAL<br/>SHOW</div>
+                <div style="margin-top: 1rem; opacity: 0.7; font-size: 0.75rem; color: white; letter-spacing: 0.1em;">EPISODE · PODCAST · INSIGHTS</div>
+              </div>
+              <!-- Animated audio bars -->
+              <div style="position: absolute; bottom: -20px; left: 50%; transform: translateX(-50%); display: flex; gap: 4px; align-items: flex-end;">
+                <div style="width: 4px; height: 20px; background: var(--accent); border-radius: 2px; animation: audioBar 0.6s ease-in-out infinite alternate;"></div>
+                <div style="width: 4px; height: 35px; background: var(--accent); border-radius: 2px; animation: audioBar 0.8s ease-in-out infinite alternate 0.1s;"></div>
+                <div style="width: 4px; height: 15px; background: var(--accent); border-radius: 2px; animation: audioBar 0.5s ease-in-out infinite alternate 0.2s;"></div>
+                <div style="width: 4px; height: 28px; background: var(--accent); border-radius: 2px; animation: audioBar 0.7s ease-in-out infinite alternate 0.15s;"></div>
+                <div style="width: 4px; height: 40px; background: var(--accent); border-radius: 2px; animation: audioBar 0.9s ease-in-out infinite alternate 0.05s;"></div>
+                <div style="width: 4px; height: 22px; background: var(--accent); border-radius: 2px; animation: audioBar 0.65s ease-in-out infinite alternate 0.25s;"></div>
+                <div style="width: 4px; height: 30px; background: var(--accent); border-radius: 2px; animation: audioBar 0.75s ease-in-out infinite alternate 0.1s;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <style>
+      @keyframes audioBar {
+        from { transform: scaleY(0.4); }
+        to { transform: scaleY(1); }
+      }
+    </style>
+
+    <!-- LATEST EPISODES -->
+    <section class="section-spacing" style="background: var(--bg-secondary); border-top: 1px solid var(--border-subtle);">
+      <div class="container">
+        <div class="section-tag">LATEST EPISODES</div>
+        <h2 style="font-size: 3rem; margin-bottom: 3rem;">FRESH FROM THE <span class="text-gradient">STUDIO</span></h2>
+
+        <div style="display: flex; flex-direction: column; gap: 1.5rem;" class="reveal">
+
+          <div class="podcast-card" data-cursor="LISTEN">
+            <div>
+              <div class="play-btn">▶</div>
+            </div>
+            <div style="flex: 1;">
+              <div class="podcast-meta">EP 06 · AUG 2026 · 48 MIN</div>
+              <div class="podcast-title">How NFC Technology is Transforming Business Networking in India</div>
+              <p class="podcast-desc">We discuss how NFC smart products are replacing traditional business cards, boosting Google reviews, and helping Indian businesses compete globally. A deep-dive into the future of contactless commerce.</p>
+              <div class="waveform">
+                <div class="wave-bar" style="height: 8px;"></div>
+                <div class="wave-bar" style="height: 18px;"></div>
+                <div class="wave-bar" style="height: 12px;"></div>
+                <div class="wave-bar" style="height: 22px;"></div>
+                <div class="wave-bar" style="height: 10px;"></div>
+                <div class="wave-bar" style="height: 20px;"></div>
+                <div class="wave-bar" style="height: 15px;"></div>
+                <div class="wave-bar" style="height: 24px;"></div>
+                <div class="wave-bar" style="height: 8px;"></div>
+                <div class="wave-bar" style="height: 18px;"></div>
+                <div class="wave-bar" style="height: 12px;"></div>
+                <div class="wave-bar" style="height: 20px;"></div>
+                <div class="wave-bar" style="height: 16px;"></div>
+                <div class="wave-bar" style="height: 22px;"></div>
+                <div class="wave-bar" style="height: 10px;"></div>
+              </div>
+            </div>
+            <div class="podcast-num">06</div>
+          </div>
+
+          <div class="podcast-card" data-cursor="LISTEN">
+            <div>
+              <div class="play-btn">▶</div>
+            </div>
+            <div style="flex: 1;">
+              <div class="podcast-meta">EP 05 · JUL 2026 · 52 MIN</div>
+              <div class="podcast-title">Local SEO Secrets: Dominating Google Rankings for Udaipur Businesses</div>
+              <p class="podcast-desc">Everything you need to know about dominating local Google search results in Udaipur, Rajasthan, and beyond. From Google Business Profile to backlink strategies for regional markets.</p>
+            </div>
+            <div class="podcast-num">05</div>
+          </div>
+
+          <div class="podcast-card" data-cursor="LISTEN">
+            <div>
+              <div class="play-btn">▶</div>
+            </div>
+            <div style="flex: 1;">
+              <div class="podcast-meta">EP 04 · JUL 2026 · 38 MIN</div>
+              <div class="podcast-title">Social Media Marketing in 2026: What's Working & What's Dead</div>
+              <p class="podcast-desc">Our digital marketing experts break down the current state of social media marketing — from Instagram Reels to LinkedIn B2B strategies, and what Indian businesses should focus on this year.</p>
+            </div>
+            <div class="podcast-num">04</div>
+          </div>
+
+          <div class="podcast-card" data-cursor="LISTEN">
+            <div>
+              <div class="play-btn">▶</div>
+            </div>
+            <div style="flex: 1;">
+              <div class="podcast-meta">EP 03 · JUN 2026 · 44 MIN</div>
+              <div class="podcast-title">Building a Brand from Zero: Lessons from Scaling Rydon Digital</div>
+              <p class="podcast-desc">The founders share the behind-the-scenes journey of building Rydon Digital from a solo venture into a multi-city agency with offices in Udaipur, Ahmedabad, and Gandhinagar.</p>
+            </div>
+            <div class="podcast-num">03</div>
+          </div>
+
+          <div class="podcast-card" data-cursor="LISTEN">
+            <div>
+              <div class="play-btn">▶</div>
+            </div>
+            <div style="flex: 1;">
+              <div class="podcast-meta">EP 02 · JUN 2026 · 41 MIN</div>
+              <div class="podcast-title">Google Ads vs Meta Ads: Where Should You Spend Your Budget?</div>
+              <p class="podcast-desc">A head-to-head comparison of Google Ads and Facebook/Instagram Ads for Indian businesses. We break down cost, targeting, ROI, and which platform wins for different business types.</p>
+            </div>
+            <div class="podcast-num">02</div>
+          </div>
+
+          <div class="podcast-card" data-cursor="LISTEN">
+            <div>
+              <div class="play-btn">▶</div>
+            </div>
+            <div style="flex: 1;">
+              <div class="podcast-meta">EP 01 · MAY 2026 · 35 MIN</div>
+              <div class="podcast-title">Why Every Business Needs a Digital Strategy in 2026</div>
+              <p class="podcast-desc">The debut episode of the Rydon Digital Show. We explore why digital transformation is no longer optional for Indian businesses and lay out a roadmap for businesses starting from scratch.</p>
+            </div>
+            <div class="podcast-num">01</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SUBSCRIBE / PLATFORMS -->
+    <section class="section-spacing">
+      <div class="container reveal" style="text-align: center;">
+        <div class="section-tag">SUBSCRIBE</div>
+        <h2 style="font-size: 3rem; margin-bottom: 1rem;">LISTEN ON YOUR<br /><span class="text-gradient">FAVOURITE PLATFORM.</span></h2>
+        <p style="color: var(--ink-60); font-size: 1rem; margin-bottom: 2.5rem; max-width: 550px; margin-left: auto; margin-right: auto;">Never miss an episode. Subscribe to The Rydon Digital Show on any platform and get new episodes every two weeks.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;">
+          <a href="#" class="platform-btn" style="padding: 1rem 2rem; font-size: 1rem;"><span>🎵</span> Listen on Spotify</a>
+          <a href="#" class="platform-btn" style="padding: 1rem 2rem; font-size: 1rem;"><span>🎙️</span> Apple Podcasts</a>
+          <a href="#" class="platform-btn" style="padding: 1rem 2rem; font-size: 1rem;"><span>▶️</span> Watch on YouTube</a>
+          <a href="#" class="platform-btn" style="padding: 1rem 2rem; font-size: 1rem;"><span>☁️</span> SoundCloud</a>
+          <a href="#" class="platform-btn" style="padding: 1rem 2rem; font-size: 1rem;"><span>🎧</span> Google Podcasts</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- GUEST ON THE SHOW CTA -->
+    <section class="cta-section">
+      <div class="container reveal">
+        <h2 class="cta-title">BE A GUEST ON<br /><span class="text-gradient">THE RYDON SHOW.</span></h2>
+        <p class="cta-subtitle">Are you a founder, marketer, or digital expert? We'd love to have you on the show. Share your story with our growing audience.</p>
+        <div class="cta-buttons">
+          <a href="contact.html" class="btn btn-primary" style="padding: 1.3rem 2.8rem;">APPLY AS GUEST ↗</a>
+          <a href="blogs.html" class="btn btn-outline" style="padding: 1.3rem 2.8rem; margin-left: 1rem;">READ OUR BLOGS →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="images/rydon-logo.png" alt="Rydon Digital" class="logo-img" style="filter: invert(1);" />
+          <p>BUILDING BRANDS FOR THE DIGITAL WORLD.</p>
+        </div>
+        <div class="footer-col"><h5>COMPANY</h5><div class="footer-links"><a href="index.html">Home</a><a href="about.html">About Us</a><a href="our-clients.html">Our Clients</a><a href="portfolio.html">Portfolio</a><a href="career.html">Career</a><a href="contact.html">Contact</a></div></div>
+        <div class="footer-col"><h5>SERVICES</h5><div class="footer-links"><a href="website-development.html">Website Development</a><a href="seo.html">SEO Optimization</a><a href="digital-marketing.html">Digital Marketing</a><a href="ads.html">Google & Meta Ads</a><a href="social-media.html">Social Media</a></div></div>
+        <div class="footer-col"><h5>PRODUCTS & MORE</h5><div class="footer-links"><a href="nfc-products.html">NFC Products</a><a href="digital-product.html">Digital Products</a><a href="advertising-products.html">Advertising Products</a><a href="blogs.html">Blogs</a><a href="podcast.html">Podcast</a></div></div>
+      </div>
+      <div class="footer-bottom"><div>© 2026 Rydon Digital. All Rights Reserved.</div></div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/interactions.js"></script>
+</body>
+</html>
