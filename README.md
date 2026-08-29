@@ -5,8 +5,7 @@
 > **Market Dominance for Ambitious Brands.**  
 > Official web repository for Rydon Digital — a premier digital agency operating across Udaipur, Ahmedabad, and Gandhinagar, specializing in bespoke web development, performance marketing, contactless NFC products, and editorial brand systems.
 
-🌐 **Live Website**: [dodgerblue-crane-661576.hostingersite.com](http://dodgerblue-crane-661576.hostingersite.com/)  
-📦 **GitHub Repository**: [Eshbanoliver/DM-website](https://github.com/Eshbanoliver/DM-website)
+
 
 ---
 
