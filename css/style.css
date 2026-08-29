@@ -1576,8 +1576,8 @@ ul { list-style: none; }
 
 /* Scroll Reveals for Subpages */
 .reveal {
-  opacity: 0;
-  transform: translateY(40px);
+  opacity: 1;
+  transform: translateY(0);
   transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
 }
 .reveal.active {
@@ -1586,8 +1586,8 @@ ul { list-style: none; }
 }
 
 .reveal-item {
-  opacity: 0;
-  transform: translateY(30px);
+  opacity: 1;
+  transform: translateY(0);
   transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
 }
 .reveal.active .reveal-item,
@@ -1601,31 +1601,44 @@ ul { list-style: none; }
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--ink-10);
+  border: 1.5px solid var(--ink-10);
   border-radius: var(--r-lg); overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.04);
 }
 .stat-item {
   padding: 2.5rem 2rem;
-  background: rgba(255, 255, 255, 0.03);
-  color: #FFFFFF;
+  background: var(--white);
+  color: var(--ink);
   transition: background .35s, transform .35s var(--ease-out);
 }
 .stat-item:hover { 
-  background: rgba(230, 0, 0, 0.12); 
+  background: var(--red-pale); 
 }
 .stat-num {
   font-family: var(--f-display);
-  font-size: 3.8rem; font-weight: 700;
+  font-size: 3.8rem; font-weight: 800;
   letter-spacing: -.04em; line-height: 1;
   margin-bottom: .5rem;
-  color: #FFFFFF;
+  color: var(--ink);
 }
-.stat-num span { color: var(--red-mid); }
+.stat-num span { color: var(--red); }
 .stat-label {
   font-family: var(--f-display);
-  font-size: .75rem; font-weight: 700;
+  font-size: .78rem; font-weight: 700;
   letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--ink-60);
+}
+
+/* Dark Section Stat Items */
+.dark-section .stat-item, .cta-card .stat-item, .about-manifesto-card .stat-item {
+  background: rgba(255, 255, 255, 0.04);
+  color: #FFFFFF;
+}
+.dark-section .stat-num, .cta-card .stat-num, .about-manifesto-card .stat-num {
+  color: #FFFFFF;
+}
+.dark-section .stat-label, .cta-card .stat-label, .about-manifesto-card .stat-label {
   color: rgba(255, 255, 255, 0.6);
 }
 
