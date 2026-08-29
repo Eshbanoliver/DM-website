@@ -68,30 +68,7 @@
 
 ---
 
-## 💻 Local Development Setup
 
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/Eshbanoliver/DM-website.git
-   cd "DM Website"
-   ```
-
-2. **Run locally**:
-   - Open `index.html` directly in any web browser, or serve via VS Code Live Server / Python HTTP Server:
-     ```bash
-     python -m http.server 8000
-     ```
-   - Access the site locally at `http://localhost:8000`.
-
----
-
-## 🚀 Deployment Pipeline
-
-The website is configured for direct SSH/SFTP deployment to Hostinger web hosting:
-
-- **Host**: `89.117.188.170` (Port `65002`)
-- **Remote Path**: `/home/u244945997/domains/dodgerblue-crane-661576.hostingersite.com/public_html/`
-- **Apache Config**: `.htaccess` configured with `DirectoryIndex index.html index.php`
 
 ---
 
