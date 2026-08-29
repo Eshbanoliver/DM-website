@@ -897,6 +897,36 @@ ul { list-style: none; }
   box-shadow: 0 20px 50px rgba(230, 0, 0, 0.3), 0 0 35px rgba(230, 0, 0, 0.18);
 }
 
+.svc-card-icon-wrap {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: var(--red-pale);
+  color: var(--red);
+  stroke: var(--red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  transition: all 0.35s var(--ease-out);
+}
+
+.svc-card-icon-wrap svg {
+  stroke: var(--red);
+  transition: stroke 0.35s var(--ease-out);
+}
+
+.svc-card:hover .svc-card-icon-wrap {
+  background: var(--red);
+  color: #FFFFFF;
+  transform: scale(1.08);
+  box-shadow: 0 8px 25px rgba(230, 0, 0, 0.35);
+}
+
+.svc-card:hover .svc-card-icon-wrap svg {
+  stroke: #FFFFFF !important;
+}
+
 .why-icon-wrap {
   width: 64px;
   height: 64px;
@@ -907,12 +937,24 @@ ul { list-style: none; }
   display: flex;
   align-items: center;
   justify-content: center;
+  color: var(--red);
+  stroke: var(--red);
   transition: background 0.35s, transform 0.35s var(--ease-out);
+}
+
+.why-icon-wrap svg {
+  stroke: var(--red);
+  transition: stroke 0.35s var(--ease-out);
 }
 
 .why-card:hover .why-icon-wrap {
   background: var(--red);
+  color: #FFFFFF;
   transform: scale(1.08);
+}
+
+.why-card:hover .why-icon-wrap svg {
+  stroke: #FFFFFF !important;
 }
 
 .why-icon {
