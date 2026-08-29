@@ -51,7 +51,8 @@
     border-radius: 20px;
   }
   .about-strip, .services-section, .products-section,
-  .work-section, .process-section, .testi-section, .cta-section { padding: 5rem 0; }
+  .work-section, .process-section, .testi-section { padding: 4rem 0; }
+  .cta-section { padding: 2.5rem 0; }
   .intro-stats-grid { grid-template-columns: 1fr; }
   .svc-row, .service-row {
     grid-template-columns: 32px 42px 1fr 40px;
@@ -68,7 +69,7 @@
   .work-card { aspect-ratio: 3/2; }
   .cta-card {
     width: calc(100% - 2rem);
-    padding: 4.5rem 1.8rem;
+    padding: 2.8rem 1.5rem;
     border-radius: 20px;
   }
   .cta-wrap  { padding: 0 1rem; }

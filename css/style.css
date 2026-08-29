@@ -1295,16 +1295,17 @@ ul { list-style: none; }
 
 /* ─── CTA FULLBLEED CINEMATIC CARD ─────────────────────────────────────── */
 .cta-section {
-  padding: 6rem 0;
+  padding: 3rem 0;
   position: relative; 
   overflow: hidden;
   background: var(--white);
+  text-align: center;
 }
 .cta-card {
   max-width: 1360px;
   width: calc(100% - 4rem);
   margin: 0 auto;
-  padding: 8rem 4rem;
+  padding: 3.5rem 3rem;
   background: #0A0A0A;
   color: #FFFFFF;
   border: 1.5px solid rgba(230, 0, 0, 0.35);
@@ -1312,21 +1313,21 @@ ul { list-style: none; }
   position: relative;
   overflow: hidden;
   text-align: center;
-  box-shadow: 0 30px 80px rgba(230, 0, 0, 0.28), 0 0 45px rgba(230, 0, 0, 0.15);
+  box-shadow: 0 20px 60px rgba(230, 0, 0, 0.22), 0 0 35px rgba(230, 0, 0, 0.12);
   transition: border-color 0.4s, box-shadow 0.4s;
 }
 .cta-card:hover {
   border-color: var(--red);
-  box-shadow: 0 40px 100px rgba(230, 0, 0, 0.4), 0 0 60px rgba(230, 0, 0, 0.25);
+  box-shadow: 0 30px 80px rgba(230, 0, 0, 0.35), 0 0 45px rgba(230, 0, 0, 0.2);
 }
 
 .cta-card::before {
   content: '';
   position: absolute;
-  top: -40%; left: 50%;
+  top: -50%; left: 50%;
   transform: translateX(-50%);
-  width: 700px; height: 500px;
-  background: radial-gradient(ellipse at center, rgba(230, 0, 0, 0.28) 0%, transparent 70%);
+  width: 600px; height: 380px;
+  background: radial-gradient(ellipse at center, rgba(230, 0, 0, 0.25) 0%, transparent 70%);
   pointer-events: none;
   animation: flareRotate 8s ease-in-out infinite alternate;
 }
@@ -1339,7 +1340,7 @@ ul { list-style: none; }
 .cta-wrap { 
   position: relative; 
   z-index: 2; 
-  max-width: 920px; 
+  max-width: 850px; 
   margin: 0 auto; 
 }
 
@@ -1348,49 +1349,61 @@ ul { list-style: none; }
   align-items: center;
   gap: 0.6rem;
   font-family: var(--f-display);
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: var(--red-mid);
   background: rgba(230, 0, 0, 0.12);
   border: 1px solid rgba(230, 0, 0, 0.3);
-  padding: 0.5rem 1.4rem;
+  padding: 0.4rem 1.2rem;
   border-radius: var(--r-pill);
-  margin-bottom: 2.2rem;
+  margin-bottom: 1.2rem;
   box-shadow: 0 0 15px rgba(230, 0, 0, 0.25);
 }
 
-.cta-headline {
+.cta-headline, .cta-title {
   font-family: var(--f-display);
-  font-size: clamp(3.5rem, 7.5vw, 7.8rem);
-  font-weight: 700; 
+  font-size: clamp(2.2rem, 5vw, 4.5rem);
+  font-weight: 800; 
   text-transform: uppercase;
-  letter-spacing: -.04em; 
-  line-height: 0.9;
-  margin-bottom: 2rem;
+  letter-spacing: -.03em; 
+  line-height: 0.95;
+  margin-bottom: 1rem;
+  color: var(--ink);
+}
+.cta-card .cta-headline, .cta-card .cta-title {
   color: #FFFFFF;
 }
 
-.cta-headline .em-outline {
+.cta-headline .em-outline, .cta-title .em-outline {
   -webkit-text-stroke: 2px #FFFFFF;
   color: transparent;
 }
 
-.cta-headline .em-red { 
+.cta-headline .em-red, .cta-title .em-red { 
   color: var(--red-mid) !important; 
-  text-shadow: 0 0 40px rgba(255, 40, 40, 0.75), 0 0 80px rgba(230, 0, 0, 0.4);
+  text-shadow: 0 0 30px rgba(255, 40, 40, 0.6), 0 0 60px rgba(230, 0, 0, 0.3);
 }
 
-.cta-sub { 
-  font-size: 1.25rem; 
-  line-height: 1.7;
-  color: rgba(255, 255, 255, 0.75); 
+.cta-sub, .cta-subtitle { 
+  font-size: 1.05rem; 
+  line-height: 1.6;
+  color: var(--ink-60); 
   max-width: 580px; 
-  margin: 0 auto 3.5rem; 
+  margin: 0 auto 1.8rem; 
+}
+.cta-card .cta-sub, .cta-card .cta-subtitle {
+  color: rgba(255, 255, 255, 0.75);
 }
 
-.cta-row { display: flex; align-items: center; justify-content: center; gap: 1.4rem; flex-wrap: wrap; }
+.cta-row, .cta-buttons { 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  gap: 1.2rem; 
+  flex-wrap: wrap; 
+}
 
 .cta-hubs {
   display: flex;
