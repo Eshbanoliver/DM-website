@@ -28,7 +28,7 @@
 
 /* Nav Menu Compatibility */
 .nav-menu, .site-nav {
-  display: flex; align-items: center; gap: 1.4rem;
+  display: flex; align-items: center; gap: 2rem;
 }
 .nav-menu .nav-link, .site-nav .nav-link {
   font-family: var(--f-display);
@@ -37,6 +37,7 @@
   color: var(--ink-60);
   padding: .4rem .2rem;
   position: relative;
+  white-space: nowrap;
   transition: color .3s;
 }
 .nav-menu .nav-link:hover, .site-nav .nav-link:hover,
