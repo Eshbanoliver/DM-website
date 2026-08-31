@@ -14,6 +14,7 @@
   .process-step + .process-step:nth-child(3) { border-left: none; border-top: 1px solid var(--ink-10); }
   .footer-grid   { grid-template-columns: 1fr 1fr; gap: 3rem; }
   .intro-stats-grid { grid-template-columns: 1fr 1fr; }
+  .contact-grid  { grid-template-columns: 1fr; gap: 3rem; }
 }
 
 @media (max-width: 900px) {
@@ -55,7 +56,7 @@
   .cta-section { padding: 2.5rem 0; }
   .intro-stats-grid { grid-template-columns: 1fr; }
   .svc-row, .service-row {
-    grid-template-columns: 32px 42px 1fr 40px;
+    flex-wrap: wrap;
     gap: 1rem;
     padding: 1.2rem 1.4rem;
   }
@@ -82,6 +83,9 @@
   .why-choose-wrap { padding: 0 1.5rem; }
   .why-choose-grid { grid-template-columns: 1fr; gap: 1.5rem; }
   .why-card { flex-direction: column; padding: 1.8rem; }
+  .faq-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+  .contact-form-wrap { padding: 2rem 1.5rem; }
+  .map-container { height: 350px; }
 }
 
 @media (max-width: 600px) {
