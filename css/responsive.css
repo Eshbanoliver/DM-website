@@ -9,7 +9,7 @@
   .strip-grid    { grid-template-columns: 1fr; gap: 3.5rem; }
   .prod-grid     { grid-template-columns: 1fr; }
   .prod-card + .prod-card { border-left: 1.5px solid rgba(230,0,0,.25); border-top: 1.5px solid rgba(230,0,0,.25); }
-  .work-grid     { grid-template-columns: 1fr; }
+  .work-grid, .portfolio-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
   .process-grid  { grid-template-columns: 1fr 1fr; }
   .process-step + .process-step:nth-child(3) { border-left: none; border-top: 1px solid var(--ink-10); }
   .footer-grid   { grid-template-columns: 1fr 1fr; gap: 3rem; }
@@ -86,6 +86,7 @@
 
 @media (max-width: 600px) {
   .svc-cards-grid { grid-template-columns: 1fr; }
+  .work-grid, .portfolio-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 480px) {

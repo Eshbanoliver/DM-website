@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -10,8 +10,9 @@
   <title>Selected Work & Client Portfolio | Rydon Digital</title>
   <meta name="description" content="Explore Rydon Digital's portfolio of work across website development, brand identity, performance marketing, and creative production." />
   
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.com/npm/remixicon@4.2.0/fonts/remixicon.css" />
+  <link rel="stylesheet" href="css/subpages.css" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/responsive.css" />
 </head>
@@ -36,7 +37,7 @@
       <img src="images/rydon-logo.png" alt="Rydon Digital" class="logo-img" />
     </a>
 
-        <nav class="site-nav">
+    <nav class="site-nav">
       <div class="nav-item"><a href="index.html" class="nav-link">Home</a></div>
       <div class="nav-item"><a href="about.html" class="nav-link">About</a></div>
       <div class="nav-item">
@@ -61,9 +62,10 @@
         </div>
       </div>
       <div class="nav-item">
-        <a href="portfolio.html" class="nav-link">Work ↓</a>
+        <a href="portfolio.html" class="nav-link active">Work ↓</a>
         <div class="dropdown-menu">
-          <a href="portfolio.html" class="dd-item"><span class="dd-title">Selected Portfolio</span><span class="dd-sub">Case studies &amp; creative projects</span></a>
+          <a href="work.html" class="dd-item"><span class="dd-title">Selected Work</span><span class="dd-sub">Featured client deliverables</span></a>
+          <a href="portfolio.html" class="dd-item"><span class="dd-title">Full Portfolio</span><span class="dd-sub">Interactive filter &amp; case studies</span></a>
           <a href="our-clients.html" class="dd-item"><span class="dd-title">Our Clients</span><span class="dd-sub">Brand partnerships &amp; testimonials</span></a>
         </div>
       </div>
@@ -93,154 +95,261 @@
   <a href="digital-product.html" class="nav-link">Digital Product</a>
   <a href="services.html" class="nav-link">Services</a>
   <a href="our-clients.html" class="nav-link">Our Clients</a>
+  <a href="work.html" class="nav-link active">Work</a>
   <a href="portfolio.html" class="nav-link">Portfolio</a>
   <a href="career.html" class="nav-link">Career</a>
   <a href="blogs.html" class="nav-link">Blogs</a>
   <a href="contact.html" class="nav-link">Contact Us</a>
   <a href="podcast.html" class="nav-link">Podcast</a>
 </div>
+
 <main>
-    <section class="inner-hero">
-      <div class="container reveal">
-        <div class="breadcrumbs-wrap">
-          <a href="index.html">HOME</a><span class="separator">/</span>
-          <span class="current">SELECTED WORK</span>
-        </div>
-        <div class="section-tag">PORTFOLIO / SELECTED WORK</div>
-        <h1 class="inner-hero-title">FEATURED CLIENT<br /><span class="text-gradient">PROJECTS.</span></h1>
-        <p class="inner-hero-desc">Explore selected projects engineered across digital design, custom development, and brand expansion.</p>
+  <!-- HERO SECTION -->
+  <section class="inner-hero">
+    <div class="container reveal">
+      <div class="breadcrumbs-wrap">
+        <a href="index.html">HOME</a><span class="separator">/</span>
+        <span class="current">SELECTED WORK</span>
       </div>
-    </section>
+      <div class="section-tag">PORTFOLIO / SELECTED WORK</div>
+      <h1 class="inner-hero-title">FEATURED CLIENT<br /><span class="text-gradient">PROJECTS.</span></h1>
+      <p class="inner-hero-desc">Explore selected projects engineered across digital design, custom development, performance marketing, and smart hardware integration.</p>
 
-    <section class="section-spacing">
-      <div class="container">
-        <div class="portfolio-grid reveal">
-          
-          <div class="portfolio-card" data-cursor="VIEW">
-            <div class="portfolio-img-wrap">
-              <img src="images/masala-chai-logo.webp" alt="Masala Chai Branding" class="work-img" />
-            </div>
-            <div class="portfolio-info">
-              <div>
-                <div class="portfolio-category">BRAND IDENTITY & DIGITAL</div>
-                <h3 class="portfolio-title">Masala Chai Identity</h3>
-              </div>
-              <div class="portfolio-link-icon">↗</div>
-            </div>
-          </div>
-
-          <div class="portfolio-card" data-cursor="VIEW">
-            <div class="portfolio-img-wrap">
-              <img src="images/polycob-logo.webp" alt="Polycob Growth Platform" class="work-img" />
-            </div>
-            <div class="portfolio-info">
-              <div>
-                <div class="portfolio-category">WEBSITE & LEAD GEN</div>
-                <h3 class="portfolio-title">Polycob Growth Platform</h3>
-              </div>
-              <div class="portfolio-link-icon">↗</div>
-            </div>
-          </div>
-
-          <div class="portfolio-card" data-cursor="VIEW">
-            <div class="portfolio-img-wrap">
-              <img src="images/hitesh-logo.webp" alt="Hitesh Creative Media" class="work-img" />
-            </div>
-            <div class="portfolio-info">
-              <div>
-                <div class="portfolio-category">SOCIAL & CREATIVE</div>
-                <h3 class="portfolio-title">Hitesh Creative</h3>
-              </div>
-              <div class="portfolio-link-icon">↗</div>
-            </div>
-          </div>
-
-          <div class="portfolio-card" data-cursor="VIEW">
-            <div class="portfolio-img-wrap">
-              <img src="images/pro-smart-logo.webp" alt="Pro Smart NFC Deployment" class="work-img" />
-            </div>
-            <div class="portfolio-info">
-              <div>
-                <div class="portfolio-category">SMART NFC HARDWARE</div>
-                <h3 class="portfolio-title">Pro Smart Hardware</h3>
-              </div>
-              <div class="portfolio-link-icon">↗</div>
-            </div>
-          </div>
-
+      <!-- Key Metrics Row -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 2rem; margin-top: 3.5rem; padding-top: 2rem; border-top: 1px solid var(--ink-10);">
+        <div class="stat-item">
+          <div class="stat-num" data-target="150" style="font-family: var(--f-display); font-size: 2.5rem; font-weight: 800; color: var(--ink);">150<span>+</span></div>
+          <div style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; color: var(--ink-60); letter-spacing: 1px; margin-top: 4px;">Projects Delivered</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num" data-target="98" style="font-family: var(--f-display); font-size: 2.5rem; font-weight: 800; color: var(--ink);">98<span>%</span></div>
+          <div style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; color: var(--ink-60); letter-spacing: 1px; margin-top: 4px;">Client Retention</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num" data-target="50" style="font-family: var(--f-display); font-size: 2.5rem; font-weight: 800; color: var(--ink);">50<span>+</span></div>
+          <div style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; color: var(--ink-60); letter-spacing: 1px; margin-top: 4px;">Brand Partners</div>
+        </div>
+        <div class="stat-item">
+          <div style="font-family: var(--f-display); font-size: 2.5rem; font-weight: 800; color: var(--red);">4.9★</div>
+          <div style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; color: var(--ink-60); letter-spacing: 1px; margin-top: 4px;">Client Rating</div>
         </div>
       </div>
-    </section>
 
-    <!-- CLIENT LOGO MARQUEE -->
-    <section class="marquee-container">
-      <div class="marquee-track">
-        <img src="images/masala-chai-logo.webp" alt="Masala Chai" class="marquee-logo" />
-        <span class="clients-divider">✦</span>
-        <img src="images/polycob-logo.webp" alt="Polycob" class="marquee-logo" />
-        <span class="clients-divider">✦</span>
-        <img src="images/hitesh-logo.webp" alt="Hitesh" class="marquee-logo" />
-        <span class="clients-divider">✦</span>
-        <img src="images/nails-logo.webp" alt="Nails" class="marquee-logo" />
-        <span class="clients-divider">✦</span>
-        <img src="images/pizza-logo.webp" alt="Pizza" class="marquee-logo" />
-        <span class="clients-divider">✦</span>
-        <img src="images/pro-smart-logo.webp" alt="Pro Smart" class="marquee-logo" />
-        <!-- duplicate for continuous loop -->
-        <span class="clients-divider">✦</span>
-        <img src="images/masala-chai-logo.webp" alt="Masala Chai" class="marquee-logo" />
-        <span class="clients-divider">✦</span>
-        <img src="images/polycob-logo.webp" alt="Polycob" class="marquee-logo" />
-        <span class="clients-divider">✦</span>
-        <img src="images/hitesh-logo.webp" alt="Hitesh" class="marquee-logo" />
-        <span class="clients-divider">✦</span>
-        <img src="images/nails-logo.webp" alt="Nails" class="marquee-logo" />
-        <span class="clients-divider">✦</span>
-        <img src="images/pizza-logo.webp" alt="Pizza" class="marquee-logo" />
-        <span class="clients-divider">✦</span>
-        <img src="images/pro-smart-logo.webp" alt="Pro Smart" class="marquee-logo" />
-      </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="cta-section">
-  <div class="cta-card reveal">
-    <div class="cta-wrap">
-      <div class="cta-pill">
-        <span class="live-dot"></span> NOW BOOKING Q3/Q4 TRANSFORMATIONS
+  <!-- PORTFOLIO FILTER & GRID SECTION -->
+  <section class="section-spacing">
+    <div class="container">
+      
+      <!-- Interactive Filter Tabs -->
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2.5rem;" class="reveal">
+        <button class="portfolio-filter active btn-secondary" data-filter="all">All Work</button>
+        <button class="portfolio-filter btn-outline" data-filter="web">Web Development</button>
+        <button class="portfolio-filter btn-outline" data-filter="brand">Brand Identity</button>
+        <button class="portfolio-filter btn-outline" data-filter="digital">Digital Marketing</button>
+        <button class="portfolio-filter btn-outline" data-filter="nfc">Smart NFC</button>
       </div>
 
-      <h2 class="cta-headline">
-        READY TO<br/>
-        <span class="em-red">DOMINATE</span><br/>
-        <span class="em-outline">YOUR MARKET?</span>
-      </h2>
+      <!-- Portfolio Grid -->
+      <div class="portfolio-grid reveal">
+        
+        <div class="portfolio-card" data-category="brand digital" data-cursor="VIEW">
+          <div class="portfolio-img-wrap">
+            <img src="images/masala-chai-logo.webp" alt="Masala Chai Branding" class="work-img" />
+          </div>
+          <div class="portfolio-info">
+            <div>
+              <div class="portfolio-category">BRAND IDENTITY & DIGITAL</div>
+              <h3 class="portfolio-title">Masala Chai Identity</h3>
+            </div>
+            <div class="portfolio-link-icon">↗</div>
+          </div>
+        </div>
 
-      <p class="cta-sub">
-        Let's engineer an extraordinary digital presence for your brand.
-        Turn customer attention into measurable commercial revenue.
-      </p>
+        <div class="portfolio-card" data-category="web" data-cursor="VIEW">
+          <div class="portfolio-img-wrap">
+            <img src="images/polycob-logo.webp" alt="Polycob Growth Platform" class="work-img" />
+          </div>
+          <div class="portfolio-info">
+            <div>
+              <div class="portfolio-category">WEBSITE & LEAD GEN</div>
+              <h3 class="portfolio-title">Polycob Industrial</h3>
+            </div>
+            <div class="portfolio-link-icon">↗</div>
+          </div>
+        </div>
 
-      <div class="cta-row">
-        <a href="contact.html" class="btn-red" style="padding: 1.1rem 2.8rem; font-size: .85rem;" data-cursor="TALK">
-          Start a Project ↗
-        </a>
-        <a href="tel:+918306241815" class="btn-ghost" style="padding: 1.1rem 2.8rem; font-size: .85rem;" data-cursor="CALL">
-          +91 83062 41815 📞
-        </a>
-      </div>
+        <div class="portfolio-card" data-category="digital brand" data-cursor="VIEW">
+          <div class="portfolio-img-wrap">
+            <img src="images/hitesh-logo.webp" alt="Hitesh Creative Media" class="work-img" />
+          </div>
+          <div class="portfolio-info">
+            <div>
+              <div class="portfolio-category">SEO & DIGITAL MARKETING</div>
+              <h3 class="portfolio-title">Hitesh Creative</h3>
+            </div>
+            <div class="portfolio-link-icon">↗</div>
+          </div>
+        </div>
 
-      <div class="cta-hubs">
-        <div>UDAIPUR <span>●</span></div>
-        <div>AHMEDABAD <span>●</span></div>
-        <div>GANDHINAGAR <span>●</span></div>
+        <div class="portfolio-card" data-category="digital brand" data-cursor="VIEW">
+          <div class="portfolio-img-wrap">
+            <img src="images/nails-logo.webp" alt="Nails Studio Udaipur" class="work-img" />
+          </div>
+          <div class="portfolio-info">
+            <div>
+              <div class="portfolio-category">SOCIAL MEDIA & BRANDING</div>
+              <h3 class="portfolio-title">Nails Studio Udaipur</h3>
+            </div>
+            <div class="portfolio-link-icon">↗</div>
+          </div>
+        </div>
+
+        <div class="portfolio-card" data-category="digital" data-cursor="VIEW">
+          <div class="portfolio-img-wrap">
+            <img src="images/pizza-logo.webp" alt="Pizza Brand Campaign" class="work-img" />
+          </div>
+          <div class="portfolio-info">
+            <div>
+              <div class="portfolio-category">PERFORMANCE ADS & CREATIVE</div>
+              <h3 class="portfolio-title">Pizza Brand Campaign</h3>
+            </div>
+            <div class="portfolio-link-icon">↗</div>
+          </div>
+        </div>
+
+        <div class="portfolio-card" data-category="nfc web" data-cursor="VIEW">
+          <div class="portfolio-img-wrap">
+            <img src="images/pro-smart-logo.webp" alt="Pro Smart Solutions" class="work-img" />
+          </div>
+          <div class="portfolio-info">
+            <div>
+              <div class="portfolio-category">SMART NFC & WEBSITE</div>
+              <h3 class="portfolio-title">Pro Smart Hardware</h3>
+            </div>
+            <div class="portfolio-link-icon">↗</div>
+          </div>
+        </div>
+
+        <div class="portfolio-card" data-category="nfc" data-cursor="VIEW">
+          <div class="portfolio-img-wrap">
+            <img src="images/digital-business-stand.webp" alt="NFC Digital Business Stand" class="work-img" />
+          </div>
+          <div class="portfolio-info">
+            <div>
+              <div class="portfolio-category">TOUCHLESS NFC HARDWARE</div>
+              <h3 class="portfolio-title">NFC Digital Stand</h3>
+            </div>
+            <div class="portfolio-link-icon">↗</div>
+          </div>
+        </div>
+
+        <div class="portfolio-card" data-category="nfc" data-cursor="VIEW">
+          <div class="portfolio-img-wrap">
+            <img src="images/google-review.webp" alt="Google Review NFC Plates" class="work-img" />
+          </div>
+          <div class="portfolio-info">
+            <div>
+              <div class="portfolio-category">LOCAL SEO & NFC HARDWARE</div>
+              <h3 class="portfolio-title">Google Review Plates</h3>
+            </div>
+            <div class="portfolio-link-icon">↗</div>
+          </div>
+        </div>
+
       </div>
     </div>
-  </div>
-</section>
-  </main>
+  </section>
 
-  
+  <!-- CREATIVE PROCESS SECTION -->
+  <section class="section-spacing" style="background: var(--off-white); border-top: 1px solid var(--ink-10);">
+    <div class="container">
+      <div class="section-tag">HOW WE DELIVER</div>
+      <h2 style="font-family: var(--f-display); font-size: clamp(2.2rem, 3.8vw, 3.8rem); font-weight: 800; text-transform: uppercase; margin-bottom: 3rem;">OUR <span class="text-gradient">CREATIVE PROCESS</span></h2>
+      
+      <div class="service-list-container reveal">
+        <div class="service-row" style="cursor: default;">
+          <span class="service-num">01</span>
+          <h3 class="service-title">DISCOVERY & STRATEGY</h3>
+          <p class="service-desc">Deep-dive into your brand, audience, and commercial objectives to construct a high-ROAS marketing blueprint.</p>
+        </div>
+        <div class="service-row" style="cursor: default;">
+          <span class="service-num">02</span>
+          <h3 class="service-title">DESIGN & ARCHITECTURE</h3>
+          <p class="service-desc">Luxury visual identity, conversion-focused wireframing, and bespoke interactive UI prototyping.</p>
+        </div>
+        <div class="service-row" style="cursor: default;">
+          <span class="service-num">03</span>
+          <h3 class="service-title">BUILD & DEPLOY</h3>
+          <p class="service-desc">Engineered website platforms, technical SEO structuring, custom NFC integrations, and targeted ad campaigns.</p>
+        </div>
+        <div class="service-row" style="cursor: default;">
+          <span class="service-num">04</span>
+          <h3 class="service-title">MEASURE & SCALE</h3>
+          <p class="service-desc">Real-time revenue attribution, continuous conversion rate optimization, and aggressive digital scaling.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- CLIENT LOGO MARQUEE -->
+  <section class="marquee-band">
+    <div class="marquee-inner">
+      <span>MASALA CHAI <em>✦</em></span>
+      <span>POLYCOB INDUSTRIAL <em>✦</em></span>
+      <span>HITESH ENTERPRISE <em>✦</em></span>
+      <span>NAILS STUDIO UDAIPUR <em>✦</em></span>
+      <span>PIZZA BRAND <em>✦</em></span>
+      <span>PRO SMART SOLUTIONS <em>✦</em></span>
+      <span>MASALA CHAI <em>✦</em></span>
+      <span>POLYCOB INDUSTRIAL <em>✦</em></span>
+      <span>HITESH ENTERPRISE <em>✦</em></span>
+      <span>NAILS STUDIO UDAIPUR <em>✦</em></span>
+      <span>PIZZA BRAND <em>✦</em></span>
+      <span>PRO SMART SOLUTIONS <em>✦</em></span>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section class="cta-section">
+    <div class="cta-card reveal">
+      <div class="cta-wrap">
+        <div class="cta-pill">
+          <span class="live-dot"></span> NOW BOOKING Q3/Q4 TRANSFORMATIONS
+        </div>
+
+        <h2 class="cta-headline">
+          READY TO<br/>
+          <span class="em-red">DOMINATE</span><br/>
+          <span class="em-outline">YOUR MARKET?</span>
+        </h2>
+
+        <p class="cta-sub">
+          Let's engineer an extraordinary digital presence for your brand.
+          Turn customer attention into measurable commercial revenue.
+        </p>
+
+        <div class="cta-row">
+          <a href="contact.html" class="btn-red" style="padding: 1.1rem 2.8rem; font-size: .85rem;" data-cursor="TALK">
+            Start a Project ↗
+          </a>
+          <a href="tel:+918306241815" class="btn-ghost" style="padding: 1.1rem 2.8rem; font-size: .85rem;" data-cursor="CALL">
+            +91 83062 41815 📞
+          </a>
+        </div>
+
+        <div class="cta-hubs">
+          <div>UDAIPUR <span>●</span></div>
+          <div>AHMEDABAD <span>●</span></div>
+          <div>GANDHINAGAR <span>●</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER -->
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-grid">
@@ -302,197 +411,8 @@
   </div>
 </footer>
 
-<!-- ─── JS ─── -->
-<script>
-(function () {
-  const bar     = document.getElementById('pl-bar');
-  const pct     = document.getElementById('pl-percent');
-  const loader  = document.getElementById('preloader');
-  if (loader) {
-    let p = 0;
-    const iv = setInterval(() => {
-      p += Math.random() * 25 + 15;
-      if (p >= 100) {
-        p = 100; clearInterval(iv);
-        setTimeout(() => {
-          loader.classList.add('out');
-          loader.style.display = 'none';
-        }, 150);
-      }
-      if (bar) bar.style.width = p + '%';
-      if (pct) pct.textContent = Math.floor(p) + '%';
-    }, 35);
-  }
-})();
-
-(function () {
-  const dot  = document.getElementById('cursor-dot');
-  const ring = document.getElementById('cursor-ring');
-  const label = document.getElementById('cursor-label');
-  if (!dot || window.innerWidth <= 900) return;
-
-  let mx = 0, my = 0, rx = 0, ry = 0;
-  let activeHoverEl = null;
-
-  document.addEventListener('mousemove', e => { 
-    mx = e.clientX; 
-    my = e.clientY; 
-    dot.style.left = mx + 'px'; 
-    dot.style.top = my + 'px'; 
-  });
-
-  const interactiveSelector = '[data-cursor], a, button, .svc-row, .prod-card, .work-card, .nfc-card, .ad-card, .location-card, .why-row, .podcast-card';
-  document.querySelectorAll(interactiveSelector).forEach(el => {
-    el.addEventListener('mouseenter', () => {
-      ring.classList.add('hovered');
-      if (label) label.textContent = el.getAttribute('data-cursor') || 'VIEW';
-      activeHoverEl = el;
-    });
-    el.addEventListener('mouseleave', () => {
-      ring.classList.remove('hovered');
-      activeHoverEl = null;
-    });
-  });
-
-  (function animate() {
-    if (activeHoverEl) {
-      const rect = activeHoverEl.getBoundingClientRect();
-      const cx = rect.left + rect.width / 2;
-      const cy = rect.top + rect.height / 2;
-      rx += (cx - rx) * 0.22;
-      ry += (cy - ry) * 0.22;
-      
-      ring.style.width = (rect.width + 12) + 'px';
-      ring.style.height = (rect.height + 12) + 'px';
-      ring.style.borderRadius = window.getComputedStyle(activeHoverEl).borderRadius;
-      ring.style.borderColor = 'var(--red)';
-    } else {
-      rx += (mx - rx) * 0.14; 
-      ry += (my - ry) * 0.14;
-      ring.style.width = '36px';
-      ring.style.height = '36px';
-      ring.style.borderRadius = '50%';
-      ring.style.borderColor = 'var(--ink-30)';
-    }
-    ring.style.left = rx + 'px'; 
-    ring.style.top = ry + 'px';
-    requestAnimationFrame(animate);
-  })();
-})();
-
-(function () {
-  const cards = document.querySelectorAll('.prod-card, .work-card, .stat-item, .process-step, .nfc-card, .ad-card, .location-card, .why-row, .podcast-card');
-  if (window.innerWidth <= 900) return;
-  
-  cards.forEach(card => {
-    card.addEventListener('mousemove', e => {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      const xc = rect.width / 2;
-      const yc = rect.height / 2;
-      const angleX = (yc - y) / 14; 
-      const angleY = (x - xc) / 14;
-      card.style.transform = 'perspective(1000px) rotateX(' + angleX + 'deg) rotateY(' + angleY + 'deg) scale3d(1.02, 1.02, 1.02)';
-      card.style.transition = 'transform 0.08s ease-out';
-    });
-    card.addEventListener('mouseleave', () => {
-      card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
-      card.style.transition = 'transform 0.5s var(--ease-out)';
-    });
-  });
-})();
-
-(function () {
-  const elements = document.querySelectorAll('.btn-red, .btn-ghost, .btn-primary, .btn-secondary, .btn-outline, .nav-cta, .site-logo');
-  if (window.innerWidth <= 900) return;
-
-  elements.forEach(el => {
-    el.addEventListener('mousemove', e => {
-      const rect = el.getBoundingClientRect();
-      const x = e.clientX - rect.left - (rect.width / 2);
-      const y = e.clientY - rect.top - (rect.height / 2);
-      el.style.transform = 'translate(' + (x * 0.3) + 'px, ' + (y * 0.3) + 'px) scale(1.02)';
-      el.style.transition = 'transform 0.1s ease-out';
-    });
-    el.addEventListener('mouseleave', () => {
-      el.style.transform = 'translate(0px, 0px) scale(1)';
-      el.style.transition = 'transform 0.5s cubic-bezier(0.25, 1, 0.5, 1)';
-    });
-  });
-})();
-
-(function () {
-  const h = document.getElementById('site-header');
-  if (!h) return;
-  window.addEventListener('scroll', () => {
-    h.classList.toggle('scrolled', window.scrollY > 40);
-  });
-})();
-
-(function () {
-  const btn = document.getElementById('mobile-burger');
-  const ov  = document.getElementById('mobile-overlay');
-  if (!btn || !ov) return;
-  btn.addEventListener('click', () => {
-    btn.classList.toggle('open');
-    ov.classList.toggle('active');
-    document.body.style.overflow = ov.classList.contains('active') ? 'hidden' : '';
-  });
-  ov.querySelectorAll('.nav-link').forEach(l => l.addEventListener('click', () => {
-    btn.classList.remove('open');
-    ov.classList.remove('active');
-    document.body.style.overflow = '';
-  }));
-})();
-
-(function () {
-  const selector = '.u-reveal, .u-reveal-left, .u-reveal-right, .u-reveal-zoom, .u-reveal-flip, .u-reveal-rotate, .reveal';
-  const els = document.querySelectorAll(selector);
-  
-  els.forEach(el => {
-    const rect = el.getBoundingClientRect();
-    if (rect.top < window.innerHeight && rect.bottom > 0) {
-      el.classList.add('visible');
-      el.classList.add('active');
-    }
-  });
-
-  if ('IntersectionObserver' in window) {
-    const io  = new IntersectionObserver(entries => {
-      entries.forEach(e => { 
-        if (e.isIntersecting) { 
-          e.target.classList.add('visible'); 
-          e.target.classList.add('active');
-          io.unobserve(e.target); 
-        } 
-      });
-    }, { rootMargin: '0px 0px -40px 0px', threshold: .05 });
-    els.forEach(el => io.observe(el));
-  }
-})();
-
-(function () {
-  const nums = document.querySelectorAll('.stat-num[data-target]');
-  if (!nums.length) return;
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (!e.isIntersecting) return;
-      const el = e.target;
-      const target = +el.dataset.target;
-      const suffix = el.querySelector('span')?.textContent || '';
-      let n = 0;
-      const step = Math.ceil(target / 50);
-      const iv = setInterval(() => {
-        n = Math.min(n + step, target);
-        el.innerHTML = n + '<span>' + (suffix || '+') + '</span>';
-        if (n >= target) clearInterval(iv);
-      }, 30);
-      io.unobserve(el);
-    });
-  }, { threshold: .3 });
-  nums.forEach(n => io.observe(n));
-})();
-</script>
+<!-- ─── JS MODULES ─── -->
+<script src="js/main.js"></script>
+<script src="js/interactions.js"></script>
 </body>
 </html>

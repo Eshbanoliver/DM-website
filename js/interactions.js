@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initClickRipple();
   initCursorFollowerLight();
   initSmoothAnchors();
+  initPortfolioFilters();
 });
 
 /* --------------------------------------------------------------------------
@@ -292,3 +293,49 @@ function initSmoothAnchors() {
     });
   });
 }
+
+/* --------------------------------------------------------------------------
+   Interactive Portfolio Category Filtering
+   -------------------------------------------------------------------------- */
+function initPortfolioFilters() {
+  const filterBtns = document.querySelectorAll('.portfolio-filter');
+  const cards = document.querySelectorAll('.work-card, .portfolio-card');
+  if (!filterBtns.length || !cards.length) return;
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => {
+        b.classList.remove('active');
+        b.classList.remove('btn-secondary');
+        b.classList.add('btn-outline');
+      });
+      btn.classList.add('active');
+      btn.classList.remove('btn-outline');
+      btn.classList.add('btn-secondary');
+
+      const filterValue = btn.getAttribute('data-filter') || 'all';
+
+      cards.forEach(card => {
+        const category = card.getAttribute('data-category') || '';
+        const matches = filterValue === 'all' || category.split(' ').includes(filterValue);
+
+        if (matches) {
+          card.classList.remove('is-hidden');
+          card.style.display = 'block';
+          setTimeout(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'scale(1)';
+          }, 30);
+        } else {
+          card.style.opacity = '0';
+          card.style.transform = 'scale(0.92)';
+          setTimeout(() => {
+            card.classList.add('is-hidden');
+            card.style.display = 'none';
+          }, 300);
+        }
+      });
+    });
+  });
+}
+
