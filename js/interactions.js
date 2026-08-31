@@ -321,7 +321,7 @@ function initPortfolioFilters() {
 
         if (matches) {
           card.classList.remove('is-hidden');
-          card.style.display = 'block';
+          card.style.display = '';
           setTimeout(() => {
             card.style.opacity = '1';
             card.style.transform = 'scale(1)';
