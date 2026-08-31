@@ -1674,6 +1674,8 @@ ul { list-style: none; }
   justify-content: space-between; flex-wrap: wrap; gap: 1rem;
   font-size: .82rem; font-family: var(--f-display); letter-spacing: .5px;
 }
+.footer-base a { color: inherit; transition: color .25s; text-decoration: none; }
+.footer-base a:hover { color: #fff; }
 .footer-base-links { display: flex; gap: 2rem; }
 .footer-base-links a { color: rgba(255,255,255,.35); transition: color .25s; }
 .footer-base-links a:hover { color: #fff; }
