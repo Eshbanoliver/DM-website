@@ -157,6 +157,47 @@ html, body {
     gap: 1.2rem !important;
   }
 
+  /* SELECTED WORK & PORTFOLIO GRID MOBILE FIX */
+  .work-section {
+    padding: 3.5rem 0 !important;
+  }
+  .work-wrap {
+    padding: 0 1.2rem !important;
+  }
+  .work-grid, 
+  .portfolio-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+    margin-top: 1.8rem !important;
+    width: 100% !important;
+  }
+  .work-card, 
+  .portfolio-card {
+    width: 100% !important;
+  }
+  .work-card-inner, 
+  .portfolio-img-wrap {
+    height: 190px !important;
+    padding: 1.2rem !important;
+  }
+  .work-overlay, 
+  .portfolio-info {
+    padding: 1.2rem 1.4rem !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.35rem !important;
+  }
+  .work-cat, 
+  .portfolio-category {
+    font-size: 0.7rem !important;
+    margin-bottom: 0.2rem !important;
+  }
+  .work-title, 
+  .portfolio-title {
+    font-size: 1.15rem !important;
+    line-height: 1.25 !important;
+  }
+
   .location-card, .why-card {
     padding: 1.8rem 1.2rem !important;
   }
