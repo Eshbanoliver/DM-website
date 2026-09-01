@@ -39,6 +39,11 @@ html, body {
 }
 
 @media (max-width: 768px) {
+  /* Prevent horizontal animation offsets on mobile */
+  .u-reveal-left, .u-reveal-right {
+    transform: none !important;
+  }
+
   /* Header & Navigation */
   .site-header, .header {
     top: 0.8rem;
@@ -79,13 +84,69 @@ html, body {
   /* Section Headings */
   section h2 {
     font-size: clamp(1.8rem, 6vw, 2.5rem) !important;
-    margin-bottom: 2rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  /* NFC INTRO & PRODUCTS SHOWCASE (HOMEPAGE & PRODUCT PAGES) */
+  .nfc-intro-section {
+    padding: 3.5rem 0 !important;
+    margin-bottom: 3.5rem !important;
+  }
+  .nfc-intro-wrap {
+    grid-template-columns: 1fr !important;
+    gap: 2.2rem !important;
+    padding: 0 1.2rem !important;
+  }
+  .nfc-intro-subheading {
+    font-size: 1.05rem !important;
+    margin-bottom: 1rem !important;
+  }
+  .nfc-intro-text {
+    font-size: 0.9rem !important;
+    line-height: 1.65 !important;
+    gap: 0.8rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  .nfc-showcase-grid, 
+  .nfc-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.2rem !important;
+    width: 100% !important;
+  }
+
+  .nfc-showcase-card,
+  .nfc-card {
+    padding: 1.5rem 1.2rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .nfc-showcase-img-wrap,
+  .nfc-card .prod-img-wrap {
+    width: 100% !important;
+    height: 200px !important;
+    aspect-ratio: auto !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .nfc-showcase-img,
+  .nfc-card .prod-img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    border-radius: var(--r-md);
+  }
+
+  .nfc-showcase-title,
+  .nfc-card h4 {
+    font-size: 1.15rem !important;
+    margin-bottom: 0.8rem !important;
   }
 
   /* Grids & Cards */
   .feature-grid-3, 
   .svc-cards-grid, 
-  .nfc-grid, 
   .ad-products-grid, 
   .hub-grid, 
   .pillar-grid, 
