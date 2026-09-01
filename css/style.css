@@ -1545,10 +1545,12 @@ ul { list-style: none; }
   text-align: center;
   box-shadow: 0 20px 60px rgba(230, 0, 0, 0.22), 0 0 35px rgba(230, 0, 0, 0.12);
   transition: border-color 0.4s, box-shadow 0.4s;
+  transform: none !important;
 }
 .cta-card:hover {
   border-color: var(--red);
   box-shadow: 0 30px 80px rgba(230, 0, 0, 0.35), 0 0 45px rgba(230, 0, 0, 0.2);
+  transform: none !important;
 }
 
 .cta-card::before {

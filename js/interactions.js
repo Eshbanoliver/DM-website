@@ -188,7 +188,7 @@ function initClickRipple() {
    3D Parallax Tilt Physics
    -------------------------------------------------------------------------- */
 function init3DTilt() {
-  const cards = document.querySelectorAll('.svc-card, .why-card, .nfc-showcase-card, .prod-card, .nfc-card, .ad-card, .testi-box, .cta-card');
+  const cards = document.querySelectorAll('.svc-card, .why-card, .nfc-showcase-card, .prod-card, .nfc-card, .ad-card, .testi-box');
   if (window.innerWidth <= 900) return;
 
   cards.forEach(card => {
