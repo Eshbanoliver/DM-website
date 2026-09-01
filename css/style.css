@@ -1138,7 +1138,8 @@ ul { list-style: none; }
   letter-spacing: -.02em;
   color: var(--ink);
   margin: 0;
-  flex: 1 1 220px;
+  line-height: 1.35;
+  flex: 1 1 auto;
   transition: color 0.3s, transform 0.35s var(--ease-out);
 }
 
@@ -1147,7 +1148,7 @@ ul { list-style: none; }
   line-height: 1.55;
   color: var(--ink-60);
   margin: 0;
-  flex: 1.4 1 280px;
+  flex: 1.4 1 auto;
 }
 
 .svc-arrow, .service-arrow {
