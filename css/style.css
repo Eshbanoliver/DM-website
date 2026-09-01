@@ -1855,10 +1855,15 @@ ul { list-style: none; }
   padding: 2.5rem 2rem;
   background: var(--white);
   color: var(--ink);
-  transition: background .35s, transform .35s var(--ease-out);
+  position: relative;
+  transition: background 0.35s var(--ease-out), color 0.35s var(--ease-out), transform 0.35s var(--ease-out), box-shadow 0.35s var(--ease-out);
 }
 .stat-item:hover { 
-  background: var(--red-pale); 
+  background: var(--red) !important; 
+  color: #FFFFFF !important;
+  transform: translateY(-4px);
+  box-shadow: 0 14px 35px rgba(230, 0, 0, 0.35) !important;
+  z-index: 2;
 }
 .stat-num {
   font-family: var(--f-display);
@@ -1866,13 +1871,25 @@ ul { list-style: none; }
   letter-spacing: -.04em; line-height: 1;
   margin-bottom: .5rem;
   color: var(--ink);
+  transition: color 0.35s var(--ease-out);
 }
-.stat-num span { color: var(--red); }
+.stat-num span { 
+  color: var(--red);
+  transition: color 0.35s var(--ease-out);
+}
 .stat-label {
   font-family: var(--f-display);
   font-size: .78rem; font-weight: 700;
   letter-spacing: 1.5px; text-transform: uppercase;
   color: var(--ink-60);
+  transition: color 0.35s var(--ease-out);
+}
+.stat-item:hover .stat-num,
+.stat-item:hover .stat-num span {
+  color: #FFFFFF !important;
+}
+.stat-item:hover .stat-label {
+  color: rgba(255, 255, 255, 0.92) !important;
 }
 
 /* Dark Section Stat Items */
@@ -1885,6 +1902,10 @@ ul { list-style: none; }
 }
 .dark-section .stat-label, .cta-card .stat-label, .about-manifesto-card .stat-label {
   color: rgba(255, 255, 255, 0.6);
+}
+.dark-section .stat-item:hover, .cta-card .stat-item:hover, .about-manifesto-card .stat-item:hover {
+  background: var(--red) !important;
+  color: #FFFFFF !important;
 }
 
 /* ─── TESTIMONIAL ────────────────────────────────────────────────────────── */

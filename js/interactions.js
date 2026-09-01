@@ -74,6 +74,10 @@ function initContactForm() {
 
     // Success State Simulation
     statusMsg.className = 'form-status-msg success';
+    statusMsg.style.display = 'block';
+    statusMsg.style.background = 'rgba(0, 200, 83, 0.15)';
+    statusMsg.style.border = '1px solid #00C853';
+    statusMsg.style.color = '#00C853';
     statusMsg.textContent = 'Thank you! Your message has been sent successfully. Our team will contact you shortly.';
     form.reset();
 

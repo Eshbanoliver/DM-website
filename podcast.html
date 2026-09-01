@@ -7,127 +7,692 @@
   <link rel="icon" type="image/png" href="images/rydon-logo.png" />
   <link rel="apple-touch-icon" href="images/rydon-logo.png" />
   <link rel="canonical" href="https://rydondigital.com/podcast.html" />
-  <title>Podcast | Digital Marketing & Business Growth Show | Rydon Digital</title>
-  <meta name="description" content="Listen to Rydon Digital's podcast featuring in-depth conversations on digital marketing, SEO, brand building, NFC technology, and business growth strategies for entrepreneurs in India." />
+  
+  <title>Podcast | The Rydon Digital Show | Marketing, SEO & Business Growth</title>
+  <meta name="description" content="Listen to The Rydon Digital Show — in-depth conversations with founders, SEO strategists, and marketing leaders on building high-growth brands in India." />
+  <meta name="keywords" content="Rydon Digital Podcast, Digital Marketing Show India, SEO Podcast Udaipur, Business Growth Podcast, NFC Technology Podcast" />
+  
+  <!-- Open Graph / Social Media Meta -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="The Rydon Digital Show | Business Growth & Digital Marketing Podcast" />
+  <meta property="og:description" content="Real talk on digital growth, SEO dominance, NFC innovation, and brand building. Stream episodes now." />
+  <meta property="og:url" content="https://rydondigital.com/podcast.html" />
+  <meta property="og:image" content="images/rydon-logo.png" />
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <!-- Fonts & Icon Libraries -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.com/npm/remixicon@4.2.0/fonts/remixicon.css" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/responsive.css" />
+
+  <!-- Schema.org JSON-LD Structured Data for Podcast -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "PodcastSeries",
+    "name": "The Rydon Digital Show",
+    "description": "In-depth conversations with founders, marketers, and digital experts on building businesses, growing brands online, and navigating digital marketing.",
+    "url": "https://rydondigital.com/podcast.html",
+    "webFeed": "https://rydondigital.com/podcast-feed.xml",
+    "author": {
+      "@type": "Organization",
+      "name": "Rydon Digital",
+      "url": "https://rydondigital.com"
+    },
+    "episodes": [
+      {
+        "@type": "PodcastEpisode",
+        "name": "EP 06: How NFC Technology is Transforming Business Networking in India",
+        "episodeNumber": "06",
+        "datePublished": "2026-08-15",
+        "description": "We discuss how NFC smart products are replacing traditional business cards, boosting Google reviews, and driving contactless business growth."
+      },
+      {
+        "@type": "PodcastEpisode",
+        "name": "EP 05: Local SEO Secrets: Dominating Google Rankings for Udaipur Businesses",
+        "episodeNumber": "05",
+        "datePublished": "2026-07-28",
+        "description": "Everything you need to know about dominating local Google search results in Udaipur, Rajasthan, and beyond."
+      }
+    ]
+  }
+  </script>
+
   <style>
-    /* Podcast-specific styles */
-    .podcast-hero-img {
+    /* ─── PODCAST PAGE STYLING ─── */
+    .podcast-hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    .podcast-art-card {
+      position: relative;
       width: 100%;
-      max-width: 360px;
-      border-radius: 24px;
-      box-shadow: 0 30px 80px rgba(224,30,60,0.25);
+      max-width: 380px;
+      margin: 0 auto;
+      background: var(--ink);
+      border: 1.5px solid var(--red);
+      border-radius: var(--r-lg);
+      padding: 2.5rem 2rem;
+      text-align: center;
+      box-shadow: var(--shadow-red), 0 30px 60px rgba(0,0,0,0.15);
+      transition: transform 0.4s var(--ease-out), box-shadow 0.4s var(--ease-out);
     }
-    .podcast-card {
-      background: var(--bg-secondary);
-      border: 1px solid var(--border-subtle);
-      border-radius: 16px;
-      padding: 2rem;
+    .podcast-art-card:hover {
+      transform: translateY(-8px) rotate(-1deg);
+      box-shadow: 0 30px 80px rgba(230,0,0,0.35);
+    }
+
+    .podcast-art-icon {
+      font-size: 4.5rem;
+      margin-bottom: 1.2rem;
+      display: inline-block;
+      filter: drop-shadow(0 10px 20px rgba(230,0,0,0.4));
+    }
+    .podcast-art-title {
+      font-family: var(--f-display);
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      letter-spacing: 1px;
+      line-height: 1.2;
+      text-transform: uppercase;
+    }
+    .podcast-art-sub {
+      font-family: var(--f-display);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--red-mid);
+      text-transform: uppercase;
+      margin-top: 0.6rem;
+    }
+
+    .podcast-hero-stats {
       display: flex;
-      gap: 1.5rem;
-      align-items: flex-start;
-      transition: transform 0.3s, box-shadow 0.3s;
-      cursor: pointer;
+      gap: 2rem;
+      margin-top: 2.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--ink-10);
     }
-    .podcast-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+    .p-stat-item {
+      display: flex;
+      flex-direction: column;
     }
-    .podcast-num {
-      font-size: 2.5rem;
-      font-weight: 900;
-      color: var(--accent);
-      opacity: 0.4;
-      min-width: 60px;
+    .p-stat-num {
+      font-family: var(--f-display);
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--ink);
       line-height: 1;
     }
-    .podcast-meta {
-      font-size: 0.78rem;
-      color: var(--ink-40);
-      margin-bottom: 0.5rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-    .podcast-title {
-      font-size: 1.1rem;
-      font-weight: 700;
-      line-height: 1.4;
-      margin-bottom: 0.6rem;
-      text-transform: uppercase;
-    }
-    .podcast-desc {
-      font-size: 0.88rem;
+    .p-stat-num span { color: var(--red); }
+    .p-stat-lbl {
+      font-size: 0.75rem;
+      font-weight: 600;
       color: var(--ink-60);
-      line-height: 1.7;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-top: 0.3rem;
     }
-    .podcast-platforms {
+
+    /* Platform Badges */
+    .platform-wrap {
       display: flex;
-      gap: 1rem;
+      gap: 0.8rem;
       flex-wrap: wrap;
       margin-top: 2rem;
     }
-    .platform-btn {
+    .platform-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.7rem 1.3rem;
+      background: var(--white);
+      border: 1.5px solid var(--ink-10);
+      border-radius: var(--r-pill);
+      color: var(--ink);
+      font-family: var(--f-display);
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-decoration: none;
+      letter-spacing: 0.5px;
+      transition: all 0.3s var(--ease-out);
+      box-shadow: var(--shadow-xs);
+    }
+    .platform-chip:hover {
+      border-color: var(--red);
+      color: var(--red);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(230,0,0,0.15);
+    }
+
+    /* Search & Filter Toolbar */
+    .podcast-toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+      padding: 1.5rem 2rem;
+      background: var(--off-white);
+      border: 1.5px solid var(--ink-10);
+      border-radius: var(--r-lg);
+    }
+    .filter-pills {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+    .filter-btn {
+      padding: 0.55rem 1.2rem;
+      background: var(--white);
+      border: 1px solid var(--ink-10);
+      border-radius: var(--r-pill);
+      font-family: var(--f-display);
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--ink-60);
+      cursor: pointer;
+      transition: all 0.25s var(--ease-out);
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--ink);
+      color: #FFFFFF;
+      border-color: var(--ink);
+    }
+    .filter-btn.active {
+      background: var(--red);
+      border-color: var(--red);
+    }
+
+    .search-box-wrap {
+      position: relative;
+      min-width: 280px;
+    }
+    .search-box-wrap i {
+      position: absolute;
+      left: 1.2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--ink-60);
+      font-size: 0.9rem;
+    }
+    .search-input {
+      width: 100%;
+      padding: 0.65rem 1rem 0.65rem 2.8rem;
+      background: var(--white);
+      border: 1px solid var(--ink-10);
+      border-radius: var(--r-pill);
+      font-family: var(--f-body);
+      font-size: 0.85rem;
+      color: var(--ink);
+      outline: none;
+      transition: border-color 0.25s;
+    }
+    .search-input:focus {
+      border-color: var(--red);
+    }
+
+    /* Episode Cards Grid */
+    .episodes-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+    }
+    .ep-card {
+      background: var(--white);
+      border: 1.5px solid var(--ink-10);
+      border-radius: var(--r-lg);
+      padding: 2rem;
+      transition: all 0.35s var(--ease-out);
+      position: relative;
+      overflow: hidden;
+    }
+    .ep-card:hover {
+      border-color: var(--red);
+      box-shadow: 0 16px 40px rgba(230,0,0,0.1);
+      transform: translateY(-3px);
+    }
+    .ep-card.active-playing {
+      border-color: var(--red);
+      background: rgba(230,0,0,0.02);
+      box-shadow: 0 16px 40px rgba(230,0,0,0.15);
+    }
+
+    .ep-header {
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+    }
+    .ep-play-btn {
+      width: 54px;
+      height: 54px;
+      min-width: 54px;
+      background: var(--red);
+      color: #FFFFFF;
+      border-radius: 50%;
       display: flex;
       align-items: center;
-      gap: 0.5rem;
-      padding: 0.8rem 1.5rem;
-      background: var(--bg-secondary);
-      border: 1px solid var(--border-subtle);
-      border-radius: 8px;
-      color: var(--ink-80);
-      font-size: 0.85rem;
+      justify-content: center;
+      font-size: 1.2rem;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s var(--ease-out);
+      box-shadow: 0 6px 20px rgba(230,0,0,0.3);
+    }
+    .ep-play-btn:hover {
+      transform: scale(1.08);
+      background: #cc0000;
+      box-shadow: 0 10px 25px rgba(230,0,0,0.45);
+    }
+
+    .ep-body { flex: 1; }
+    .ep-meta-row {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 0.6rem;
+      flex-wrap: wrap;
+    }
+    .ep-num-badge {
+      font-family: var(--f-display);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      padding: 0.25rem 0.65rem;
+      background: var(--ink);
+      color: #FFFFFF;
+      border-radius: var(--r-sm);
+      text-transform: uppercase;
+    }
+    .ep-cat-badge {
+      font-family: var(--f-display);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      padding: 0.25rem 0.65rem;
+      background: var(--red-pale);
+      color: var(--red);
+      border-radius: var(--r-sm);
+      text-transform: uppercase;
+    }
+    .ep-date {
+      font-size: 0.78rem;
+      color: var(--ink-60);
       font-weight: 600;
-      text-decoration: none;
-      transition: all 0.2s;
     }
-    .platform-btn:hover {
-      border-color: var(--accent);
-      color: var(--accent);
+
+    .ep-title {
+      font-family: var(--f-display);
+      font-size: 1.35rem;
+      font-weight: 800;
+      line-height: 1.3;
+      color: var(--ink);
+      margin-bottom: 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
     }
-    .play-btn {
+    .ep-desc {
+      font-size: 0.95rem;
+      color: var(--ink-60);
+      line-height: 1.65;
+      margin-bottom: 1.2rem;
+    }
+
+    /* Animated Waveform Equalizer */
+    .ep-waveform {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      height: 28px;
+      margin-top: 1rem;
+    }
+    .eq-bar {
+      width: 4px;
+      height: 8px;
+      background: var(--red);
+      border-radius: 2px;
+      opacity: 0.3;
+      transition: height 0.2s;
+    }
+    .ep-card.active-playing .eq-bar {
+      opacity: 1;
+      animation: eqBarPulse 0.7s ease-in-out infinite alternate;
+    }
+    .ep-card.active-playing .eq-bar:nth-child(2n) { animation-delay: 0.15s; }
+    .ep-card.active-playing .eq-bar:nth-child(3n) { animation-delay: 0.3s; }
+    .ep-card.active-playing .eq-bar:nth-child(4n) { animation-delay: 0.45s; }
+
+    @keyframes eqBarPulse {
+      0% { height: 6px; }
+      100% { height: 26px; }
+    }
+
+    /* Show Notes Drawer */
+    .ep-drawer-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: transparent;
+      border: none;
+      font-family: var(--f-display);
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--red);
+      cursor: pointer;
+      padding: 0;
+      margin-top: 0.8rem;
+      letter-spacing: 0.5px;
+    }
+    .ep-drawer-btn i { transition: transform 0.3s; }
+    .ep-drawer-btn.open i { transform: rotate(180deg); }
+
+    .ep-drawer-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s var(--ease-out), padding 0.3s;
+      background: var(--off-white);
+      border-radius: var(--r-md);
+      margin-top: 0;
+    }
+    .ep-drawer-content.open {
+      max-height: 500px;
+      padding: 1.4rem;
+      margin-top: 1.2rem;
+      border: 1px solid var(--ink-10);
+    }
+    .timestamps-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-top: 0.8rem;
+    }
+    .ts-item {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-size: 0.85rem;
+      color: var(--ink-60);
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+    .ts-item:hover { color: var(--red); }
+    .ts-time {
+      font-family: var(--f-display);
+      font-weight: 700;
+      color: var(--ink);
+      background: var(--white);
+      padding: 0.15rem 0.5rem;
+      border-radius: var(--r-sm);
+      border: 1px solid var(--ink-10);
+      font-size: 0.75rem;
+    }
+
+    /* Sticky Audio Player Dock */
+    .sticky-player-dock {
+      position: fixed;
+      bottom: -120px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 3rem);
+      max-width: 1200px;
+      background: rgba(10, 10, 10, 0.96);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1.5px solid var(--red);
+      border-radius: var(--r-pill);
+      padding: 0.8rem 1.8rem;
+      z-index: 99990;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 30px rgba(230,0,0,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      transition: bottom 0.5s var(--ease-out);
+    }
+    .sticky-player-dock.visible {
+      bottom: 1.5rem;
+    }
+
+    .sp-track-info {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      min-width: 240px;
+    }
+    .sp-thumb {
       width: 44px;
       height: 44px;
-      min-width: 44px;
-      background: var(--accent);
+      background: var(--red);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      color: #FFFFFF;
+      flex-shrink: 0;
+    }
+    .sp-details {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .sp-ep {
+      font-family: var(--f-display);
+      font-size: 0.65rem;
+      font-weight: 800;
+      color: var(--red-mid);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .sp-title {
+      font-family: var(--f-display);
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 260px;
+    }
+
+    .sp-controls {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      flex: 1;
+      max-width: 500px;
+    }
+    .sp-btn {
+      background: none;
+      border: none;
+      color: #FFFFFF;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: color 0.2s, transform 0.2s;
+    }
+    .sp-btn:hover { color: var(--red); transform: scale(1.1); }
+    .sp-play-main {
+      width: 40px;
+      height: 40px;
+      background: var(--red);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 1rem;
-      margin-top: 0.5rem;
-      flex-shrink: 0;
-      cursor: pointer;
-      transition: transform 0.2s, box-shadow 0.2s;
     }
-    .play-btn:hover {
-      transform: scale(1.1);
-      box-shadow: 0 8px 25px rgba(224,30,60,0.4);
-    }
-    .waveform {
+
+    .sp-progress-wrap {
       display: flex;
       align-items: center;
-      gap: 3px;
-      height: 24px;
-      margin-top: 1rem;
+      gap: 0.8rem;
+      width: 100%;
     }
-    .wave-bar {
-      width: 3px;
-      background: var(--accent);
-      border-radius: 2px;
-      opacity: 0.4;
+    .sp-time {
+      font-family: var(--f-display);
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.7);
+      min-width: 38px;
     }
-    .wave-bar:nth-child(odd) { opacity: 0.7; }
+    .sp-scrubber {
+      flex: 1;
+      height: 6px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 3px;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+    .sp-scrubber-fill {
+      height: 100%;
+      width: 0%;
+      background: var(--red);
+      border-radius: 3px;
+      transition: width 0.1s linear;
+    }
+
+    .sp-volume-wrap {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: #FFFFFF;
+    }
+    .sp-vol-slider {
+      width: 70px;
+      accent-color: var(--red);
+      cursor: pointer;
+    }
+
+    .sp-close {
+      background: none;
+      border: none;
+      color: rgba(255,255,255,0.5);
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: color 0.2s;
+      padding: 0 0.4rem;
+    }
+    .sp-close:hover { color: #FFFFFF; }
+
+    /* Hosts & Guests Cards */
+    .hosts-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .host-card {
+      background: var(--white);
+      border: 1.5px solid var(--ink-10);
+      border-radius: var(--r-lg);
+      padding: 2.2rem 1.8rem;
+      text-align: center;
+      transition: all 0.35s var(--ease-out);
+    }
+    .host-card:hover {
+      border-color: var(--red);
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(230,0,0,0.12);
+    }
+    .host-avatar {
+      width: 84px;
+      height: 84px;
+      border-radius: 50%;
+      background: var(--surface);
+      margin: 0 auto 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      border: 2px solid var(--red);
+    }
+    .host-name {
+      font-family: var(--f-display);
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--ink);
+      margin-bottom: 0.3rem;
+      text-transform: uppercase;
+    }
+    .host-role {
+      font-family: var(--f-display);
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--red);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 0.8rem;
+    }
+    .host-bio {
+      font-size: 0.88rem;
+      color: var(--ink-60);
+      line-height: 1.6;
+    }
+
+    /* Guest Form Card */
+    .guest-form-card {
+      background: var(--ink);
+      color: #FFFFFF;
+      border-radius: var(--r-lg);
+      padding: 4rem 3rem;
+      position: relative;
+      overflow: hidden;
+      border: 1.5px solid rgba(230,0,0,0.3);
+      box-shadow: var(--shadow-red);
+    }
+    .guest-form-card input, .guest-form-card textarea {
+      width: 100%;
+      padding: 0.9rem 1.2rem;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: var(--r-sm);
+      color: #FFFFFF;
+      font-family: var(--f-body);
+      font-size: 0.9rem;
+      outline: none;
+      transition: border-color 0.25s;
+    }
+    .guest-form-card input:focus, .guest-form-card textarea:focus {
+      border-color: var(--red);
+    }
+
+    /* Toast Notification */
+    #toast-msg {
+      position: fixed;
+      top: 100px;
+      right: 20px;
+      background: var(--ink);
+      color: #FFFFFF;
+      border: 1.5px solid var(--red);
+      padding: 1rem 1.5rem;
+      border-radius: var(--r-md);
+      box-shadow: var(--shadow-red);
+      font-family: var(--f-display);
+      font-size: 0.85rem;
+      font-weight: 700;
+      z-index: 100000;
+      opacity: 0;
+      transform: translateY(-20px);
+      transition: all 0.4s var(--ease-out);
+      pointer-events: none;
+    }
+    #toast-msg.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
   </style>
 </head>
 <body>
 <!-- ─── CUSTOM CURSOR ─── -->
 <div id="cursor-dot"></div>
 <div id="cursor-ring">
-  <span class="ring-label" id="cursor-label">VIEW</span>
+  <span class="ring-label" id="cursor-label">LISTEN</span>
 </div>
 
 <!-- ─── PRELOADER ─── -->
@@ -137,6 +702,9 @@
   <div class="pl-percent" id="pl-percent">0%</div>
 </div>
 
+<!-- ─── TOAST NOTIFICATION ─── -->
+<div id="toast-msg">Application received! Our team will contact you soon.</div>
+
 <!-- ─── HEADER ─── -->
 <header class="site-header" id="site-header">
   <div class="header-wrap">
@@ -144,7 +712,7 @@
       <img src="images/rydon-logo.png" alt="Rydon Digital" class="logo-img" />
     </a>
 
-        <nav class="site-nav">
+    <nav class="site-nav">
       <div class="nav-item"><a href="index.html" class="nav-link">Home</a></div>
       <div class="nav-item"><a href="about.html" class="nav-link">About</a></div>
       <div class="nav-item">
@@ -176,10 +744,10 @@
         </div>
       </div>
       <div class="nav-item">
-        <a href="blogs.html" class="nav-link active">More ↓</a>
+        <a href="podcast.html" class="nav-link active">More ↓</a>
         <div class="dropdown-menu">
           <a href="blogs.html" class="dd-item"><span class="dd-title">Blogs &amp; Insights</span><span class="dd-sub">Digital marketing &amp; SEO articles</span></a>
-          <a href="podcast.html" class="dd-item"><span class="dd-title">Podcast</span><span class="dd-sub">The Rydon Digital Show</span></a>
+          <a href="podcast.html" class="dd-item"><span class="dd-title" style="color: var(--red);">Podcast</span><span class="dd-sub">The Rydon Digital Show</span></a>
           <a href="career.html" class="dd-item"><span class="dd-title">Career</span><span class="dd-sub">Join our growing agency team</span></a>
         </div>
       </div>
@@ -203,221 +771,499 @@
   <a href="our-clients.html" class="nav-link">Our Clients</a>
   <a href="portfolio.html" class="nav-link">Portfolio</a>
   <a href="career.html" class="nav-link">Career</a>
-  <a href="blogs.html" class="nav-link active">Blogs</a>
-  <a href="contact.html" class="nav-link">Contact Us</a>
+  <a href="blogs.html" class="nav-link">Blogs</a>
   <a href="podcast.html" class="nav-link active">Podcast</a>
+  <a href="contact.html" class="nav-link">Contact Us</a>
 </div>
+
 <main>
-    <!-- HERO - PODCAST FEATURED -->
-    <section class="section-spacing" style="padding-top: 140px;">
-      <div class="container">
-        <div class="intro-grid reveal" style="align-items: center;">
-          <div>
-            <div class="breadcrumbs-wrap" style="margin-bottom: 1.5rem;">
-              <a href="index.html">HOME</a><span class="separator">/</span>
-              <span class="current">PODCAST</span>
-            </div>
-            <div class="section-tag">THE RYDON DIGITAL SHOW</div>
-            <h1 class="inner-hero-title" style="font-size: clamp(2.5rem, 5vw, 4.5rem);">
-              REAL TALK ON<br />DIGITAL GROWTH<br /><span class="text-gradient">& MARKETING.</span>
-            </h1>
-            <p class="intro-body" style="margin-top: 1.5rem;">In-depth conversations with founders, marketers, and digital experts on building businesses, growing brands online, and navigating the ever-changing world of digital marketing.</p>
+  <!-- HERO SECTION -->
+  <section class="inner-hero">
+    <div class="container">
+      <div class="podcast-hero-grid reveal">
+        <div>
+          <div class="breadcrumbs-wrap">
+            <a href="index.html">HOME</a><span class="separator">/</span>
+            <span class="current">PODCAST</span>
+          </div>
+          <div class="section-tag">THE RYDON DIGITAL SHOW</div>
+          <h1 class="inner-hero-title">
+            REAL TALK ON<br />DIGITAL GROWTH<br /><span class="em-red">& MARKETING.</span>
+          </h1>
+          <p class="inner-hero-desc">
+            In-depth conversations with founders, marketers, and digital experts on building businesses, growing brands online, and navigating SEO, NFC tech, and modern growth strategies in India.
+          </p>
 
-            <div class="podcast-platforms">
-              <a href="#" class="platform-btn"><span>🎵</span> Spotify</a>
-              <a href="#" class="platform-btn"><span>🎙️</span> Apple Podcasts</a>
-              <a href="#" class="platform-btn"><span>▶️</span> YouTube</a>
-              <a href="#" class="platform-btn"><span>☁️</span> SoundCloud</a>
-            </div>
+          <!-- Platforms -->
+          <div class="platform-wrap">
+            <a href="https://spotify.com" target="_blank" rel="noopener" class="platform-chip" data-cursor="SPOTIFY">
+              <i class="fa-brands fa-spotify" style="color: #1DB954; font-size: 1.1rem;"></i> Spotify
+            </a>
+            <a href="https://apple.com/apple-podcasts/" target="_blank" rel="noopener" class="platform-chip" data-cursor="APPLE">
+              <i class="fa-solid fa-podcast" style="color: #9933FF; font-size: 1.1rem;"></i> Apple Podcasts
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener" class="platform-chip" data-cursor="YOUTUBE">
+              <i class="fa-brands fa-youtube" style="color: #FF0000; font-size: 1.1rem;"></i> YouTube
+            </a>
+            <a href="https://soundcloud.com" target="_blank" rel="noopener" class="platform-chip" data-cursor="SOUNDCLOUD">
+              <i class="fa-brands fa-soundcloud" style="color: #FF5500; font-size: 1.1rem;"></i> SoundCloud
+            </a>
           </div>
 
-          <div style="display: flex; justify-content: center;">
-            <div style="position: relative; width: fit-content;">
-              <div style="width: 300px; height: 300px; background: linear-gradient(135deg, var(--accent), #8B0000); border-radius: 24px; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 30px 80px rgba(224,30,60,0.35);">
-                <div style="font-size: 5rem; margin-bottom: 1rem;">🎙️</div>
-                <div style="font-size: 1.1rem; font-weight: 900; color: white; letter-spacing: 0.05em; text-align: center; line-height: 1.3;">RYDON<br/>DIGITAL<br/>SHOW</div>
-                <div style="margin-top: 1rem; opacity: 0.7; font-size: 0.75rem; color: white; letter-spacing: 0.1em;">EPISODE · PODCAST · INSIGHTS</div>
-              </div>
-              <!-- Animated audio bars -->
-              <div style="position: absolute; bottom: -20px; left: 50%; transform: translateX(-50%); display: flex; gap: 4px; align-items: flex-end;">
-                <div style="width: 4px; height: 20px; background: var(--accent); border-radius: 2px; animation: audioBar 0.6s ease-in-out infinite alternate;"></div>
-                <div style="width: 4px; height: 35px; background: var(--accent); border-radius: 2px; animation: audioBar 0.8s ease-in-out infinite alternate 0.1s;"></div>
-                <div style="width: 4px; height: 15px; background: var(--accent); border-radius: 2px; animation: audioBar 0.5s ease-in-out infinite alternate 0.2s;"></div>
-                <div style="width: 4px; height: 28px; background: var(--accent); border-radius: 2px; animation: audioBar 0.7s ease-in-out infinite alternate 0.15s;"></div>
-                <div style="width: 4px; height: 40px; background: var(--accent); border-radius: 2px; animation: audioBar 0.9s ease-in-out infinite alternate 0.05s;"></div>
-                <div style="width: 4px; height: 22px; background: var(--accent); border-radius: 2px; animation: audioBar 0.65s ease-in-out infinite alternate 0.25s;"></div>
-                <div style="width: 4px; height: 30px; background: var(--accent); border-radius: 2px; animation: audioBar 0.75s ease-in-out infinite alternate 0.1s;"></div>
-              </div>
+          <!-- Hero Stats -->
+          <div class="podcast-hero-stats">
+            <div class="p-stat-item">
+              <div class="p-stat-num">06<span>+</span></div>
+              <div class="p-stat-lbl">Episodes Live</div>
+            </div>
+            <div class="p-stat-item">
+              <div class="p-stat-num">50K<span>+</span></div>
+              <div class="p-stat-lbl">Total Listens</div>
+            </div>
+            <div class="p-stat-item">
+              <div class="p-stat-num">4.9<span>★</span></div>
+              <div class="p-stat-lbl">Show Rating</div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
 
-    <style>
-      @keyframes audioBar {
-        from { transform: scaleY(0.4); }
-        to { transform: scaleY(1); }
-      }
-    </style>
-
-    <!-- LATEST EPISODES -->
-    <section class="section-spacing" style="background: var(--bg-secondary); border-top: 1px solid var(--border-subtle);">
-      <div class="container">
-        <div class="section-tag">LATEST EPISODES</div>
-        <h2 style="font-size: 3rem; margin-bottom: 3rem;">FRESH FROM THE <span class="text-gradient">STUDIO</span></h2>
-
-        <div style="display: flex; flex-direction: column; gap: 1.5rem;" class="reveal">
-
-          <div class="podcast-card" data-cursor="LISTEN">
-            <div>
-              <div class="play-btn">▶</div>
+        <!-- 3D Art Card -->
+        <div style="display: flex; justify-content: center;">
+          <div class="podcast-art-card" data-cursor="SHOW">
+            <div class="podcast-art-icon">🎙️</div>
+            <div class="podcast-art-title">THE RYDON<br />DIGITAL SHOW</div>
+            <div class="podcast-art-sub">STRATEGY · SEO · GROWTH</div>
+            
+            <div class="ep-waveform" style="justify-content: center; margin-top: 1.5rem;">
+              <div class="eq-bar" style="height: 12px; animation: eqBarPulse 0.6s infinite alternate;"></div>
+              <div class="eq-bar" style="height: 22px; animation: eqBarPulse 0.8s infinite alternate 0.1s;"></div>
+              <div class="eq-bar" style="height: 16px; animation: eqBarPulse 0.5s infinite alternate 0.2s;"></div>
+              <div class="eq-bar" style="height: 26px; animation: eqBarPulse 0.7s infinite alternate 0.15s;"></div>
+              <div class="eq-bar" style="height: 14px; animation: eqBarPulse 0.65s infinite alternate 0.25s;"></div>
+              <div class="eq-bar" style="height: 20px; animation: eqBarPulse 0.75s infinite alternate 0.05s;"></div>
             </div>
-            <div style="flex: 1;">
-              <div class="podcast-meta">EP 06 · AUG 2026 · 48 MIN</div>
-              <div class="podcast-title">How NFC Technology is Transforming Business Networking in India</div>
-              <p class="podcast-desc">We discuss how NFC smart products are replacing traditional business cards, boosting Google reviews, and helping Indian businesses compete globally. A deep-dive into the future of contactless commerce.</p>
-              <div class="waveform">
-                <div class="wave-bar" style="height: 8px;"></div>
-                <div class="wave-bar" style="height: 18px;"></div>
-                <div class="wave-bar" style="height: 12px;"></div>
-                <div class="wave-bar" style="height: 22px;"></div>
-                <div class="wave-bar" style="height: 10px;"></div>
-                <div class="wave-bar" style="height: 20px;"></div>
-                <div class="wave-bar" style="height: 15px;"></div>
-                <div class="wave-bar" style="height: 24px;"></div>
-                <div class="wave-bar" style="height: 8px;"></div>
-                <div class="wave-bar" style="height: 18px;"></div>
-                <div class="wave-bar" style="height: 12px;"></div>
-                <div class="wave-bar" style="height: 20px;"></div>
-                <div class="wave-bar" style="height: 16px;"></div>
-                <div class="wave-bar" style="height: 22px;"></div>
-                <div class="wave-bar" style="height: 10px;"></div>
-              </div>
-            </div>
-            <div class="podcast-num">06</div>
           </div>
-
-          <div class="podcast-card" data-cursor="LISTEN">
-            <div>
-              <div class="play-btn">▶</div>
-            </div>
-            <div style="flex: 1;">
-              <div class="podcast-meta">EP 05 · JUL 2026 · 52 MIN</div>
-              <div class="podcast-title">Local SEO Secrets: Dominating Google Rankings for Udaipur Businesses</div>
-              <p class="podcast-desc">Everything you need to know about dominating local Google search results in Udaipur, Rajasthan, and beyond. From Google Business Profile to backlink strategies for regional markets.</p>
-            </div>
-            <div class="podcast-num">05</div>
-          </div>
-
-          <div class="podcast-card" data-cursor="LISTEN">
-            <div>
-              <div class="play-btn">▶</div>
-            </div>
-            <div style="flex: 1;">
-              <div class="podcast-meta">EP 04 · JUL 2026 · 38 MIN</div>
-              <div class="podcast-title">Social Media Marketing in 2026: What's Working & What's Dead</div>
-              <p class="podcast-desc">Our digital marketing experts break down the current state of social media marketing — from Instagram Reels to LinkedIn B2B strategies, and what Indian businesses should focus on this year.</p>
-            </div>
-            <div class="podcast-num">04</div>
-          </div>
-
-          <div class="podcast-card" data-cursor="LISTEN">
-            <div>
-              <div class="play-btn">▶</div>
-            </div>
-            <div style="flex: 1;">
-              <div class="podcast-meta">EP 03 · JUN 2026 · 44 MIN</div>
-              <div class="podcast-title">Building a Brand from Zero: Lessons from Scaling Rydon Digital</div>
-              <p class="podcast-desc">The founders share the behind-the-scenes journey of building Rydon Digital from a solo venture into a multi-city agency with offices in Udaipur, Ahmedabad, and Gandhinagar.</p>
-            </div>
-            <div class="podcast-num">03</div>
-          </div>
-
-          <div class="podcast-card" data-cursor="LISTEN">
-            <div>
-              <div class="play-btn">▶</div>
-            </div>
-            <div style="flex: 1;">
-              <div class="podcast-meta">EP 02 · JUN 2026 · 41 MIN</div>
-              <div class="podcast-title">Google Ads vs Meta Ads: Where Should You Spend Your Budget?</div>
-              <p class="podcast-desc">A head-to-head comparison of Google Ads and Facebook/Instagram Ads for Indian businesses. We break down cost, targeting, ROI, and which platform wins for different business types.</p>
-            </div>
-            <div class="podcast-num">02</div>
-          </div>
-
-          <div class="podcast-card" data-cursor="LISTEN">
-            <div>
-              <div class="play-btn">▶</div>
-            </div>
-            <div style="flex: 1;">
-              <div class="podcast-meta">EP 01 · MAY 2026 · 35 MIN</div>
-              <div class="podcast-title">Why Every Business Needs a Digital Strategy in 2026</div>
-              <p class="podcast-desc">The debut episode of the Rydon Digital Show. We explore why digital transformation is no longer optional for Indian businesses and lay out a roadmap for businesses starting from scratch.</p>
-            </div>
-            <div class="podcast-num">01</div>
-          </div>
-
         </div>
-      </div>
-    </section>
-
-    <!-- SUBSCRIBE / PLATFORMS -->
-    <section class="section-spacing">
-      <div class="container reveal" style="text-align: center;">
-        <div class="section-tag">SUBSCRIBE</div>
-        <h2 style="font-size: 3rem; margin-bottom: 1rem;">LISTEN ON YOUR<br /><span class="text-gradient">FAVOURITE PLATFORM.</span></h2>
-        <p style="color: var(--ink-60); font-size: 1rem; margin-bottom: 2.5rem; max-width: 550px; margin-left: auto; margin-right: auto;">Never miss an episode. Subscribe to The Rydon Digital Show on any platform and get new episodes every two weeks.</p>
-        <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;">
-          <a href="#" class="platform-btn" style="padding: 1rem 2rem; font-size: 1rem;"><span>🎵</span> Listen on Spotify</a>
-          <a href="#" class="platform-btn" style="padding: 1rem 2rem; font-size: 1rem;"><span>🎙️</span> Apple Podcasts</a>
-          <a href="#" class="platform-btn" style="padding: 1rem 2rem; font-size: 1rem;"><span>▶️</span> Watch on YouTube</a>
-          <a href="#" class="platform-btn" style="padding: 1rem 2rem; font-size: 1rem;"><span>☁️</span> SoundCloud</a>
-          <a href="#" class="platform-btn" style="padding: 1rem 2rem; font-size: 1rem;"><span>🎧</span> Google Podcasts</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- GUEST ON THE SHOW CTA -->
-    <section class="cta-section">
-  <div class="cta-card reveal">
-    <div class="cta-wrap">
-      <div class="cta-pill">
-        <span class="live-dot"></span> NOW BOOKING Q3/Q4 TRANSFORMATIONS
-      </div>
-
-      <h2 class="cta-headline">
-        READY TO<br/>
-        <span class="em-red">DOMINATE</span><br/>
-        <span class="em-outline">YOUR MARKET?</span>
-      </h2>
-
-      <p class="cta-sub">
-        Let's engineer an extraordinary digital presence for your brand.
-        Turn customer attention into measurable commercial revenue.
-      </p>
-
-      <div class="cta-row">
-        <a href="contact.html" class="btn-red" style="padding: 1.1rem 2.8rem; font-size: .85rem;" data-cursor="TALK">
-          Start a Project ↗
-        </a>
-        <a href="tel:+918306241815" class="btn-ghost" style="padding: 1.1rem 2.8rem; font-size: .85rem;" data-cursor="CALL">
-          +91 83062 41815 📞
-        </a>
-      </div>
-
-      <div class="cta-hubs">
-        <div>UDAIPUR <span>●</span></div>
-        <div>AHMEDABAD <span>●</span></div>
-        <div>GANDHINAGAR <span>●</span></div>
       </div>
     </div>
+  </section>
+
+  <!-- EPISODES SECTION -->
+  <section class="section-spacing">
+    <div class="container">
+      <div class="section-tag">LATEST EPISODES</div>
+      <h2 style="font-size: clamp(2.2rem, 4vw, 3.5rem); font-family: var(--f-display); text-transform: uppercase; font-weight: 800; margin-bottom: 2rem;">
+        FRESH FROM THE <span class="em-red">STUDIO</span>
+      </h2>
+
+      <!-- Search & Filter Toolbar -->
+      <div class="podcast-toolbar reveal">
+        <div class="filter-pills">
+          <button class="filter-btn active" data-filter="all">All Episodes</button>
+          <button class="filter-btn" data-filter="nfc">NFC Tech</button>
+          <button class="filter-btn" data-filter="seo">SEO & Local</button>
+          <button class="filter-btn" data-filter="social">Social Media</button>
+          <button class="filter-btn" data-filter="growth">Agency Growth</button>
+          <button class="filter-btn" data-filter="ads">Paid Ads</button>
+        </div>
+
+        <div class="search-box-wrap">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="episode-search" class="search-input" placeholder="Search episodes or topics..." />
+        </div>
+      </div>
+
+      <!-- Episode List Grid -->
+      <div class="episodes-list reveal" id="episodes-container">
+
+        <!-- EP 06 -->
+        <article class="ep-card" data-category="nfc" data-title="nfc technology business networking india" data-cursor="LISTEN">
+          <div class="ep-header">
+            <button class="ep-play-btn" data-ep="6" data-title="How NFC Technology is Transforming Business Networking in India" data-audio="ep6" aria-label="Play Episode 06">
+              <i class="fa-solid fa-play"></i>
+            </button>
+
+            <div class="ep-body">
+              <div class="ep-meta-row">
+                <span class="ep-num-badge">EP 06</span>
+                <span class="ep-cat-badge">NFC TECH</span>
+                <span class="ep-date">AUG 2026 · 48 MIN</span>
+              </div>
+              <h3 class="ep-title">How NFC Technology is Transforming Business Networking in India</h3>
+              <p class="ep-desc">We discuss how NFC smart products are replacing traditional business cards, boosting Google reviews, and helping Indian businesses compete globally. A deep-dive into contactless cards, Google review stands, and tap-to-connect tech.</p>
+
+              <div class="ep-waveform">
+                <div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div>
+                <div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div>
+                <div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div>
+                <div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div>
+              </div>
+
+              <button class="ep-drawer-btn" onclick="toggleDrawer('drawer-6', this)">
+                <span>Show Notes & Timestamps</span> <i class="fa-solid fa-chevron-down"></i>
+              </button>
+
+              <div class="ep-drawer-content" id="drawer-6">
+                <strong>Episode Summary:</strong>
+                <p style="font-size: 0.88rem; color: var(--ink-60); margin-top: 0.4rem; line-height: 1.6;">
+                  In this episode, we invite lead product designers to explore how NFC cards eliminate paper waste and enable instant digital lead capture for retail stores and agencies across India.
+                </p>
+                <div class="timestamps-list">
+                  <div class="ts-item"><span class="ts-time">00:00</span> Introduction & NFC Market Growth in India</div>
+                  <div class="ts-item"><span class="ts-time">12:30</span> Smart NFC Cards vs Paper Business Cards ROI</div>
+                  <div class="ts-item"><span class="ts-time">26:45</span> How Google Review Tap Plates Increase Star Ratings</div>
+                  <div class="ts-item"><span class="ts-time">41:10</span> Q&A with Udaipur Retail Owners</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- EP 05 -->
+        <article class="ep-card" data-category="seo" data-title="local seo secrets dominating google rankings udaipur" data-cursor="LISTEN">
+          <div class="ep-header">
+            <button class="ep-play-btn" data-ep="5" data-title="Local SEO Secrets: Dominating Google Rankings for Udaipur Businesses" data-audio="ep5" aria-label="Play Episode 05">
+              <i class="fa-solid fa-play"></i>
+            </button>
+
+            <div class="ep-body">
+              <div class="ep-meta-row">
+                <span class="ep-num-badge">EP 05</span>
+                <span class="ep-cat-badge">SEO & LOCAL</span>
+                <span class="ep-date">JUL 2026 · 52 MIN</span>
+              </div>
+              <h3 class="ep-title">Local SEO Secrets: Dominating Google Rankings for Udaipur Businesses</h3>
+              <p class="ep-desc">Everything you need to know about dominating local Google search results in Udaipur, Rajasthan, and beyond. From Google Business Profile optimization to regional backlink strategies.</p>
+
+              <div class="ep-waveform">
+                <div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div>
+                <div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div>
+                <div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div>
+              </div>
+
+              <button class="ep-drawer-btn" onclick="toggleDrawer('drawer-5', this)">
+                <span>Show Notes & Timestamps</span> <i class="fa-solid fa-chevron-down"></i>
+              </button>
+
+              <div class="ep-drawer-content" id="drawer-5">
+                <strong>Episode Summary:</strong>
+                <p style="font-size: 0.88rem; color: var(--ink-60); margin-top: 0.4rem; line-height: 1.6;">
+                  We break down exact step-by-step Local SEO tactics used by Rydon Digital to rank local hotels, clinics, and retail clients at #1 on Google Maps.
+                </p>
+                <div class="timestamps-list">
+                  <div class="ts-item"><span class="ts-time">00:00</span> Why Local SEO is King for Regional Business</div>
+                  <div class="ts-item"><span class="ts-time">14:15</span> Google Business Profile Audit & Optimization</div>
+                  <div class="ts-item"><span class="ts-time">31:00</span> Hyper-local Citations & Local Link Building</div>
+                  <div class="ts-item"><span class="ts-time">48:20</span> Case Studies: 300% Organic Traffic Growth</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- EP 04 -->
+        <article class="ep-card" data-category="social" data-title="social media marketing 2026 instagram reels b2b strategy" data-cursor="LISTEN">
+          <div class="ep-header">
+            <button class="ep-play-btn" data-ep="4" data-title="Social Media Marketing in 2026: What's Working & What's Dead" data-audio="ep4" aria-label="Play Episode 04">
+              <i class="fa-solid fa-play"></i>
+            </button>
+
+            <div class="ep-body">
+              <div class="ep-meta-row">
+                <span class="ep-num-badge">EP 04</span>
+                <span class="ep-cat-badge">SOCIAL MEDIA</span>
+                <span class="ep-date">JUL 2026 · 38 MIN</span>
+              </div>
+              <h3 class="ep-title">Social Media Marketing in 2026: What's Working & What's Dead</h3>
+              <p class="ep-desc">Our digital marketing experts break down the current state of social media — from Instagram Reels algorithms to LinkedIn B2B strategies, and what Indian brands should focus on this year.</p>
+
+              <div class="ep-waveform">
+                <div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div>
+                <div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div>
+              </div>
+
+              <button class="ep-drawer-btn" onclick="toggleDrawer('drawer-4', this)">
+                <span>Show Notes & Timestamps</span> <i class="fa-solid fa-chevron-down"></i>
+              </button>
+
+              <div class="ep-drawer-content" id="drawer-4">
+                <strong>Episode Summary:</strong>
+                <p style="font-size: 0.88rem; color: var(--ink-60); margin-top: 0.4rem; line-height: 1.6;">
+                  An honest discussion on why static post carousels are declining and how video storytelling drives real conversion for modern direct-to-consumer and B2B brands.
+                </p>
+                <div class="timestamps-list">
+                  <div class="ts-item"><span class="ts-time">00:00</span> Instagram Algorithm Changes in 2026</div>
+                  <div class="ts-item"><span class="ts-time">11:40</span> High-Hook Short Form Reel Framework</div>
+                  <div class="ts-item"><span class="ts-time">25:10</span> Building Authority on LinkedIn</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- EP 03 -->
+        <article class="ep-card" data-category="growth" data-title="building brand zero lessons scaling rydon digital udaipur ahmedabad" data-cursor="LISTEN">
+          <div class="ep-header">
+            <button class="ep-play-btn" data-ep="3" data-title="Building a Brand from Zero: Lessons from Scaling Rydon Digital" data-audio="ep3" aria-label="Play Episode 03">
+              <i class="fa-solid fa-play"></i>
+            </button>
+
+            <div class="ep-body">
+              <div class="ep-meta-row">
+                <span class="ep-num-badge">EP 03</span>
+                <span class="ep-cat-badge">AGENCY GROWTH</span>
+                <span class="ep-date">JUN 2026 · 44 MIN</span>
+              </div>
+              <h3 class="ep-title">Building a Brand from Zero: Lessons from Scaling Rydon Digital</h3>
+              <p class="ep-desc">The founders share the behind-the-scenes journey of building Rydon Digital into a multi-city agency with offices in Udaipur, Ahmedabad, and Gandhinagar.</p>
+
+              <div class="ep-waveform">
+                <div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div>
+                <div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div>
+              </div>
+
+              <button class="ep-drawer-btn" onclick="toggleDrawer('drawer-3', this)">
+                <span>Show Notes & Timestamps</span> <i class="fa-solid fa-chevron-down"></i>
+              </button>
+
+              <div class="ep-drawer-content" id="drawer-3">
+                <strong>Episode Summary:</strong>
+                <p style="font-size: 0.88rem; color: var(--ink-60); margin-top: 0.4rem; line-height: 1.6;">
+                  Founders discuss client acquisition, building internal team culture, setting up design systems, and expanding agency operations across Rajasthan and Gujarat.
+                </p>
+                <div class="timestamps-list">
+                  <div class="ts-item"><span class="ts-time">00:00</span> Founding Rydon Digital: The Vision</div>
+                  <div class="ts-item"><span class="ts-time">15:20</span> Landing First 10 Enterprise Clients</div>
+                  <div class="ts-item"><span class="ts-time">32:00</span> Scaling to Ahmedabad & Gandhinagar</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- EP 02 -->
+        <article class="ep-card" data-category="ads" data-title="google ads vs meta ads spend budget roas return" data-cursor="LISTEN">
+          <div class="ep-header">
+            <button class="ep-play-btn" data-ep="2" data-title="Google Ads vs Meta Ads: Where Should You Spend Your Budget?" data-audio="ep2" aria-label="Play Episode 02">
+              <i class="fa-solid fa-play"></i>
+            </button>
+
+            <div class="ep-body">
+              <div class="ep-meta-row">
+                <span class="ep-num-badge">EP 02</span>
+                <span class="ep-cat-badge">PAID ADS</span>
+                <span class="ep-date">JUN 2026 · 41 MIN</span>
+              </div>
+              <h3 class="ep-title">Google Ads vs Meta Ads: Where Should You Spend Your Budget?</h3>
+              <p class="ep-desc">A head-to-head comparison of Google Search/Shopping Ads and Facebook/Instagram Ads for Indian businesses. We break down CPC, targeting precision, and ROI for different industries.</p>
+
+              <div class="ep-waveform">
+                <div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div>
+                <div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div>
+              </div>
+
+              <button class="ep-drawer-btn" onclick="toggleDrawer('drawer-2', this)">
+                <span>Show Notes & Timestamps</span> <i class="fa-solid fa-chevron-down"></i>
+              </button>
+
+              <div class="ep-drawer-content" id="drawer-2">
+                <strong>Episode Summary:</strong>
+                <p style="font-size: 0.88rem; color: var(--ink-60); margin-top: 0.4rem; line-height: 1.6;">
+                  Detailed budget allocation strategies for high intent vs demand generation advertising campaigns.
+                </p>
+                <div class="timestamps-list">
+                  <div class="ts-item"><span class="ts-time">00:00</span> High Intent (Google) vs Push Discovery (Meta)</div>
+                  <div class="ts-item"><span class="ts-time">18:30</span> Budget Allocation Rules for Small vs Medium Brands</div>
+                  <div class="ts-item"><span class="ts-time">34:15</span> Conversion Tracking Best Practices</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- EP 01 -->
+        <article class="ep-card" data-category="growth" data-title="why every business needs digital strategy 2026 debut episode" data-cursor="LISTEN">
+          <div class="ep-header">
+            <button class="ep-play-btn" data-ep="1" data-title="Why Every Business Needs a Digital Strategy in 2026" data-audio="ep1" aria-label="Play Episode 01">
+              <i class="fa-solid fa-play"></i>
+            </button>
+
+            <div class="ep-body">
+              <div class="ep-meta-row">
+                <span class="ep-num-badge">EP 01</span>
+                <span class="ep-cat-badge">AGENCY GROWTH</span>
+                <span class="ep-date">MAY 2026 · 35 MIN</span>
+              </div>
+              <h3 class="ep-title">Why Every Business Needs a Digital Strategy in 2026</h3>
+              <p class="ep-desc">The debut episode of The Rydon Digital Show. We explore why digital transformation is mandatory for business survival and outline a roadmap for brands starting from scratch.</p>
+
+              <div class="ep-waveform">
+                <div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div>
+                <div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div>
+              </div>
+
+              <button class="ep-drawer-btn" onclick="toggleDrawer('drawer-1', this)">
+                <span>Show Notes & Timestamps</span> <i class="fa-solid fa-chevron-down"></i>
+              </button>
+
+              <div class="ep-drawer-content" id="drawer-1">
+                <strong>Episode Summary:</strong>
+                <p style="font-size: 0.88rem; color: var(--ink-60); margin-top: 0.4rem; line-height: 1.6;">
+                  Laying down foundational digital pillars: web engineering, local search presence, content engines, and physical-to-digital NFC bridges.
+                </p>
+                <div class="timestamps-list">
+                  <div class="ts-item"><span class="ts-time">00:00</span> Welcome to The Rydon Digital Show</div>
+                  <div class="ts-item"><span class="ts-time">10:20</span> The 4 Pillars of Modern Digital Presence</div>
+                  <div class="ts-item"><span class="ts-time">28:00</span> Actionable First Steps for Business Owners</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MEET THE HOSTS SECTION -->
+  <section class="section-spacing" style="background: var(--off-white); border-top: 1px solid var(--ink-10); border-bottom: 1px solid var(--ink-10);">
+    <div class="container reveal">
+      <div class="section-tag">THE VOICES</div>
+      <h2 style="font-size: clamp(2.2rem, 4vw, 3.5rem); font-family: var(--f-display); text-transform: uppercase; font-weight: 800; margin-bottom: 1rem;">
+        MEET THE <span class="em-red">HOSTS & GUESTS</span>
+      </h2>
+      <p style="color: var(--ink-60); font-size: 1.05rem; max-width: 600px; margin-bottom: 2rem;">
+        Bringing together agency leaders, digital strategists, and innovative entrepreneurs from across India.
+      </p>
+
+      <div class="hosts-grid">
+        <div class="host-card" data-cursor="HOST">
+          <div class="host-avatar">👨‍💼</div>
+          <h3 class="host-name">Eshban Oliver</h3>
+          <div class="host-role">Show Host & Growth Lead</div>
+          <p class="host-bio">Founder at Rydon Digital. Passionate about performance web engineering, NFC innovation, and scaling regional businesses to national prominence.</p>
+        </div>
+
+        <div class="host-card" data-cursor="HOST">
+          <div class="host-avatar">⚡</div>
+          <h3 class="host-name">Lead SEO Director</h3>
+          <div class="host-role">Co-Host & Search Strategist</div>
+          <p class="host-bio">Decoding search engine algorithms, Google Maps rank triggers, and organic funnel optimization for enterprise and local client portfolios.</p>
+        </div>
+
+        <div class="host-card" data-cursor="GUEST">
+          <div class="host-avatar">🤝</div>
+          <h3 class="host-name">Guest Industry Leaders</h3>
+          <div class="host-role">Founders & CXOs</div>
+          <p class="host-bio">Featuring guest interviews with startup founders, retail leaders, and tech pioneers sharing real, unvarnished business growth lessons.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BE A GUEST FORM SECTION -->
+  <section class="section-spacing">
+    <div class="container reveal">
+      <div class="guest-form-card">
+        <div style="max-width: 650px;">
+          <div class="section-tag" style="color: var(--red-mid);">APPLY NOW</div>
+          <h2 style="font-family: var(--f-display); font-size: clamp(2rem, 3.8vw, 3.2rem); text-transform: uppercase; font-weight: 800; line-height: 1.1; margin-bottom: 1rem;">
+            WANT TO BE A GUEST ON <span class="em-red">THE SHOW?</span>
+          </h2>
+          <p style="color: rgba(255,255,255,0.7); font-size: 1rem; margin-bottom: 2rem; line-height: 1.6;">
+            Are you a business founder, marketing strategist, or industry leader with a compelling story to share? Apply to join us in studio.
+          </p>
+
+          <form id="guest-pitch-form" onsubmit="handleGuestSubmit(event)" style="display: flex; flex-direction: column; gap: 1.2rem;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem;">
+              <input type="text" id="g-name" placeholder="Your Full Name *" required />
+              <input type="email" id="g-email" placeholder="Your Business Email *" required />
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem;">
+              <input type="text" id="g-company" placeholder="Company / Brand Name *" required />
+              <input type="url" id="g-website" placeholder="Website / LinkedIn Profile URL" />
+            </div>
+            <textarea id="g-pitch" rows="4" placeholder="What growth topic or business story would you like to discuss? *" required></textarea>
+
+            <button type="submit" class="btn-red" style="align-self: flex-start; margin-top: 0.5rem;" data-cursor="SUBMIT">
+              Submit Application ↗
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section class="cta-section">
+    <div class="cta-card reveal">
+      <div class="cta-wrap">
+        <div class="cta-pill">
+          <span class="live-dot"></span> NOW BOOKING Q3/Q4 TRANSFORMATIONS
+        </div>
+
+        <h2 class="cta-headline">
+          READY TO<br/>
+          <span class="em-red">DOMINATE</span><br/>
+          <span class="em-outline">YOUR MARKET?</span>
+        </h2>
+
+        <p class="cta-sub">
+          Let's engineer an extraordinary digital presence for your brand.
+          Turn customer attention into measurable commercial revenue.
+        </p>
+
+        <div class="cta-row">
+          <a href="contact.html" class="btn-red" style="padding: 1.1rem 2.8rem; font-size: .85rem;" data-cursor="TALK">
+            Start a Project ↗
+          </a>
+          <a href="tel:+918306241815" class="btn-ghost" style="padding: 1.1rem 2.8rem; font-size: .85rem;" data-cursor="CALL">
+            +91 83062 41815 📞
+          </a>
+        </div>
+
+        <div class="cta-hubs">
+          <div>UDAIPUR <span>●</span></div>
+          <div>AHMEDABAD <span>●</span></div>
+          <div>GANDHINAGAR <span>●</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ─── STICKY BOTTOM AUDIO PLAYER DOCK ─── -->
+<div class="sticky-player-dock" id="sticky-player">
+  <div class="sp-track-info">
+    <div class="sp-thumb" id="sp-thumb-icon">🎙️</div>
+    <div class="sp-details">
+      <div class="sp-ep" id="sp-ep-num">EPISODE 06</div>
+      <div class="sp-title" id="sp-title">Select an Episode to Play</div>
+    </div>
   </div>
-</section>
-  </main>
 
-  
+  <div class="sp-controls">
+    <button class="sp-btn sp-play-main" id="sp-play-toggle" onclick="toggleAudioPlay()" aria-label="Toggle Play Pause">
+      <i class="fa-solid fa-play"></i>
+    </button>
 
+    <div class="sp-progress-wrap">
+      <span class="sp-time" id="sp-current-time">00:00</span>
+      <div class="sp-scrubber" id="sp-scrubber-bar" onclick="seekAudio(event)">
+        <div class="sp-scrubber-fill" id="sp-progress-fill"></div>
+      </div>
+      <span class="sp-time" id="sp-duration">48:00</span>
+    </div>
+  </div>
+
+  <div class="sp-volume-wrap">
+    <i class="fa-solid fa-volume-high" id="sp-vol-icon" onclick="toggleMute()" style="cursor: pointer;"></i>
+    <input type="range" class="sp-vol-slider" id="sp-volume" min="0" max="1" step="0.05" value="0.8" oninput="setAudioVolume(this.value)" />
+    <button class="sp-close" onclick="closePlayerDock()" aria-label="Close Player">✕</button>
+  </div>
+</div>
+
+<!-- ─── FOOTER ─── -->
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-grid">
@@ -479,8 +1325,9 @@
   </div>
 </footer>
 
-<!-- ─── JS ─── -->
+<!-- ─── JAVASCRIPT SYSTEM & WEB AUDIO ENGINE ─── -->
 <script>
+/* Preloader */
 (function () {
   const bar     = document.getElementById('pl-bar');
   const pct     = document.getElementById('pl-percent');
@@ -502,6 +1349,7 @@
   }
 })();
 
+/* Custom Cursor Follower */
 (function () {
   const dot  = document.getElementById('cursor-dot');
   const ring = document.getElementById('cursor-ring');
@@ -518,11 +1366,11 @@
     dot.style.top = my + 'px'; 
   });
 
-  const interactiveSelector = '[data-cursor], a, button, .svc-row, .prod-card, .work-card, .nfc-card, .ad-card, .location-card, .why-row, .podcast-card';
+  const interactiveSelector = '[data-cursor], a, button, .ep-card, .host-card, .platform-chip';
   document.querySelectorAll(interactiveSelector).forEach(el => {
     el.addEventListener('mouseenter', () => {
       ring.classList.add('hovered');
-      if (label) label.textContent = el.getAttribute('data-cursor') || 'VIEW';
+      if (label) label.textContent = el.getAttribute('data-cursor') || 'LISTEN';
       activeHoverEl = el;
     });
     el.addEventListener('mouseleave', () => {
@@ -557,8 +1405,9 @@
   })();
 })();
 
+/* 3D Card Perspective */
 (function () {
-  const cards = document.querySelectorAll('.prod-card, .work-card, .stat-item, .process-step, .nfc-card, .ad-card, .location-card, .why-row, .podcast-card');
+  const cards = document.querySelectorAll('.ep-card, .host-card, .podcast-art-card');
   if (window.innerWidth <= 900) return;
   
   cards.forEach(card => {
@@ -568,9 +1417,9 @@
       const y = e.clientY - rect.top;
       const xc = rect.width / 2;
       const yc = rect.height / 2;
-      const angleX = (yc - y) / 14; 
-      const angleY = (x - xc) / 14;
-      card.style.transform = 'perspective(1000px) rotateX(' + angleX + 'deg) rotateY(' + angleY + 'deg) scale3d(1.02, 1.02, 1.02)';
+      const angleX = (yc - y) / 18; 
+      const angleY = (x - xc) / 18;
+      card.style.transform = 'perspective(1000px) rotateX(' + angleX + 'deg) rotateY(' + angleY + 'deg) scale3d(1.01, 1.01, 1.01)';
       card.style.transition = 'transform 0.08s ease-out';
     });
     card.addEventListener('mouseleave', () => {
@@ -580,8 +1429,9 @@
   });
 })();
 
+/* Magnetic Buttons */
 (function () {
-  const elements = document.querySelectorAll('.btn-red, .btn-ghost, .btn-primary, .btn-secondary, .btn-outline, .nav-cta, .site-logo');
+  const elements = document.querySelectorAll('.btn-red, .btn-ghost, .nav-cta, .platform-chip');
   if (window.innerWidth <= 900) return;
 
   elements.forEach(el => {
@@ -589,7 +1439,7 @@
       const rect = el.getBoundingClientRect();
       const x = e.clientX - rect.left - (rect.width / 2);
       const y = e.clientY - rect.top - (rect.height / 2);
-      el.style.transform = 'translate(' + (x * 0.3) + 'px, ' + (y * 0.3) + 'px) scale(1.02)';
+      el.style.transform = 'translate(' + (x * 0.25) + 'px, ' + (y * 0.25) + 'px) scale(1.02)';
       el.style.transition = 'transform 0.1s ease-out';
     });
     el.addEventListener('mouseleave', () => {
@@ -599,6 +1449,7 @@
   });
 })();
 
+/* Header Scroll Toggle */
 (function () {
   const h = document.getElementById('site-header');
   if (!h) return;
@@ -607,6 +1458,7 @@
   });
 })();
 
+/* Mobile Burger Menu */
 (function () {
   const btn = document.getElementById('mobile-burger');
   const ov  = document.getElementById('mobile-overlay');
@@ -623,53 +1475,282 @@
   }));
 })();
 
+/* Scroll Reveal */
 (function () {
-  const selector = '.u-reveal, .u-reveal-left, .u-reveal-right, .u-reveal-zoom, .u-reveal-flip, .u-reveal-rotate, .reveal';
-  const els = document.querySelectorAll(selector);
-  
-  els.forEach(el => {
-    const rect = el.getBoundingClientRect();
-    if (rect.top < window.innerHeight && rect.bottom > 0) {
-      el.classList.add('visible');
-      el.classList.add('active');
-    }
-  });
-
+  const els = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window) {
-    const io  = new IntersectionObserver(entries => {
-      entries.forEach(e => { 
-        if (e.isIntersecting) { 
-          e.target.classList.add('visible'); 
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
           e.target.classList.add('active');
-          io.unobserve(e.target); 
-        } 
+          io.unobserve(e.target);
+        }
       });
-    }, { rootMargin: '0px 0px -40px 0px', threshold: .05 });
+    }, { threshold: 0.05 });
     els.forEach(el => io.observe(el));
+  } else {
+    els.forEach(el => el.classList.add('visible'));
   }
 })();
 
+/* ─── EPISODE FILTER & SEARCH LOGIC ─── */
 (function () {
-  const nums = document.querySelectorAll('.stat-num[data-target]');
-  if (!nums.length) return;
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (!e.isIntersecting) return;
-      const el = e.target;
-      const target = +el.dataset.target;
-      const suffix = el.querySelector('span')?.textContent || '';
-      let n = 0;
-      const step = Math.ceil(target / 50);
-      const iv = setInterval(() => {
-        n = Math.min(n + step, target);
-        el.innerHTML = n + '<span>' + (suffix || '+') + '</span>';
-        if (n >= target) clearInterval(iv);
-      }, 30);
-      io.unobserve(el);
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const searchInput = document.getElementById('episode-search');
+  const epCards = document.querySelectorAll('.ep-card');
+
+  let currentCategory = 'all';
+  let currentSearch = '';
+
+  function applyFilters() {
+    epCards.forEach(card => {
+      const cat = card.getAttribute('data-category');
+      const text = card.getAttribute('data-title').toLowerCase();
+
+      const matchesCat = (currentCategory === 'all' || cat === currentCategory);
+      const matchesSearch = (!currentSearch || text.includes(currentSearch));
+
+      if (matchesCat && matchesSearch) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
     });
-  }, { threshold: .3 });
-  nums.forEach(n => io.observe(n));
+  }
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentCategory = btn.getAttribute('data-filter');
+      applyFilters();
+    });
+  });
+
+  if (searchInput) {
+    searchInput.addEventListener('input', e => {
+      currentSearch = e.target.value.toLowerCase().trim();
+      applyFilters();
+    });
+  }
 })();
+
+/* ─── SHOW NOTES DRAWER TOGGLE ─── */
+function toggleDrawer(id, btn) {
+  const drawer = document.getElementById(id);
+  if (!drawer) return;
+  drawer.classList.toggle('open');
+  btn.classList.toggle('open');
+}
+
+/* ─── WEB AUDIO API PLAYER ENGINE ─── */
+let audioCtx = null;
+let synthOsc = null;
+let gainNode = null;
+let isPlaying = false;
+let playTimer = null;
+let currentSeconds = 0;
+let totalDurationSeconds = 2880; // 48 mins default
+let activeEpNumber = null;
+
+const stickyDock = document.getElementById('sticky-player');
+const spTitle = document.getElementById('sp-title');
+const spEpNum = document.getElementById('sp-ep-num');
+const spToggleBtn = document.getElementById('sp-play-toggle');
+const spCurrentTimeEl = document.getElementById('sp-current-time');
+const spDurationEl = document.getElementById('sp-duration');
+const spProgressFill = document.getElementById('sp-progress-fill');
+const spVolSlider = document.getElementById('sp-volume');
+const spVolIcon = document.getElementById('sp-vol-icon');
+
+function initWebAudioEngine() {
+  if (!audioCtx) {
+    const AudioContext = window.AudioContext || window.webkitAudioContext;
+    audioCtx = new AudioContext();
+  }
+  if (audioCtx.state === 'suspended') {
+    audioCtx.resume();
+  }
+}
+
+function startSynthAudio() {
+  initWebAudioEngine();
+  stopSynthAudio();
+
+  // Create ambient podcast studio tone synthesizer
+  synthOsc = audioCtx.createOscillator();
+  gainNode = audioCtx.createGain();
+
+  synthOsc.type = 'sine';
+  synthOsc.frequency.setValueAtTime(120, audioCtx.currentTime); // Low warm tone
+  
+  // Frequency modulation for natural voice/atmosphere feel
+  const lfo = audioCtx.createOscillator();
+  lfo.frequency.setValueAtTime(2, audioCtx.currentTime);
+  const lfoGain = audioCtx.createGain();
+  lfoGain.gain.setValueAtTime(15, audioCtx.currentTime);
+  lfo.connect(synthOsc.frequency);
+  lfo.start();
+
+  gainNode.gain.setValueAtTime(parseFloat(spVolSlider.value) * 0.15, audioCtx.currentTime);
+
+  synthOsc.connect(gainNode);
+  gainNode.connect(audioCtx.destination);
+  synthOsc.start();
+}
+
+function stopSynthAudio() {
+  if (synthOsc) {
+    try { synthOsc.stop(); } catch(e){}
+    synthOsc = null;
+  }
+}
+
+function formatTime(secs) {
+  const m = Math.floor(secs / 60);
+  const s = Math.floor(secs % 60);
+  return (m < 10 ? '0' : '') + m + ':' + (s < 10 ? '0' : '') + s;
+}
+
+function playEpisode(epNum, title) {
+  activeEpNumber = epNum;
+  spTitle.textContent = title;
+  spEpNum.textContent = 'EPISODE 0' + epNum;
+
+  // Set episode duration approximations
+  const durations = { 6: 2880, 5: 3120, 4: 2280, 3: 2640, 2: 2460, 1: 2100 };
+  totalDurationSeconds = durations[epNum] || 2880;
+  spDurationEl.textContent = formatTime(totalDurationSeconds);
+
+  currentSeconds = 0;
+  isPlaying = true;
+
+  startSynthAudio();
+  updatePlayerUI();
+
+  stickyDock.classList.add('visible');
+  startTimer();
+}
+
+function startTimer() {
+  clearInterval(playTimer);
+  playTimer = setInterval(() => {
+    if (isPlaying) {
+      currentSeconds++;
+      if (currentSeconds >= totalDurationSeconds) {
+        currentSeconds = 0;
+        isPlaying = false;
+        stopSynthAudio();
+      }
+      updateTimeDisplay();
+    }
+  }, 1000);
+}
+
+function updateTimeDisplay() {
+  spCurrentTimeEl.textContent = formatTime(currentSeconds);
+  const pct = (currentSeconds / totalDurationSeconds) * 100;
+  spProgressFill.style.width = pct + '%';
+}
+
+function updatePlayerUI() {
+  // Reset all play buttons on cards
+  document.querySelectorAll('.ep-play-btn').forEach(btn => {
+    btn.innerHTML = '<i class="fa-solid fa-play"></i>';
+    btn.closest('.ep-card').classList.remove('active-playing');
+  });
+
+  if (activeEpNumber) {
+    const activeCardBtn = document.querySelector(`.ep-play-btn[data-ep="${activeEpNumber}"]`);
+    if (activeCardBtn) {
+      activeCardBtn.innerHTML = isPlaying ? '<i class="fa-solid fa-pause"></i>' : '<i class="fa-solid fa-play"></i>';
+      if (isPlaying) {
+        activeCardBtn.closest('.ep-card').classList.add('active-playing');
+      }
+    }
+  }
+
+  spToggleBtn.innerHTML = isPlaying ? '<i class="fa-solid fa-pause"></i>' : '<i class="fa-solid fa-play"></i>';
+}
+
+function toggleAudioPlay() {
+  if (!activeEpNumber) {
+    playEpisode(6, "How NFC Technology is Transforming Business Networking in India");
+    return;
+  }
+  isPlaying = !isPlaying;
+  if (isPlaying) {
+    startSynthAudio();
+  } else {
+    stopSynthAudio();
+  }
+  updatePlayerUI();
+}
+
+function seekAudio(e) {
+  const rect = e.currentTarget.getBoundingClientRect();
+  const clickX = e.clientX - rect.left;
+  const pct = clickX / rect.width;
+  currentSeconds = Math.floor(pct * totalDurationSeconds);
+  updateTimeDisplay();
+}
+
+function setAudioVolume(val) {
+  if (gainNode && audioCtx) {
+    gainNode.gain.setValueAtTime(parseFloat(val) * 0.15, audioCtx.currentTime);
+  }
+  if (val == 0) {
+    spVolIcon.className = 'fa-solid fa-volume-xmark';
+  } else if (val < 0.5) {
+    spVolIcon.className = 'fa-solid fa-volume-low';
+  } else {
+    spVolIcon.className = 'fa-solid fa-volume-high';
+  }
+}
+
+function toggleMute() {
+  if (spVolSlider.value > 0) {
+    spVolSlider.dataset.prev = spVolSlider.value;
+    spVolSlider.value = 0;
+  } else {
+    spVolSlider.value = spVolSlider.dataset.prev || 0.8;
+  }
+  setAudioVolume(spVolSlider.value);
+}
+
+function closePlayerDock() {
+  stickyDock.classList.remove('visible');
+  isPlaying = false;
+  stopSynthAudio();
+  clearInterval(playTimer);
+  updatePlayerUI();
+}
+
+/* Attach episode play button listeners */
+document.querySelectorAll('.ep-play-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const ep = btn.getAttribute('data-ep');
+    const title = btn.getAttribute('data-title');
+
+    if (activeEpNumber === ep && isPlaying) {
+      toggleAudioPlay();
+    } else {
+      playEpisode(ep, title);
+    }
+  });
+});
+
+/* Guest Form Handler */
+function handleGuestSubmit(e) {
+  e.preventDefault();
+  const toast = document.getElementById('toast-msg');
+  if (toast) {
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 4000);
+  }
+  document.getElementById('guest-pitch-form').reset();
+}
 </script>
 </body>
 </html>
