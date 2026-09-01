@@ -192,10 +192,28 @@ html, body {
     font-size: 0.7rem !important;
     margin-bottom: 0.2rem !important;
   }
-  .work-title, 
-  .portfolio-title {
-    font-size: 1.15rem !important;
-    line-height: 1.25 !important;
+  /* PODCAST HERO RESPONSIVE FIX */
+  .podcast-hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+    width: 100% !important;
+  }
+  .podcast-art-card {
+    max-width: 300px !important;
+    width: 100% !important;
+    padding: 2rem 1.5rem !important;
+    margin: 0 auto !important;
+  }
+  .podcast-hero-stats {
+    gap: 1.2rem !important;
+    flex-wrap: wrap !important;
+  }
+  .platform-wrap {
+    gap: 0.6rem !important;
+  }
+  .platform-chip {
+    padding: 0.6rem 1.1rem !important;
+    font-size: 0.75rem !important;
   }
 
   .location-card, .why-card {
