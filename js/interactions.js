@@ -54,6 +54,20 @@ function initContactForm() {
 
   if (!form || !statusMsg) return;
 
+  // Auto-select package from URL params (e.g. ?plan=growth)
+  const urlParams = new URLSearchParams(window.location.search);
+  const plan = urlParams.get('plan');
+  const serviceSelect = document.getElementById('form-service');
+  if (plan && serviceSelect) {
+    if (plan.toLowerCase() === 'starter') {
+      serviceSelect.value = 'Starter Retainer Plan (₹15K/mo)';
+    } else if (plan.toLowerCase() === 'growth') {
+      serviceSelect.value = 'Growth Retainer Plan (₹30K/mo)';
+    } else if (plan.toLowerCase() === 'scale') {
+      serviceSelect.value = 'Scale Retainer Plan (₹70K/mo)';
+    }
+  }
+
   form.addEventListener('submit', (e) => {
     e.preventDefault();
 

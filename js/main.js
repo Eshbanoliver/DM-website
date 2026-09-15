@@ -173,3 +173,27 @@ function initMobileMenu() {
     });
   });
 }
+
+/* --------------------------------------------------------------------------
+   Floating WhatsApp & Live Chat Widget Injection
+   -------------------------------------------------------------------------- */
+function initFloatingWidgets() {
+  if (document.querySelector('.floating-actions-hub')) return;
+
+  const hub = document.createElement('div');
+  hub.className = 'floating-actions-hub';
+  hub.innerHTML = `
+    <a href="https://wa.me/918306241815?text=Hello%20Rydon%20Digital,%20I%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" rel="noopener noreferrer" class="floating-action-btn floating-whatsapp-btn" aria-label="Chat on WhatsApp">
+      <i class="fa-brands fa-whatsapp"></i>
+      <span>Chat on WhatsApp</span>
+    </a>
+    <a href="contact.html" class="floating-action-btn floating-livechat-btn" aria-label="Quick Inquiry">
+      <i class="fa-solid fa-comment-dots"></i>
+      <span>Start a Project</span>
+    </a>
+  `;
+  document.body.appendChild(hub);
+}
+
+// Call on load
+document.addEventListener('DOMContentLoaded', initFloatingWidgets);
