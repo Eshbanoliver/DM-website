@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCursorFollowerLight();
   initSmoothAnchors();
   initPortfolioFilters();
+  initMockupLightbox();
 });
 
 /* --------------------------------------------------------------------------
@@ -313,47 +314,236 @@ function initSmoothAnchors() {
 }
 
 /* --------------------------------------------------------------------------
-   Interactive Portfolio Category Filtering
+   Interactive Portfolio & Mockup Category Filtering
    -------------------------------------------------------------------------- */
 function initPortfolioFilters() {
-  const filterBtns = document.querySelectorAll('.portfolio-filter');
-  const cards = document.querySelectorAll('.work-card, .portfolio-card');
-  if (!filterBtns.length || !cards.length) return;
-
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filterBtns.forEach(b => {
-        b.classList.remove('active');
-        b.classList.remove('btn-secondary');
-        b.classList.add('btn-outline');
-      });
-      btn.classList.add('active');
-      btn.classList.remove('btn-outline');
-      btn.classList.add('btn-secondary');
-
-      const filterValue = btn.getAttribute('data-filter') || 'all';
-
-      cards.forEach(card => {
-        const category = card.getAttribute('data-category') || '';
-        const matches = filterValue === 'all' || category.split(' ').includes(filterValue);
-
-        if (matches) {
-          card.classList.remove('is-hidden');
-          card.style.display = '';
-          setTimeout(() => {
-            card.style.opacity = '1';
-            card.style.transform = 'scale(1)';
-          }, 30);
-        } else {
-          card.style.opacity = '0';
-          card.style.transform = 'scale(0.92)';
-          setTimeout(() => {
-            card.classList.add('is-hidden');
-            card.style.display = 'none';
-          }, 300);
+  const filterBars = document.querySelectorAll('.portfolio-filter-nav, .portfolio-filters, .mockup-filter-bar');
+  
+  filterBars.forEach(bar => {
+    const buttons = bar.querySelectorAll('.portfolio-filter, .mockup-filter-chip');
+    const targetSelector = bar.getAttribute('data-target');
+    
+    buttons.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        
+        // Toggle active button state within this bar
+        buttons.forEach(b => {
+          b.classList.remove('active');
+          if (b.classList.contains('btn-secondary')) {
+            b.classList.remove('btn-secondary');
+            b.classList.add('btn-outline');
+          }
+        });
+        btn.classList.add('active');
+        if (btn.classList.contains('btn-outline')) {
+          btn.classList.remove('btn-outline');
+          btn.classList.add('btn-secondary');
         }
+
+        const filterValue = btn.getAttribute('data-filter') || 'all';
+
+        // Determine which cards to filter
+        let cards;
+        if (targetSelector) {
+          const targetContainer = document.querySelector(targetSelector);
+          cards = targetContainer ? targetContainer.querySelectorAll('.work-card, .portfolio-card, .mockup-card') : [];
+        } else {
+          // Check if inside a section with a grid, else all cards
+          const parentSection = bar.closest('section') || document;
+          cards = parentSection.querySelectorAll('.work-card, .portfolio-card, .mockup-card');
+          if (!cards.length) {
+            cards = document.querySelectorAll('.work-card, .portfolio-card, .mockup-card');
+          }
+        }
+
+        cards.forEach(card => {
+          const category = card.getAttribute('data-category') || '';
+          const categories = category.toLowerCase().split(/\s+/);
+          const matches = filterValue === 'all' || categories.includes(filterValue.toLowerCase());
+
+          if (matches) {
+            card.classList.remove('is-hidden');
+            card.style.display = '';
+            setTimeout(() => {
+              card.style.opacity = '1';
+              card.style.transform = 'scale(1)';
+            }, 30);
+          } else {
+            card.style.opacity = '0';
+            card.style.transform = 'scale(0.92)';
+            setTimeout(() => {
+              card.classList.add('is-hidden');
+              card.style.display = 'none';
+            }, 250);
+          }
+        });
       });
     });
   });
 }
+
+/* --------------------------------------------------------------------------
+   High-Resolution Mockup Lightbox Modal Viewer
+   -------------------------------------------------------------------------- */
+function initMockupLightbox() {
+  // Inject modal into DOM if not present
+  let backdrop = document.getElementById('mockup-modal');
+  if (!backdrop) {
+    const modalHTML = `
+      <div id="mockup-modal" class="mockup-modal-backdrop" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="mockup-modal-window">
+          <div class="mockup-modal-header">
+            <div class="mockup-modal-meta">
+              <span class="mockup-modal-badge" id="modal-category">Design Work</span>
+              <span class="mockup-modal-counter" id="modal-counter">1 / 1</span>
+            </div>
+            <button class="mockup-modal-close-btn" id="modal-close-btn" aria-label="Close Preview" title="Close (Esc)">&times;</button>
+          </div>
+          <div class="mockup-modal-body">
+            <button class="mockup-modal-nav-btn prev" id="modal-prev-btn" aria-label="Previous Design" title="Previous (Left Arrow)">&#10094;</button>
+            <img src="" alt="Mockup Design Preview" id="modal-img" class="mockup-modal-img" />
+            <button class="mockup-modal-nav-btn next" id="modal-next-btn" aria-label="Next Design" title="Next (Right Arrow)">&#10095;</button>
+          </div>
+          <div class="mockup-modal-footer">
+            <div class="mockup-modal-details">
+              <h3 class="mockup-modal-title" id="modal-title">Design Sheet Title</h3>
+              <p class="mockup-modal-desc" id="modal-desc">Design Sheet Description</p>
+            </div>
+            <a href="contact.html" class="mockup-modal-cta">Request Similar Design <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    `;
+    document.body.insertAdjacentHTML('beforeend', modalHTML);
+    backdrop = document.getElementById('mockup-modal');
+  }
+
+  const modalImg = document.getElementById('modal-img');
+  const modalTitle = document.getElementById('modal-title');
+  const modalDesc = document.getElementById('modal-desc');
+  const modalCategory = document.getElementById('modal-category');
+  const modalCounter = document.getElementById('modal-counter');
+  const closeBtn = document.getElementById('modal-close-btn');
+  const prevBtn = document.getElementById('modal-prev-btn');
+  const nextBtn = document.getElementById('modal-next-btn');
+
+  let activeGalleryCards = [];
+  let currentIndex = -1;
+
+  function openLightbox(cards, index) {
+    if (!cards || !cards.length || index < 0 || index >= cards.length) return;
+    activeGalleryCards = cards;
+    currentIndex = index;
+    renderCurrentSlide();
+    backdrop.classList.add('is-active');
+    backdrop.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    backdrop.classList.remove('is-active');
+    backdrop.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  function renderCurrentSlide() {
+    if (currentIndex < 0 || currentIndex >= activeGalleryCards.length) return;
+    const card = activeGalleryCards[currentIndex];
+    
+    // Extract metadata from card attributes or children
+    const imgSrc = card.getAttribute('data-img') || 
+                   (card.querySelector('img') ? card.querySelector('img').getAttribute('src') : '');
+    const title = card.getAttribute('data-title') || 
+                  (card.querySelector('.portfolio-title, .work-title') ? card.querySelector('.portfolio-title, .work-title').textContent.trim() : 'Design Showcase');
+    const desc = card.getAttribute('data-desc') || 
+                 (card.querySelector('.portfolio-desc, .work-desc, .portfolio-sub') ? card.querySelector('.portfolio-desc, .work-desc, .portfolio-sub').textContent.trim() : '');
+    const category = card.getAttribute('data-folder') || 
+                     card.getAttribute('data-category') || 
+                     (card.querySelector('.mockup-folder-badge, .portfolio-category, .work-cat') ? card.querySelector('.mockup-folder-badge, .portfolio-category, .work-cat').textContent.trim() : 'Showcase');
+
+    // Update UI
+    modalImg.style.opacity = '0.3';
+    modalImg.src = imgSrc;
+    modalImg.alt = title;
+    modalImg.onload = () => {
+      modalImg.style.opacity = '1';
+    };
+
+    modalTitle.textContent = title;
+    modalDesc.textContent = desc;
+    modalCategory.textContent = category.toUpperCase();
+    modalCounter.textContent = `${currentIndex + 1} / ${activeGalleryCards.length}`;
+
+    // Hide or dim arrows if only 1 item
+    if (activeGalleryCards.length <= 1) {
+      prevBtn.style.display = 'none';
+      nextBtn.style.display = 'none';
+    } else {
+      prevBtn.style.display = 'flex';
+      nextBtn.style.display = 'flex';
+    }
+  }
+
+  function prevSlide() {
+    if (activeGalleryCards.length <= 1) return;
+    currentIndex = (currentIndex - 1 + activeGalleryCards.length) % activeGalleryCards.length;
+    renderCurrentSlide();
+  }
+
+  function nextSlide() {
+    if (activeGalleryCards.length <= 1) return;
+    currentIndex = (currentIndex + 1) % activeGalleryCards.length;
+    renderCurrentSlide();
+  }
+
+  // Bind click handlers to cards
+  document.addEventListener('click', (e) => {
+    const card = e.target.closest('.mockup-card, .portfolio-card, [data-lightbox="true"]');
+    if (!card) return;
+
+    // Check if user clicked on a direct link inside the card (like button or URL link)
+    if (e.target.closest('a') && !e.target.closest('.portfolio-img-wrap, .mockup-card-img-wrap, .portfolio-link-icon')) {
+      return;
+    }
+
+    e.preventDefault();
+
+    // Collect currently visible cards in the same grid
+    const parentGrid = card.closest('.portfolio-grid, .work-grid, #mockup-grid') || card.parentElement;
+    const visibleCards = Array.from(parentGrid.querySelectorAll('.mockup-card:not(.is-hidden), .portfolio-card:not(.is-hidden), [data-lightbox="true"]:not(.is-hidden)'));
+    const index = visibleCards.indexOf(card);
+
+    if (index !== -1) {
+      openLightbox(visibleCards, index);
+    } else {
+      openLightbox([card], 0);
+    }
+  });
+
+  // Modal controls
+  if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
+  if (prevBtn) prevBtn.addEventListener('click', (e) => { e.stopPropagation(); prevSlide(); });
+  if (nextBtn) nextBtn.addEventListener('click', (e) => { e.stopPropagation(); nextSlide(); });
+
+  // Close on backdrop click (outside window)
+  backdrop.addEventListener('click', (e) => {
+    if (e.target === backdrop) {
+      closeLightbox();
+    }
+  });
+
+  // Keyboard navigation
+  window.addEventListener('keydown', (e) => {
+    if (!backdrop.classList.contains('is-active')) return;
+    if (e.key === 'Escape') {
+      closeLightbox();
+    } else if (e.key === 'ArrowLeft') {
+      prevSlide();
+    } else if (e.key === 'ArrowRight') {
+      nextSlide();
+    }
+  });
+}
+
 
