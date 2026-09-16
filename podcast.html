@@ -1802,11 +1802,40 @@ document.querySelectorAll('.ep-play-btn').forEach(btn => {
 /* Guest Form Handler */
 function handleGuestSubmit(e) {
   e.preventDefault();
+  const name = document.getElementById('g-name') ? document.getElementById('g-name').value.trim() : '';
+  const email = document.getElementById('g-email') ? document.getElementById('g-email').value.trim() : '';
+  const company = document.getElementById('g-company') ? document.getElementById('g-company').value.trim() : '';
+  const website = document.getElementById('g-website') ? document.getElementById('g-website').value.trim() : 'N/A';
+  const pitch = document.getElementById('g-pitch') ? document.getElementById('g-pitch').value.trim() : '';
+
+  const waText = 
+`*New Podcast Guest Application - The Rydon Growth Show*
+
+👤 *Name:* ${name}
+📧 *Email:* ${email}
+🏢 *Company / Brand:* ${company}
+🌐 *Website / LinkedIn:* ${website}
+
+🎙️ *Pitch / Discussion Topic:*
+${pitch}
+
+---
+Sent via The Rydon Growth Show application form`;
+
+  const waUrl = `https://api.whatsapp.com/send?phone=918306241815&text=${encodeURIComponent(waText)}`;
+
   const toast = document.getElementById('toast-msg');
   if (toast) {
+    toast.textContent = 'Opening WhatsApp to submit your guest pitch...';
     toast.classList.add('show');
-    setTimeout(() => toast.classList.remove('show'), 4000);
+    setTimeout(() => toast.classList.remove('show'), 5000);
   }
+
+  const opened = window.open(waUrl, '_blank');
+  if (!opened || opened.closed || typeof opened.closed === 'undefined') {
+    window.location.href = waUrl;
+  }
+
   document.getElementById('guest-pitch-form').reset();
 }
 </script>

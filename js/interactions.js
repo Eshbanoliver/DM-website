@@ -75,6 +75,10 @@ function initContactForm() {
     const name = document.getElementById('form-name').value.trim();
     const email = document.getElementById('form-email').value.trim();
     const phone = document.getElementById('form-phone').value.trim();
+    const serviceSelect = document.getElementById('form-service');
+    const budgetSelect = document.getElementById('form-budget');
+    const service = serviceSelect && serviceSelect.value ? serviceSelect.value : 'General Inquiry';
+    const budget = budgetSelect && budgetSelect.value ? budgetSelect.value : 'Not Specified';
     const message = document.getElementById('form-message').value.trim();
 
     if (!name || !email || !phone || !message) {
@@ -87,18 +91,44 @@ function initContactForm() {
       return;
     }
 
-    // Success State Simulation
+    // Build structured, clean WhatsApp message
+    const waText = 
+`*New Project Inquiry - Rydon Digital*
+
+👤 *Name:* ${name}
+📧 *Email:* ${email}
+📞 *Phone / WhatsApp:* ${phone}
+💼 *Capability / Package:* ${service}
+💰 *Estimated Budget:* ${budget}
+
+📝 *Project Details & Objectives:*
+${message}
+
+---
+Sent via rydondigital.com contact form`;
+
+    const whatsappNumber = '918306241815';
+    const waUrl = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(waText)}`;
+
+    // Display confirmation state with fallback link
     statusMsg.className = 'form-status-msg success';
     statusMsg.style.display = 'block';
     statusMsg.style.background = 'rgba(0, 200, 83, 0.15)';
     statusMsg.style.border = '1px solid #00C853';
-    statusMsg.style.color = '#00C853';
-    statusMsg.textContent = 'Thank you! Your message has been sent successfully. Our team will contact you shortly.';
+    statusMsg.style.color = '#00E676';
+    statusMsg.innerHTML = `✓ <strong>Opening WhatsApp...</strong> If your WhatsApp did not open automatically, <a href="${waUrl}" target="_blank" rel="noopener noreferrer" style="color: #00E676; text-decoration: underline; font-weight: 700;">click here to send on WhatsApp</a>.`;
+
+    // Open WhatsApp in new tab/app, fallback to current window if popup blocked
+    const newTab = window.open(waUrl, '_blank');
+    if (!newTab || newTab.closed || typeof newTab.closed === 'undefined') {
+      window.location.href = waUrl;
+    }
+
     form.reset();
 
     setTimeout(() => {
       statusMsg.style.display = 'none';
-    }, 6000);
+    }, 12000);
   });
 }
 
