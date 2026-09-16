@@ -1,5 +1,50 @@
+# ==============================================================================
+# RYDON DIGITAL — ROBOTS.TXT DIRECTIVES
+# Website: https://rydondigital.com
+# Agency: Rydon Digital (International Digital Agency & Creative Studio)
+# ==============================================================================
+
 User-agent: *
 Allow: /
+Allow: /css/
+Allow: /js/
+Allow: /images/
+Disallow: /404.html
 
-# Sitemap Index
+# Explicit directives for Google search crawlers
+User-agent: Googlebot
+Allow: /
+Allow: /css/
+Allow: /js/
+Allow: /images/
+Disallow: /404.html
+
+# Allow full crawling for image indexation (mockups, portfolios, deliverables)
+User-agent: Googlebot-Image
+Allow: /images/
+Allow: /images/mockups/
+Allow: /images/portfolio/
+
+# Bing Search Engine Crawler
+User-agent: Bingbot
+Allow: /
+Allow: /css/
+Allow: /js/
+Allow: /images/
+Disallow: /404.html
+
+# Apple & Siri Suggestions Crawler
+User-agent: Applebot
+Allow: /
+Disallow: /404.html
+
+# DuckDuckGo Privacy Search Crawler
+User-agent: DuckDuckBot
+Allow: /
+Disallow: /404.html
+
+# Sitemap Declaration
 Sitemap: https://rydondigital.com/sitemap.xml
+
+# Canonical Host
+Host: https://rydondigital.com

@@ -1,159 +1,204 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd
+        http://www.google.com/schemas/sitemap-image/1.1
+        http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd">
 
-  <!-- Primary Pages -->
+  <!-- Primary Flagship Page -->
   <url>
     <loc>https://rydondigital.com/</loc>
-    <lastmod>2026-08-29</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://rydondigital.com/images/rydon-logo.png</image:loc>
+      <image:title>Rydon Digital Agency Logo</image:title>
+    </image:image>
   </url>
+
+  <!-- Core Agency Information & Contact -->
   <url>
     <loc>https://rydondigital.com/about.html</loc>
-    <lastmod>2026-08-29</lastmod>
+    <lastmod>2026-09-16</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://rydondigital.com/contact.html</loc>
-    <lastmod>2026-08-29</lastmod>
+    <lastmod>2026-09-16</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://rydondigital.com/career.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rydondigital.com/privacy-policy.html</loc>
-    <lastmod>2026-08-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.50</priority>
   </url>
   <url>
     <loc>https://rydondigital.com/terms-of-service.html</loc>
-    <lastmod>2026-08-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.50</priority>
   </url>
 
-  <!-- Service Directory & Capability Pages -->
+  <!-- Services Master Directory & Specialist Capability Hubs -->
   <url>
     <loc>https://rydondigital.com/services.html</loc>
-    <lastmod>2026-08-29</lastmod>
+    <lastmod>2026-09-16</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://rydondigital.com/graphic-design.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://rydondigital.com/images/mockups/Logo/1.png</image:loc>
+      <image:title>Udaipur Infohub Brand Identity Design</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://rydondigital.com/images/mockups/Packing/6.png</image:loc>
+      <image:title>Riyora Ayurvedic Hair Oil Packaging Box</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://rydondigital.com/images/mockups/Mockup/26.png</image:loc>
+      <image:title>Riyora 3D Product Box Mockup</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://rydondigital.com/images/mockups/3D%20Design/31.png</image:loc>
+      <image:title>Rydon Kinetic 3D Volumetric Typography</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://rydondigital.com/images/mockups/Visual%20Poster/16.png</image:loc>
+      <image:title>Marketing Vista Strategic Chess Poster</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://rydondigital.com/images/mockups/Vector%20Design/36.png</image:loc>
+      <image:title>Scarlet Macaw Geometric Vector Art</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://rydondigital.com/website-development.html</loc>
-    <lastmod>2026-08-29</lastmod>
+    <lastmod>2026-09-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://rydondigital.com/seo.html</loc>
-    <lastmod>2026-08-29</lastmod>
+    <lastmod>2026-09-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://rydondigital.com/digital-marketing.html</loc>
-    <lastmod>2026-08-29</lastmod>
+    <lastmod>2026-09-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://rydondigital.com/social-media.html</loc>
-    <lastmod>2026-08-29</lastmod>
+    <lastmod>2026-09-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://rydondigital.com/video-editing.html</loc>
-    <lastmod>2026-08-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://rydondigital.com/graphic-design.html</loc>
-    <lastmod>2026-08-29</lastmod>
+    <lastmod>2026-09-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://rydondigital.com/content-writing.html</loc>
-    <lastmod>2026-08-29</lastmod>
+    <lastmod>2026-09-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://rydondigital.com/ads.html</loc>
-    <lastmod>2026-08-29</lastmod>
+    <lastmod>2026-09-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
 
-  <!-- Product Suite Pages -->
+  <!-- Hardware & Digital Products -->
   <url>
     <loc>https://rydondigital.com/nfc-products.html</loc>
-    <lastmod>2026-08-29</lastmod>
+    <lastmod>2026-09-16</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://rydondigital.com/images/digital-business-stand.webp</image:loc>
+      <image:title>Touchless Smart NFC Digital Business Stand</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://rydondigital.com/images/google-review.webp</image:loc>
+      <image:title>Google Review Tap NFC Plate</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://rydondigital.com/images/business-card.webp</image:loc>
+      <image:title>Smart Contactless NFC Business Card</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://rydondigital.com/digital-product.html</loc>
-    <lastmod>2026-08-29</lastmod>
+    <lastmod>2026-09-16</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://rydondigital.com/advertising-products.html</loc>
-    <lastmod>2026-08-29</lastmod>
+    <lastmod>2026-09-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
 
-  <!-- Work, Clients & Insights -->
+  <!-- Work Showcases, Clients & Thought Leadership -->
   <url>
     <loc>https://rydondigital.com/portfolio.html</loc>
-    <lastmod>2026-08-29</lastmod>
+    <lastmod>2026-09-16</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.90</priority>
   </url>
   <url>
     <loc>https://rydondigital.com/work.html</loc>
-    <lastmod>2026-08-29</lastmod>
+    <lastmod>2026-09-16</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.90</priority>
   </url>
   <url>
     <loc>https://rydondigital.com/our-clients.html</loc>
-    <lastmod>2026-08-29</lastmod>
+    <lastmod>2026-09-16</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://rydondigital.com/blogs.html</loc>
-    <lastmod>2026-08-29</lastmod>
+    <lastmod>2026-09-16</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://rydondigital.com/podcast.html</loc>
-    <lastmod>2026-08-29</lastmod>
+    <lastmod>2026-09-16</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://rydondigital.com/career.html</loc>
-    <lastmod>2026-08-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://rydondigital.com/sitemap.html</loc>
-    <lastmod>2026-08-29</lastmod>
+    <lastmod>2026-09-16</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.50</priority>
   </url>
 
 </urlset>
