@@ -590,7 +590,7 @@ ul { list-style: none; }
 .strip-cta-arrow { font-size: 1.2rem; transition: transform .3s var(--ease-out); }
 .strip-cta:hover .strip-cta-arrow { transform: translateX(4px) translateY(-2px); }
 
-/* ─── NFC PRODUCTS INTRO SECTION (ABOVE SERVICES) ────────────────────────── */
+/* ─── NFC PRODUCTS INTRO SECTION ─────────────────────────────────────────── */
 .nfc-intro-section {
   padding: 9rem 0;
   background: var(--off-white);
@@ -598,7 +598,7 @@ ul { list-style: none; }
   border-bottom: 1px solid var(--ink-10);
   position: relative;
   overflow: hidden;
-  margin-bottom: 9rem;
+  margin-bottom: 0;
 }
 
 .nfc-intro-wrap {

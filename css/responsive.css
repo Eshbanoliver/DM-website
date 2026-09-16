@@ -90,7 +90,7 @@ html, body {
   /* NFC INTRO & PRODUCTS SHOWCASE (HOMEPAGE & PRODUCT PAGES) */
   .nfc-intro-section {
     padding: 3.5rem 0 !important;
-    margin-bottom: 3.5rem !important;
+    margin-bottom: 0 !important;
   }
   .nfc-intro-wrap {
     grid-template-columns: 1fr !important;
